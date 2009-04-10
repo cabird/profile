@@ -1,0 +1,12 @@
+*.aux
+*.log
+*.bbl
+*.blg
+*.todo
+*.pdfsync
+paper.pdf
+*~
+*.sw?
+/.gvim-init.vim
+/.project-aliases
+/.vimproject
