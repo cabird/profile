@@ -39,6 +39,13 @@ ENTRY
 
 INTEGERS { output.state before.all mid.sentence after.sentence after.block }
 
+STRINGS { bold.author }
+
+FUNCTION {set.bold.author}
+{
+  "Christian Bird" 'bold.author :=
+}
+
 FUNCTION {format.acceptance}
 { acceptance empty$
     { "" }
@@ -196,6 +203,10 @@ FUNCTION {format.names}
   numnames 'namesleft :=
     { namesleft #0 > }
     { s nameptr "{ff }{vv~}{ll}{, jj}" format.name$ 't :=
+      t bold.author = 
+        { "\textbf{" t * "}" * 't := }
+        {}
+      if$
       nameptr #1 >
 	{ namesleft #1 >
 	    { ", " * t * }
@@ -1121,7 +1132,7 @@ FUNCTION {longest.label.pass}
 }
 
 EXECUTE {initialize.longest.label}
-
+EXECUTE {set.bold.author}
 ITERATE {longest.label.pass}
 
 FUNCTION {begin.bib}
