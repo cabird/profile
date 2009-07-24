@@ -11,18 +11,65 @@
 	Author = {Christian Bird and Nachiappan Nagappan and Premkumar Devanbu and Harald Gall and Brendan Murphy},
 	Booktitle = {Proceedings of the 17th International Symposium on Software Reliability Engineering},
 	Title = {{Putting it All Together: Using Socio-Technical Networks to Predict Failures} },
+	publisher = {IEEE Computer Society},
 	Year = {2009},
-	acceptance = {25\%}
+	acceptance = {25\%},
+	location = {Bengaluru-Mysuru, India},
+	abbrv={ISSRE 09},
+	abstract = {Studies have shown that social factors in development organizations have a
+dramatic effect on software quality.  Separately,  program dependency
+information has also been used successfully to predict which software components
+are more fault prone. Interestingly, the influence of these two phenomena  have
+only been studied separately.  Intuition and practical experience suggests,
+however, that task assignment (i.e. who worked on which components and how
+much) and dependency structure (which components have dependencies on others)
+together interact to  influence the quality of the resulting software.  We
+study the influence of  combined socio-technical software networks on
+the fault-proneness of individual software components within a system.  The
+network  properties of a software component in this  combined network are able
+to predict if an entity is failure prone with greater accuracy than prior
+methods which use dependency or contribution information in isolation.  We
+evaluate our approach in different settings by using it on Windows Vista and
+across six releases of the Eclipse development environment including using
+models built from one release to predict failure prone components in the next
+release.  We compare this to previous work.  In every case, our method performs
+as well or better and is able to more accurately identify those software
+components that have more post-release failures, with precision and recall
+rates as high as 85%.}
 }
 
 @inproceedings{bird2009fbb,
 	Author = {Christian Bird and Adrian Bachmann and Eirik Aune and John Duffy and Abraham Bernstein and
 	Vladimir Filkov and Premkumar Devanbu},
 	Booktitle = {Proceedings of the the Seventh joint meeting of the European Software Engineering Conference and the ACM SIGSOFT Symposium on The Foundations of Software Engineering},
-	Location = {Amsterdam Netherlands},
+	Location = {Amsterdam, Netherlands},
 	Title = {{Fair and Balanced? Bias in Bug-Fix Datasets} },
 	Year = {2009},
-	acceptance = {14\%}
+	acceptance = {14\%},
+	publisher = {ACM},
+	abbrv = {ESEC/FSE 09},
+	pdf = {bird2009fbb},
+	abstract = {Software engineering researchers have long been interested in
+where and why bugs occur in code, and in predicting where they might
+turn up next. Historical bug-occurence data has been key to this
+research.  Bug tracking systems, and code version histories, record
+when, how and by whom bugs were fixed; from these sources,  datasets
+that  relate file changes to bug fixes can be extracted. These
+historical datasets   can be used to test hypotheses concerning
+processes of bug introduction, and also to build statistical bug
+prediction models.  Unfortunately, processes and humans are imperfect,
+and only a fraction of bug fixes are actually labelled in source
+code version histories, and thus become available for study in the
+extracted datasets. The question naturally arises, are the bug fixes
+recorded in these historical datasets a fair representation of the full
+population of bug fixes?  In this paper, we investigate historical data
+from several software projects, and find strong evidence of systematic
+bias. We then investigate the potential effects of "unfair,
+imbalanced" datasets on the performance of prediction techniques.  We
+draw the lesson that bias is a critical problem that threatens  both
+the effectiveness of processes that rely on biased datasets to build
+prediction models and the generalizability of hypotheses tested on
+biased data}
 }
 
 @inproceedings{bird2009ppm,
@@ -32,7 +79,32 @@
 	Publisher = {IEEE Computer Society},
 	Title = {{The Promises and Perils of Mining Git}},
 	Year = {2009},
-	acceptance = {30\%}
+	acceptance = {30\%},
+	location = {Vancouver, Canada},
+	abbrv = {MSR 09},
+	pdf = {bird2009ppm.pdf},
+	abstract = {We are now witnessing the rapid growth of  decentralized source code
+management (DSCM) systems, in which every developer has her own repository. 
+DSCMs facilitate a style of collaboration in which
+ work output can flow sideways (and privately)
+ between collaborators, rather than always
+up and down (and publicly) via a central repository. 
+Decentralization comes with both the promise of new data and the peril of its
+misinterpretation. 
+We focus on git, a very popular DSCM used in high-profile projects. 
+Decentralization, and other features of git, such as automatically recorded
+contributor attribution, lead to richer content histories, 
+giving rise to new questions such as ``How do contributions flow
+between developers to the official project repository?''
+However, there are pitfalls. 
+Commits may be reordered, deleted, or edited as they move between repositories.
+The semantics of terms common to SCMs and DSCMs sometimes differ markedly,
+potentially creating confusion.  
+For example, a commit is immediately visible
+to all developers in centralized SCMs, but not in DSCMs. 
+Our goal is to help researchers interested in DSCMs avoid  these and other
+perils when mining and analyzing git data.}
+
 }
 
 @inproceedings{bird2009sdr,
@@ -44,7 +116,37 @@
 	Year = {2009},
 	pages = {826--837},
 	acceptance = {29\%\footnote{SDM paper accepted in full as a poster paper.  15\% of papers accepted as full
-	papers and 14\% were accepted as poster papers.}}
+	papers and 14\% were accepted as poster papers.}},
+	abbrv = {SDM 09},
+	pdf = {bird2009sdr.pdf},
+	abstract = {Complex systems exhibit emergent patterns of behavior at different levels of
+organization. Powerful network analysis methods, developed in physics and
+social sciences, have been successfully used to tease out patterns that
+relate to community structure and network dynamics.  In this paper, we mine
+the complex network of collaboration relationships in computer science, and
+adapt these network analysis methods to study collaboration and
+interdisciplinary research at the individual, within-area and network-wide
+levels.  
+
+We start with a collaboration graph extracted from the DBLP bibliographic
+database and use extrinsic data to define research areas within computer
+science.  Using topological measures on the collaboration graph, we find
+significant differences in the behavior of individuals among areas based on
+their collaboration patterns. We use community structure analysis,
+betweenness centralization, and longitudinal assortativity as metrics within
+each area to determine how centralized, integrated, and cohesive they are.
+Of special interest is how research areas change with time. We
+longitudinally examine the area overlap and migration patterns of authors,
+and empirically confirm some computer science folklore.
+
+We also examine the degree to which the research areas and their key
+conferences are interdisciplinary.  We find that data mining and software
+engineering are very interdisciplinary while theory and cryptography are
+not.  Specifically, it appears that SDM and ICSE attract authors who publish
+in many areas while FOCS and STOC do not.  We also examine isolation both
+within and between areas.  One interesting discovery is that cryptography is
+highly isolated within the larger computer science community, but densely
+interconnected within itself.}
 }
 
 @article{bird2009dddb,
@@ -55,7 +157,26 @@
 	address = {New York, NY, USA},
 	Month = {August},
 	Year = {2009},
-	acceptance = {Revised addition of ICSE paper invited to Research Highlights in CACM}
+	acceptance = {Revised addition of ICSE paper invited to Research Highlights in CACM},
+	abstract = {Existing literature on distributed 
+development in software engineering, and other fields discuss various challenges, 
+including cultural barriers, expertise transfer difficulties, and communication 
+and coordination overhead.  Conventional wisdom, in  fact, holds 
+that distributed software development is riskier and 
+more challenging than collocated development. 
+We revisit this belief, empirically studying
+the overall development of Windows Vista and comparing the post-release failures 
+of components that were developed in a distributed fashion with those that were 
+developed by collocated teams.  We found a negligible difference in failures.  
+This difference becomes even less significant when controlling for the number
+of developers working on a binary.  Furthermore, we also found that component characteristics
+(such as code churn, complexity, dependency information, and test code coverage)
+differ very little between distributed and collocated components.
+Finally, we  examine the software process used during the Vista
+development cycle and  examine how it may have
+mitigated some of the difficulties of distributed development
+introduced in
+prior work in this area.}
 }
 
 @inproceedings{bird2009ddd,
@@ -66,8 +187,28 @@
 	Year = {2009},
 	publisher = {IEEE Computer Society},
 	pages = {518--528},
-	acceptance = {12\% Best Paper Award 1\%}
-
+	acceptance = {12\% Best Paper Award 1\%},
+	abbrv = {ICSE 09},
+	pdf = {bird2009ddd.pdf},
+	abstract = {Existing literature on distributed 
+development in software engineering, and other fields discuss various challenges, 
+including cultural barriers, expertise transfer difficulties, and communication 
+and coordination overhead.  Conventional wisdom, in  fact, holds 
+that distributed software development is riskier and 
+more challenging than collocated development. 
+We revisit this belief, empirically studying
+the overall development of Windows Vista and comparing the post-release failures 
+of components that were developed in a distributed fashion with those that were 
+developed by collocated teams.  We found a negligible difference in failures.  
+This difference becomes even less significant when controlling for the number
+of developers working on a binary.  Furthermore, we also found that component characteristics
+(such as code churn, complexity, dependency information, and test code coverage)
+differ very little between distributed and collocated components.
+Finally, we  examine the software process used during the Vista
+development cycle and  examine how it may have
+mitigated some of the difficulties of distributed development
+introduced in
+prior work in this area.}
 }
 
 @inproceedings{bird2008lss,
@@ -79,7 +220,31 @@
 	Publisher = {ACM},
 	Title = {{Latent Social Structure in Open Source Projects} },
 	Year = {2008},
-	acceptance = {20\%}
+	acceptance = {20\%},
+	abbrv = {FSE 08},
+	pdf = {bird2008lss.pdf},
+	abstract = {Commercial software project managers design
+project organizational structure carefully, mindful of available skills,
+division of labour, geographical boundaries, etc.  These organizational
+	"cathedrals" are to be contrasted with the "bazaar-like" nature of
+	Open Source Software (OSS) Projects, which  have no pre-designed
+	organizational structure.  Any structure that exists is dynamic,
+self-organizing, latent, and usually not explicitly stated.  Still, in  large,
+complex, successful, OSS projects, we do expect that subcommunities will form
+	spontaneously within the developer  teams.  Studying these
+	subcommunities,  and  their behavior can shed light on how successful
+	OSS projects  self-organize.  This phenomenon could well hold important
+	lessons for how commercial software teams might be organized.  Building
+	on known well-established techniques for detecting community structure
+	in complex networks, we extract and study latent subcommunities from
+	the email social network of several projects: Apache HTTPD, Python,
+PostgresSQL, Perl, and Apache ANT.  We then validate them with software
+	development activity history.  Our results show that subcommunities do
+	indeed spontaneously arise within these projects as the projects
+	evolve.  These subcommunities  manifest most strongly in technical
+	discussions, and are significantly connected with collaboration
+	behaviour.}
+
 }
 
 @inproceedings{pattison2008twp,
@@ -93,7 +258,9 @@
 	Publisher = {ACM},
 	Title = {{Talk and Work: a Preliminary Report} },
 	Year = {2008},
-	acceptance = {40\%}
+	acceptance = {40\%},
+	abbrv = {MSR 08},
+	pdf = {pattison2008twp.pdf}
 }
 
 @inproceedings{saul2007rrw,
@@ -107,7 +274,9 @@
 	Publisher = {ACM},
 	Title = {{Recommending Random Walks} },
 	Year = {2007},
-	acceptance = {17\% nominated for Best Paper}
+	acceptance = {17\% nominated for Best Paper},
+	abbrv = {FSE 07},
+	pdf = {fse-2007.pdf}
 }
 
 @inproceedings{bird2007dps,
@@ -120,7 +289,10 @@
 	Publisher = {IEEE Computer Society},
 	Title = {{Detecting Patch Submission and Acceptance in OSS Projects} },
 	Year = {2007},
-	acceptance = {38\%}
+	acceptance = {38\%},
+	location = {Minneapolis, Minnesota, USA},
+	abbrv = {MSR 07},
+	pdf = {bird2007dps}
 }
 
 @inproceedings{ogawa2007vsi,
@@ -129,7 +301,9 @@
 	Pages = {25--32},
 	Title = {{Visualizing Social Interaction in Open Source Software Projects} },
 	Year = {2007},
-	acceptance = {45\%}
+	acceptance = {45\%},
+	abbrv = {APVIS 07},
+	pdf = {apvisogawa.pdf}
 }
 
 @inproceedings{bird2007obi,
@@ -142,7 +316,10 @@
 	Publisher = {IEEE Computer Society},
 	Title = {{Open Borders? Immigration in Open Source Projects} },
 	Year = {2007},
-	acceptance = {38\%}
+	acceptance = {38\%},
+	location = {Minneapolis, Minnesota, USA},
+	abbrv = {MSR 07},
+	pdf = {bird2007obi.pdf},
 }
 
 @inproceedings{bird2006mes,
@@ -157,7 +334,9 @@
 	Title = {{Mining Email Social Networks} },
 	Year = {2006},
 	acceptance = {35\%},
-	Bdsk-Url-1 = {http://doi.acm.org/10.1145/1137983.1138016}}
+	abbrv = {MSR 06},
+	pdf = {msr06.pdf}
+}
 
 @inproceedings{bird2006mesp,
 	Address = {New York, NY, USA},
@@ -170,4 +349,6 @@
 	Publisher = {ACM},
 	Title = {{Mining Email Social Networks in Postgres} },
 	Year = {2006},
-	Bdsk-Url-1 = {http://doi.acm.org/10.1145/1137983.1138033}}
+	abbrv = {MSR 06},
+	pdf = {msrchallenge2006.pdf}
+}
