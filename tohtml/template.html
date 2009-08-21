@@ -4,22 +4,50 @@
         <meta content="text/html;charset=ISO-8859-1" http-equiv="Content-Type">
         <title>Christian Bird</title><meta content="Christian Bird" name="author">
 <script src="jquery.js"></script>
+<script src="niftycube.js"></script>
 
 <script>
     $(document).ready(function(){
         /*CLICK FUNCS*/
     });
+    window.onload = function() {
+       Nifty("div#container", "big");
+       Nifty("p.abstract", "big");
+       Nifty("div.pub", "big");
+    }
 </script>
 <style>
-        div.initial_hidden { display:none; margin:10px; width:600px;}
-        body {margin: 30px; width:700px; }
-        pre.bibtex {overflow-x:scroll; background:#F0F0F0;}
-        p.abstract {background:#F0F0F0;}
+        div.initial_hidden { display:none;  
+               margin:10px; width:600px;}
+        pre.bibtex {overflow-x:scroll; background:#D0D0D0;}
+        p.abstract {background:#D0D0D0; padding:20px; width: 500px;
+               font-family:Georgia;}
+       body {padding-top:40px; text-align: center; background:#993333;
+               font-family:Georgia;}
+       #container {padding:20px; 
+               margin: 0 auto; width: 700px; text-align: left;
+               background:#F0F0F0;}
+       .boxed_link {background:#D0D0D0; padding:1px; margin-right:5px;
+               outline-color:#A0A0A0; color:#404040; text-decoration:none;
+               outline-style:solid; outline-width:2px;  font-family:Arial;}
+	div.pub{background:#D8D8D8; padding-bottom:10px; 
+		padding-left:10px; padding-right:10px; margin-top:20px;}
+	
+	body {background:#98372d;}
+	body {background:#d27a68;}
+	div.pub, .boxed_link {background:#c1dfff;}
+	p.abstract, pre.bibtex {background:#ffe4bc;}
+	.boxed_link {outline-color:#0a353d;}
+	.title {font-weight:bold;}
+	.venue {font-style:italic;}
+
 </style>
     
 </head>
 
 <body>
+<div>
+	<div id="container">
                 <div align="center"><h1>Christian Bird</h1></div>
 <div align="center"><br><img src="me.jpeg"><br>
 </div>
@@ -74,6 +102,11 @@ example).  I therefore list them below.
 _uacct = "UA-3146004-1";
 urchinTracker();
 </script>
+</div>
+
+<small><a href="http://colorschemedesigner.com/#08423aW--g0g0">Color Scheme</a>
+</small>
+</div>
 
 </body>
 

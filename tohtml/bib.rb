@@ -52,22 +52,23 @@ class Entry
 
 	def toHTML
 		cfields = {}
-		@fields.each{ |k, v| cfields[k] = v.gsub(/[\}\{]/, "").strip }
-		s = cfields["author"].split(" and ").map{|x| x.strip}.join(", ") + ". "
-		s += cfields["title"] + ". "
-		s += "In " + cfields["booktitle"]  if cfields.key? "booktitle"
-		s += "In " + cfields["journal"]  if cfields.key? "journal"
-		s += " (" + cfields["abbrv"] + ")" if cfields.key? "abbrv"
-		s += ", " + cfields["location"] if cfields.key? "location"
+		@fields.each { |k, v| cfields[k] = v.gsub(/[\}\{]/, "").strip }
+		s = "<span class='authors'>" + cfields["author"].split(" and ").map{|x| x.strip}.join(", ") + "</span>. "
+		s += "<span class='title'>" + cfields["title"] + "</span>. "
+		s += "In <span class='venue'>#{cfields['booktitle']}</span>" if cfields.key? "booktitle"
+		s += "In <span class='venue'>#{cfields['journal']}</span>" if cfields.key? "journal"
+		s += " <span class='abbrv'>(#{cfields['abbrv']})</span>" if cfields.key? "abbrv"
+		s += ", <span class='location'>#{cfields['location']}</span>" if cfields.key? "location"
 		if cfields.key? "month"
-			s += ", " + cfields["month"] + " " + cfields["year"]
+			s += ", <span class='date'>" + cfields["month"] + " " + cfields["year"] + "</span>"
 		else
-			s += ", " + cfields["year"]
+			s += ", <span class='data'>" + cfields["year"] + "</span>"
 		end
 		s += "."
 
 	end
 end
+
 
 
 # parse a file and return an ordered list of keys and hash mapping cite keys to bibtex entrie
@@ -157,28 +158,6 @@ def parseField(text)
 	end
 end
 
-# order of files actually matters.  In this case, the ordering of keys in 
-# file1 is preserved over the ordering in file2
-def merge(file1, file2, file3)
-	keys1, entries1 = parseFile file1
-	keys2, entries2 = parseFile file2
-	out = open(file3, "w")
-
-	newKeys = keys2 - keys1
-	print "there are #{newKeys.length} in #{file2} that are not in #{file1}\n"
-	puts newKeys
-	entries1.update entries2
-	(keys1 + newKeys).each { |key| out << entries1[key] << "\n\n" }
-end
-
-def shownew(file1, file2)
-	keys1, entries1 = parseFile file1
-	keys2, entries2 = parseFile file2
-	newKeys = keys2 - keys1
-	print "there are #{newKeys.length} in #{file2} that are not in #{file1}\n"
-	puts newKeys
-end
-
 def makePage(bibFile, htmlFile)
 	keys, entries = parseFile bibFile
 	template = open("template.html").read()
@@ -193,7 +172,7 @@ def makePage(bibFile, htmlFile)
 		if entry.fields.key? "pdf"
 			pdf = entry.fields["pdf"]
 			pdf.gsub!(/[\}\{]/, "")	
-			pdfLink = "<a href='papers/#{pdf}'>PDF</a>"
+			pdfLink = "<a href='papers/#{pdf}' class='boxed_link'>PDF</a>"
 		end
 
 
@@ -205,7 +184,7 @@ def makePage(bibFile, htmlFile)
 			clickFuncs << "$('#hide_#{key}_abstract').click(function(){$('#hidden_#{key}_abstract').hide('slow')});"
 			absText = entry.fields["abstract"].gsub(/[\{\}]/, "").strip 
 			absText.gsub!(/\n\n/, "<br><br>")	
-			absLink = "<a id='show_#{key}_abstract' href='javascript:'>show abstract</a>"
+			absLink = "<a id='show_#{key}_abstract' class='boxed_link' href='javascript:'>Astract</a>"
 			absCode = <<EOF
 <div id="hidden_#{key}_abstract" class="initial_hidden">
 	<p class="abstract">#{absText}</p>
@@ -214,16 +193,19 @@ def makePage(bibFile, htmlFile)
 EOF
 		end
 
-
 		bibLines << <<EOF
-<p>#{entry.toHTML}<br>
-#{pdfLink}
-#{absLink}
-<a id="show_#{key}" href="javascript:">show bibtex</a>
-#{absCode}
-<div id="hidden_#{key}" class="initial_hidden">
-	<pre class="bibtex">#{entry.toPreBibtex}</pre>
-	<div id="hide_#{key}"><a href="javascript:">Hide</a></div>
+<div class="pub">
+	<p>#{entry.toHTML}</p>
+	<div>
+		#{pdfLink}
+		#{absLink}
+		<a id="show_#{key}" class="boxed_link" href="javascript:">BibTeX</a>
+	</div>
+	#{absCode}
+	<div id="hidden_#{key}" class="initial_hidden">
+		<pre class="bibtex">#{entry.toPreBibtex}</pre>
+		<div id="hide_#{key}"><a href="javascript:">Hide</a></div>
+	</div>
 </div>
 EOF
 
@@ -234,12 +216,4 @@ EOF
 
 end
 
-#I wish I knew the if __name__ == "__main__": equivalent in ruby
-
-case ARGV[0]
-	when "merge": merge(ARGV[1], ARGV[2], ARGV[3])
-	when "parse": parseFile(ARGV[1])[1].each { |key, entry| puts entry }
-	when "count": parseFile(ARGV[1])
-	when "shownew": shownew(ARGV[1], ARGV[2])
-	when "makepage" : makePage(ARGV[1], ARGV[2])
-end
+makePage(ARGV[0], ARGV[1])

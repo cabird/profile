@@ -4,6 +4,7 @@
         <meta content="text/html;charset=ISO-8859-1" http-equiv="Content-Type">
         <title>Christian Bird</title><meta content="Christian Bird" name="author">
 <script src="jquery.js"></script>
+<script src="niftycube.js"></script>
 
 <script>
     $(document).ready(function(){
@@ -50,17 +51,44 @@
         $('#show_bird2006mesp').click(function(){$('#hidden_bird2006mesp').show('slow')});
         $('#hide_bird2006mesp').click(function(){$('#hidden_bird2006mesp').hide('slow')});
     });
+    window.onload = function() {
+       Nifty("div#container", "big");
+       Nifty("p.abstract", "big");
+       Nifty("div.pub", "big");
+    }
 </script>
 <style>
-        div.initial_hidden { display:none; margin:10px; width:600px;}
-        body {margin: 30px; width:700px; }
-        pre.bibtex {overflow-x:scroll; background:#F0F0F0;}
-        p.abstract {background:#F0F0F0;}
+        div.initial_hidden { display:none;  
+               margin:10px; width:600px;}
+        pre.bibtex {overflow-x:scroll; background:#D0D0D0;}
+        p.abstract {background:#D0D0D0; padding:20px; width: 500px;
+               font-family:Georgia;}
+       body {padding-top:40px; text-align: center; background:#993333;
+               font-family:Georgia;}
+       #container {padding:20px; 
+               margin: 0 auto; width: 700px; text-align: left;
+               background:#F0F0F0;}
+       .boxed_link {background:#D0D0D0; padding:1px; margin-right:5px;
+               outline-color:#A0A0A0; color:#404040; text-decoration:none;
+               outline-style:solid; outline-width:2px;  font-family:Arial;}
+	div.pub{background:#D8D8D8; padding-bottom:10px; 
+		padding-left:10px; padding-right:10px; margin-top:20px;}
+	
+	body {background:#98372d;}
+	body {background:#d27a68;}
+	div.pub, .boxed_link {background:#c1dfff;}
+	p.abstract, pre.bibtex {background:#ffe4bc;}
+	.boxed_link {outline-color:#0a353d;}
+	.title {font-weight:bold;}
+	.venue {font-style:italic;}
+
 </style>
     
 </head>
 
 <body>
+<div>
+	<div id="container">
                 <div align="center"><h1>Christian Bird</h1></div>
 <div align="center"><br><img src="me.jpeg"><br>
 </div>
@@ -101,11 +129,14 @@ my paper from the ACM <a href="http://doi.acm.org/10.1145/1137983.1138016">here<
 example).  I therefore list them below.
 </p>
 
-        <p>Christian Bird, Nachiappan Nagappan, Premkumar Devanbu, Harald Gall, Brendan Murphy. Putting it All Together: Using Socio-Technical Networks to Predict Failures. In Proceedings of the 17th International Symposium on Software Reliability Engineering (ISSRE 09), Bengaluru-Mysuru, India, 2009.<br>
-
-<a id='show_bird2009pat_abstract' href='javascript:'>show abstract</a>
-<a id="show_bird2009pat" href="javascript:">show bibtex</a>
-<div id="hidden_bird2009pat_abstract" class="initial_hidden">
+        <div class="pub">
+	<p><span class='authors'>Christian Bird, Nachiappan Nagappan, Premkumar Devanbu, Harald Gall, Brendan Murphy</span>. <span class='title'>Putting it All Together: Using Socio-Technical Networks to Predict Failures</span>. In <span class='venue'>Proceedings of the 17th International Symposium on Software Reliability Engineering</span> <span class='abbrv'>(ISSRE 09)</span>, <span class='location'>Bengaluru-Mysuru, India</span>, <span class='data'>2009</span>.</p>
+	<div>
+		
+		<a id='show_bird2009pat_abstract' class='boxed_link' href='javascript:'>Astract</a>
+		<a id="show_bird2009pat" class="boxed_link" href="javascript:">BibTeX</a>
+	</div>
+	<div id="hidden_bird2009pat_abstract" class="initial_hidden">
 	<p class="abstract">Studies have shown that social factors in development organizations have a
 dramatic effect on software quality.  Separately,  program dependency
 information has also been used successfully to predict which software components
@@ -129,8 +160,8 @@ rates as high as 85%.</p>
 	<div id="hide_bird2009pat_abstract"><a href="javascript:">Hide</a></div>
 </div>
 
-<div id="hidden_bird2009pat" class="initial_hidden">
-	<pre class="bibtex">@inproceedings{bird2009pat,
+	<div id="hidden_bird2009pat" class="initial_hidden">
+		<pre class="bibtex">@inproceedings{bird2009pat,
     Author = {Christian Bird and Nachiappan Nagappan and Premkumar Devanbu and Harald Gall and Brendan Murphy},
     Title = {{Putting it All Together: Using Socio-Technical Networks to Predict Failures} },
     Booktitle = {Proceedings of the 17th International Symposium on Software Reliability Engineering},
@@ -139,15 +170,19 @@ rates as high as 85%.</p>
     Location = {Bengaluru-Mysuru, India},
 }
 </pre>
-	<div id="hide_bird2009pat"><a href="javascript:">Hide</a></div>
+		<div id="hide_bird2009pat"><a href="javascript:">Hide</a></div>
+	</div>
 </div>
 
-<p>Christian Bird, Adrian Bachmann, Eirik Aune, John Duffy, Abraham Bernstein and
-	Vladimir Filkov, Premkumar Devanbu. Fair and Balanced? Bias in Bug-Fix Datasets. In Proceedings of the the Seventh joint meeting of the European Software Engineering Conference and the ACM SIGSOFT Symposium on The Foundations of Software Engineering (ESEC/FSE 09), Amsterdam, Netherlands, 2009.<br>
-<a href='papers/bird2009fbb'>PDF</a>
-<a id='show_bird2009fbb_abstract' href='javascript:'>show abstract</a>
-<a id="show_bird2009fbb" href="javascript:">show bibtex</a>
-<div id="hidden_bird2009fbb_abstract" class="initial_hidden">
+<div class="pub">
+	<p><span class='authors'>Christian Bird, Adrian Bachmann, Eirik Aune, John Duffy, Abraham Bernstein and
+	Vladimir Filkov, Premkumar Devanbu</span>. <span class='title'>Fair and Balanced? Bias in Bug-Fix Datasets</span>. In <span class='venue'>Proceedings of the the Seventh joint meeting of the European Software Engineering Conference and the ACM SIGSOFT Symposium on The Foundations of Software Engineering</span> <span class='abbrv'>(ESEC/FSE 09)</span>, <span class='location'>Amsterdam, Netherlands</span>, <span class='data'>2009</span>.</p>
+	<div>
+		<a href='papers/bird2009fbb' class='boxed_link'>PDF</a>
+		<a id='show_bird2009fbb_abstract' class='boxed_link' href='javascript:'>Astract</a>
+		<a id="show_bird2009fbb" class="boxed_link" href="javascript:">BibTeX</a>
+	</div>
+	<div id="hidden_bird2009fbb_abstract" class="initial_hidden">
 	<p class="abstract">Software engineering researchers have long been interested in
 where and why bugs occur in code, and in predicting where they might
 turn up next. Historical bug-occurence data has been key to this
@@ -172,8 +207,8 @@ biased data</p>
 	<div id="hide_bird2009fbb_abstract"><a href="javascript:">Hide</a></div>
 </div>
 
-<div id="hidden_bird2009fbb" class="initial_hidden">
-	<pre class="bibtex">@inproceedings{bird2009fbb,
+	<div id="hidden_bird2009fbb" class="initial_hidden">
+		<pre class="bibtex">@inproceedings{bird2009fbb,
     Author = {Christian Bird and Adrian Bachmann and Eirik Aune and John Duffy and Abraham Bernstein and
 	Vladimir Filkov and Premkumar Devanbu},
     Title = {{Fair and Balanced? Bias in Bug-Fix Datasets} },
@@ -183,14 +218,18 @@ biased data</p>
     Location = {Amsterdam, Netherlands},
 }
 </pre>
-	<div id="hide_bird2009fbb"><a href="javascript:">Hide</a></div>
+		<div id="hide_bird2009fbb"><a href="javascript:">Hide</a></div>
+	</div>
 </div>
 
-<p>Christian Bird, Peter C. Rigby, Earl T. Barr, David J. Hamilton, Daniel M. German, Prem Devanbu. The Promises and Perils of Mining Git. In Proceedings of the Sixth Working Conference on Mining Software Repositories (MSR 09), Vancouver, Canada, 2009.<br>
-<a href='papers/bird2009ppm.pdf'>PDF</a>
-<a id='show_bird2009ppm_abstract' href='javascript:'>show abstract</a>
-<a id="show_bird2009ppm" href="javascript:">show bibtex</a>
-<div id="hidden_bird2009ppm_abstract" class="initial_hidden">
+<div class="pub">
+	<p><span class='authors'>Christian Bird, Peter C. Rigby, Earl T. Barr, David J. Hamilton, Daniel M. German, Prem Devanbu</span>. <span class='title'>The Promises and Perils of Mining Git</span>. In <span class='venue'>Proceedings of the Sixth Working Conference on Mining Software Repositories</span> <span class='abbrv'>(MSR 09)</span>, <span class='location'>Vancouver, Canada</span>, <span class='data'>2009</span>.</p>
+	<div>
+		<a href='papers/bird2009ppm.pdf' class='boxed_link'>PDF</a>
+		<a id='show_bird2009ppm_abstract' class='boxed_link' href='javascript:'>Astract</a>
+		<a id="show_bird2009ppm" class="boxed_link" href="javascript:">BibTeX</a>
+	</div>
+	<div id="hidden_bird2009ppm_abstract" class="initial_hidden">
 	<p class="abstract">We are now witnessing the rapid growth of  decentralized source code
 management (DSCM) systems, in which every developer has her own repository. 
 DSCMs facilitate a style of collaboration in which
@@ -215,8 +254,8 @@ perils when mining and analyzing git data.</p>
 	<div id="hide_bird2009ppm_abstract"><a href="javascript:">Hide</a></div>
 </div>
 
-<div id="hidden_bird2009ppm" class="initial_hidden">
-	<pre class="bibtex">@inproceedings{bird2009ppm,
+	<div id="hidden_bird2009ppm" class="initial_hidden">
+		<pre class="bibtex">@inproceedings{bird2009ppm,
     Author = {Christian Bird and Peter C. Rigby and Earl T. Barr and David J. Hamilton and Daniel M. German and Prem Devanbu},
     Title = {{The Promises and Perils of Mining Git}},
     Booktitle = {Proceedings of the Sixth Working Conference on Mining Software Repositories},
@@ -225,14 +264,18 @@ perils when mining and analyzing git data.</p>
     Location = {Vancouver, Canada},
 }
 </pre>
-	<div id="hide_bird2009ppm"><a href="javascript:">Hide</a></div>
+		<div id="hide_bird2009ppm"><a href="javascript:">Hide</a></div>
+	</div>
 </div>
 
-<p>Christian Bird, Earl Barr, Andre Nash, Premkumar Devanbu, Vladimir Filkov, Zhendong Su. Structure and Dynamics of Research Collaboration in Computer Science. In Proceedings of the Ninth SIAM International Conference on Data Mining (SDM 09), Sparks, Nevada, USA, 2009.<br>
-<a href='papers/bird2009sdr.pdf'>PDF</a>
-<a id='show_bird2009sdr_abstract' href='javascript:'>show abstract</a>
-<a id="show_bird2009sdr" href="javascript:">show bibtex</a>
-<div id="hidden_bird2009sdr_abstract" class="initial_hidden">
+<div class="pub">
+	<p><span class='authors'>Christian Bird, Earl Barr, Andre Nash, Premkumar Devanbu, Vladimir Filkov, Zhendong Su</span>. <span class='title'>Structure and Dynamics of Research Collaboration in Computer Science</span>. In <span class='venue'>Proceedings of the Ninth SIAM International Conference on Data Mining</span> <span class='abbrv'>(SDM 09)</span>, <span class='location'>Sparks, Nevada, USA</span>, <span class='data'>2009</span>.</p>
+	<div>
+		<a href='papers/bird2009sdr.pdf' class='boxed_link'>PDF</a>
+		<a id='show_bird2009sdr_abstract' class='boxed_link' href='javascript:'>Astract</a>
+		<a id="show_bird2009sdr" class="boxed_link" href="javascript:">BibTeX</a>
+	</div>
+	<div id="hidden_bird2009sdr_abstract" class="initial_hidden">
 	<p class="abstract">Complex systems exhibit emergent patterns of behavior at different levels of
 organization. Powerful network analysis methods, developed in physics and
 social sciences, have been successfully used to tease out patterns that
@@ -260,8 +303,8 @@ interconnected within itself.</p>
 	<div id="hide_bird2009sdr_abstract"><a href="javascript:">Hide</a></div>
 </div>
 
-<div id="hidden_bird2009sdr" class="initial_hidden">
-	<pre class="bibtex">@inproceedings{bird2009sdr,
+	<div id="hidden_bird2009sdr" class="initial_hidden">
+		<pre class="bibtex">@inproceedings{bird2009sdr,
     Author = {Christian Bird and Earl Barr and   Andre Nash and Premkumar Devanbu and Vladimir Filkov   and Zhendong Su},
     Title = {{Structure and Dynamics of Research Collaboration in Computer Science} },
     Booktitle = {Proceedings of the Ninth SIAM International Conference on Data Mining},
@@ -271,14 +314,18 @@ interconnected within itself.</p>
     Location = {Sparks, Nevada, USA},
 }
 </pre>
-	<div id="hide_bird2009sdr"><a href="javascript:">Hide</a></div>
+		<div id="hide_bird2009sdr"><a href="javascript:">Hide</a></div>
+	</div>
 </div>
 
-<p>Christian Bird, Nachiappan Nagappan, Premkumar Devanbu, Harald Gall, Brendan Murphy. Does Distributed Development Affect Software Quality? An Empirical   Case Study of Windows Vista. In Communications of the ACM, August 2009.<br>
-
-<a id='show_bird2009dddb_abstract' href='javascript:'>show abstract</a>
-<a id="show_bird2009dddb" href="javascript:">show bibtex</a>
-<div id="hidden_bird2009dddb_abstract" class="initial_hidden">
+<div class="pub">
+	<p><span class='authors'>Christian Bird, Nachiappan Nagappan, Premkumar Devanbu, Harald Gall, Brendan Murphy</span>. <span class='title'>Does Distributed Development Affect Software Quality? An Empirical   Case Study of Windows Vista</span>. In <span class='venue'>Communications of the ACM</span>, <span class='date'>August 2009</span>.</p>
+	<div>
+		
+		<a id='show_bird2009dddb_abstract' class='boxed_link' href='javascript:'>Astract</a>
+		<a id="show_bird2009dddb" class="boxed_link" href="javascript:">BibTeX</a>
+	</div>
+	<div id="hidden_bird2009dddb_abstract" class="initial_hidden">
 	<p class="abstract">Existing literature on distributed 
 development in software engineering, and other fields discuss various challenges, 
 including cultural barriers, expertise transfer difficulties, and communication 
@@ -301,8 +348,8 @@ prior work in this area.</p>
 	<div id="hide_bird2009dddb_abstract"><a href="javascript:">Hide</a></div>
 </div>
 
-<div id="hidden_bird2009dddb" class="initial_hidden">
-	<pre class="bibtex">@article{bird2009dddb,
+	<div id="hidden_bird2009dddb" class="initial_hidden">
+		<pre class="bibtex">@article{bird2009dddb,
     Author = {Christian Bird and Nachiappan Nagappan and   Premkumar Devanbu and Harald Gall and Brendan Murphy},
     Title = {{Does Distributed Development Affect Software Quality? An Empirical   Case Study of Windows Vista} },
     Journal = {Communications of the ACM},
@@ -311,14 +358,18 @@ prior work in this area.</p>
     Year = {2009},
 }
 </pre>
-	<div id="hide_bird2009dddb"><a href="javascript:">Hide</a></div>
+		<div id="hide_bird2009dddb"><a href="javascript:">Hide</a></div>
+	</div>
 </div>
 
-<p>Christian Bird, Nachiappan Nagappan, Premkumar Devanbu, Harald Gall, Brendan Murphy. Does Distributed Development Affect Software Quality? An Empirical   Case Study of Windows Vista. In Proceedings of the 31st International Conference on Software Engineering (ICSE 09), Vancouver, Canada, 2009.<br>
-<a href='papers/bird2009ddd.pdf'>PDF</a>
-<a id='show_bird2009ddd_abstract' href='javascript:'>show abstract</a>
-<a id="show_bird2009ddd" href="javascript:">show bibtex</a>
-<div id="hidden_bird2009ddd_abstract" class="initial_hidden">
+<div class="pub">
+	<p><span class='authors'>Christian Bird, Nachiappan Nagappan, Premkumar Devanbu, Harald Gall, Brendan Murphy</span>. <span class='title'>Does Distributed Development Affect Software Quality? An Empirical   Case Study of Windows Vista</span>. In <span class='venue'>Proceedings of the 31st International Conference on Software Engineering</span> <span class='abbrv'>(ICSE 09)</span>, <span class='location'>Vancouver, Canada</span>, <span class='data'>2009</span>.</p>
+	<div>
+		<a href='papers/bird2009ddd.pdf' class='boxed_link'>PDF</a>
+		<a id='show_bird2009ddd_abstract' class='boxed_link' href='javascript:'>Astract</a>
+		<a id="show_bird2009ddd" class="boxed_link" href="javascript:">BibTeX</a>
+	</div>
+	<div id="hidden_bird2009ddd_abstract" class="initial_hidden">
 	<p class="abstract">Existing literature on distributed 
 development in software engineering, and other fields discuss various challenges, 
 including cultural barriers, expertise transfer difficulties, and communication 
@@ -341,8 +392,8 @@ prior work in this area.</p>
 	<div id="hide_bird2009ddd_abstract"><a href="javascript:">Hide</a></div>
 </div>
 
-<div id="hidden_bird2009ddd" class="initial_hidden">
-	<pre class="bibtex">@inproceedings{bird2009ddd,
+	<div id="hidden_bird2009ddd" class="initial_hidden">
+		<pre class="bibtex">@inproceedings{bird2009ddd,
     Author = {Christian Bird and Nachiappan Nagappan and   Premkumar Devanbu and Harald Gall and Brendan Murphy},
     Title = {{Does Distributed Development Affect Software Quality? An Empirical   Case Study of Windows Vista} },
     Booktitle = {Proceedings of the 31st International Conference on Software Engineering},
@@ -352,14 +403,18 @@ prior work in this area.</p>
     Location = {Vancouver, Canada},
 }
 </pre>
-	<div id="hide_bird2009ddd"><a href="javascript:">Hide</a></div>
+		<div id="hide_bird2009ddd"><a href="javascript:">Hide</a></div>
+	</div>
 </div>
 
-<p>Christian Bird, David Pattison, Raissa D'Souza, Vladimir Filkov, Premkumar Devanbu. Latent Social Structure in Open Source Projects. In SIGSOFT '08/FSE-16: Proceedings of the 16th ACM SIGSOFT Symposium  on Foundations of Software Engineering (FSE 08), Atlanta, Georgia, USA, 2008.<br>
-<a href='papers/bird2008lss.pdf'>PDF</a>
-<a id='show_bird2008lss_abstract' href='javascript:'>show abstract</a>
-<a id="show_bird2008lss" href="javascript:">show bibtex</a>
-<div id="hidden_bird2008lss_abstract" class="initial_hidden">
+<div class="pub">
+	<p><span class='authors'>Christian Bird, David Pattison, Raissa D'Souza, Vladimir Filkov, Premkumar Devanbu</span>. <span class='title'>Latent Social Structure in Open Source Projects</span>. In <span class='venue'>SIGSOFT '08/FSE-16: Proceedings of the 16th ACM SIGSOFT Symposium  on Foundations of Software Engineering</span> <span class='abbrv'>(FSE 08)</span>, <span class='location'>Atlanta, Georgia, USA</span>, <span class='data'>2008</span>.</p>
+	<div>
+		<a href='papers/bird2008lss.pdf' class='boxed_link'>PDF</a>
+		<a id='show_bird2008lss_abstract' class='boxed_link' href='javascript:'>Astract</a>
+		<a id="show_bird2008lss" class="boxed_link" href="javascript:">BibTeX</a>
+	</div>
+	<div id="hidden_bird2008lss_abstract" class="initial_hidden">
 	<p class="abstract">Commercial software project managers design
 project organizational structure carefully, mindful of available skills,
 division of labour, geographical boundaries, etc.  These organizational
@@ -384,8 +439,8 @@ PostgresSQL, Perl, and Apache ANT.  We then validate them with software
 	<div id="hide_bird2008lss_abstract"><a href="javascript:">Hide</a></div>
 </div>
 
-<div id="hidden_bird2008lss" class="initial_hidden">
-	<pre class="bibtex">@inproceedings{bird2008lss,
+	<div id="hidden_bird2008lss" class="initial_hidden">
+		<pre class="bibtex">@inproceedings{bird2008lss,
     Author = {Christian Bird and David Pattison and Raissa D'Souza and   Vladimir Filkov and Premkumar Devanbu},
     Title = {{Latent Social Structure in Open Source Projects} },
     Booktitle = {SIGSOFT '08/FSE-16: Proceedings of the 16th ACM SIGSOFT Symposium  on Foundations of Software Engineering},
@@ -395,16 +450,20 @@ PostgresSQL, Perl, and Apache ANT.  We then validate them with software
     Location = {Atlanta, Georgia, USA},
 }
 </pre>
-	<div id="hide_bird2008lss"><a href="javascript:">Hide</a></div>
+		<div id="hide_bird2008lss"><a href="javascript:">Hide</a></div>
+	</div>
 </div>
 
-<p>David Pattison, Christian Bird, Premkumar Devanbu. Talk and Work: a Preliminary Report. In Proceedings of the Fifth International Working Conference on Mining Software Repositories (MSR 08), Leipzig, Germany, 2008.<br>
-<a href='papers/pattison2008twp.pdf'>PDF</a>
-
-<a id="show_pattison2008twp" href="javascript:">show bibtex</a>
-
-<div id="hidden_pattison2008twp" class="initial_hidden">
-	<pre class="bibtex">@inproceedings{pattison2008twp,
+<div class="pub">
+	<p><span class='authors'>David Pattison, Christian Bird, Premkumar Devanbu</span>. <span class='title'>Talk and Work: a Preliminary Report</span>. In <span class='venue'>Proceedings of the Fifth International Working Conference on Mining Software Repositories</span> <span class='abbrv'>(MSR 08)</span>, <span class='location'>Leipzig, Germany</span>, <span class='data'>2008</span>.</p>
+	<div>
+		<a href='papers/pattison2008twp.pdf' class='boxed_link'>PDF</a>
+		
+		<a id="show_pattison2008twp" class="boxed_link" href="javascript:">BibTeX</a>
+	</div>
+	
+	<div id="hidden_pattison2008twp" class="initial_hidden">
+		<pre class="bibtex">@inproceedings{pattison2008twp,
     Author = {David Pattison and Christian Bird and Premkumar Devanbu},
     Title = {{Talk and Work: a Preliminary Report} },
     Booktitle = {Proceedings of the Fifth International Working Conference on Mining Software Repositories},
@@ -414,16 +473,20 @@ PostgresSQL, Perl, and Apache ANT.  We then validate them with software
     Location = {Leipzig, Germany},
 }
 </pre>
-	<div id="hide_pattison2008twp"><a href="javascript:">Hide</a></div>
+		<div id="hide_pattison2008twp"><a href="javascript:">Hide</a></div>
+	</div>
 </div>
 
-<p>Zachary M. Saul, Vladimir Filkov, Premkumar Devanbu, Christian Bird. Recommending Random Walks. In ESEC-FSE '07: Proceedings of the the Sixth joint meeting of the European Software Engineering Conference and the ACM SIGSOFT Symposium on The Foundations of Software Engineering (FSE 07), Dubrovnik, Croatia, 2007.<br>
-<a href='papers/fse-2007.pdf'>PDF</a>
-
-<a id="show_saul2007rrw" href="javascript:">show bibtex</a>
-
-<div id="hidden_saul2007rrw" class="initial_hidden">
-	<pre class="bibtex">@inproceedings{saul2007rrw,
+<div class="pub">
+	<p><span class='authors'>Zachary M. Saul, Vladimir Filkov, Premkumar Devanbu, Christian Bird</span>. <span class='title'>Recommending Random Walks</span>. In <span class='venue'>ESEC-FSE '07: Proceedings of the the Sixth joint meeting of the European Software Engineering Conference and the ACM SIGSOFT Symposium on The Foundations of Software Engineering</span> <span class='abbrv'>(FSE 07)</span>, <span class='location'>Dubrovnik, Croatia</span>, <span class='data'>2007</span>.</p>
+	<div>
+		<a href='papers/fse-2007.pdf' class='boxed_link'>PDF</a>
+		
+		<a id="show_saul2007rrw" class="boxed_link" href="javascript:">BibTeX</a>
+	</div>
+	
+	<div id="hidden_saul2007rrw" class="initial_hidden">
+		<pre class="bibtex">@inproceedings{saul2007rrw,
     Author = {Zachary M. Saul and Vladimir Filkov and Premkumar Devanbu and Christian Bird},
     Title = {{Recommending Random Walks} },
     Booktitle = {ESEC-FSE '07: Proceedings of the the Sixth joint meeting of the European Software Engineering Conference and the ACM SIGSOFT Symposium on The Foundations of Software Engineering},
@@ -433,16 +496,20 @@ PostgresSQL, Perl, and Apache ANT.  We then validate them with software
     Location = {Dubrovnik, Croatia},
 }
 </pre>
-	<div id="hide_saul2007rrw"><a href="javascript:">Hide</a></div>
+		<div id="hide_saul2007rrw"><a href="javascript:">Hide</a></div>
+	</div>
 </div>
 
-<p>Christian Bird, Alex Gourley, Prem Devanbu. Detecting Patch Submission and Acceptance in OSS Projects. In Proceedings of the Fourth International Workshop on Mining Software Repositories (MSR 07), Minneapolis, Minnesota, USA, 2007.<br>
-<a href='papers/bird2007dps'>PDF</a>
-
-<a id="show_bird2007dps" href="javascript:">show bibtex</a>
-
-<div id="hidden_bird2007dps" class="initial_hidden">
-	<pre class="bibtex">@inproceedings{bird2007dps,
+<div class="pub">
+	<p><span class='authors'>Christian Bird, Alex Gourley, Prem Devanbu</span>. <span class='title'>Detecting Patch Submission and Acceptance in OSS Projects</span>. In <span class='venue'>Proceedings of the Fourth International Workshop on Mining Software Repositories</span> <span class='abbrv'>(MSR 07)</span>, <span class='location'>Minneapolis, Minnesota, USA</span>, <span class='data'>2007</span>.</p>
+	<div>
+		<a href='papers/bird2007dps' class='boxed_link'>PDF</a>
+		
+		<a id="show_bird2007dps" class="boxed_link" href="javascript:">BibTeX</a>
+	</div>
+	
+	<div id="hidden_bird2007dps" class="initial_hidden">
+		<pre class="bibtex">@inproceedings{bird2007dps,
     Author = {Christian Bird and Alex Gourley and Prem Devanbu},
     Title = {{Detecting Patch Submission and Acceptance in OSS Projects} },
     Booktitle = {Proceedings of the Fourth International Workshop on Mining Software Repositories},
@@ -452,16 +519,20 @@ PostgresSQL, Perl, and Apache ANT.  We then validate them with software
     Location = {Minneapolis, Minnesota, USA},
 }
 </pre>
-	<div id="hide_bird2007dps"><a href="javascript:">Hide</a></div>
+		<div id="hide_bird2007dps"><a href="javascript:">Hide</a></div>
+	</div>
 </div>
 
-<p>Michael Ogawa, Kwan-Liu Ma, Christian Bird, Premkumar T. Devanbu, Alex Gourley. Visualizing Social Interaction in Open Source Software Projects. In Sixth International Asia-Pacific Symposium on Visualization (APVIS 07), 2007.<br>
-<a href='papers/apvisogawa.pdf'>PDF</a>
-
-<a id="show_ogawa2007vsi" href="javascript:">show bibtex</a>
-
-<div id="hidden_ogawa2007vsi" class="initial_hidden">
-	<pre class="bibtex">@inproceedings{ogawa2007vsi,
+<div class="pub">
+	<p><span class='authors'>Michael Ogawa, Kwan-Liu Ma, Christian Bird, Premkumar T. Devanbu, Alex Gourley</span>. <span class='title'>Visualizing Social Interaction in Open Source Software Projects</span>. In <span class='venue'>Sixth International Asia-Pacific Symposium on Visualization</span> <span class='abbrv'>(APVIS 07)</span>, <span class='data'>2007</span>.</p>
+	<div>
+		<a href='papers/apvisogawa.pdf' class='boxed_link'>PDF</a>
+		
+		<a id="show_ogawa2007vsi" class="boxed_link" href="javascript:">BibTeX</a>
+	</div>
+	
+	<div id="hidden_ogawa2007vsi" class="initial_hidden">
+		<pre class="bibtex">@inproceedings{ogawa2007vsi,
     Author = {Michael Ogawa and Kwan-Liu Ma and Christian Bird and Premkumar T. Devanbu and                Alex Gourley},
     Title = {{Visualizing Social Interaction in Open Source Software Projects} },
     Booktitle = {Sixth International Asia-Pacific Symposium on Visualization},
@@ -469,16 +540,20 @@ PostgresSQL, Perl, and Apache ANT.  We then validate them with software
     Year = {2007},
 }
 </pre>
-	<div id="hide_ogawa2007vsi"><a href="javascript:">Hide</a></div>
+		<div id="hide_ogawa2007vsi"><a href="javascript:">Hide</a></div>
+	</div>
 </div>
 
-<p>Christian Bird, Alex Gourley, Prem Devanbu, Anand Swaminathan, Greta Hsu. Open Borders? Immigration in Open Source Projects. In Proceedings of the Fourth International Workshop on Mining Software Repositories (MSR 07), Minneapolis, Minnesota, USA, 2007.<br>
-<a href='papers/bird2007obi.pdf'>PDF</a>
-
-<a id="show_bird2007obi" href="javascript:">show bibtex</a>
-
-<div id="hidden_bird2007obi" class="initial_hidden">
-	<pre class="bibtex">@inproceedings{bird2007obi,
+<div class="pub">
+	<p><span class='authors'>Christian Bird, Alex Gourley, Prem Devanbu, Anand Swaminathan, Greta Hsu</span>. <span class='title'>Open Borders? Immigration in Open Source Projects</span>. In <span class='venue'>Proceedings of the Fourth International Workshop on Mining Software Repositories</span> <span class='abbrv'>(MSR 07)</span>, <span class='location'>Minneapolis, Minnesota, USA</span>, <span class='data'>2007</span>.</p>
+	<div>
+		<a href='papers/bird2007obi.pdf' class='boxed_link'>PDF</a>
+		
+		<a id="show_bird2007obi" class="boxed_link" href="javascript:">BibTeX</a>
+	</div>
+	
+	<div id="hidden_bird2007obi" class="initial_hidden">
+		<pre class="bibtex">@inproceedings{bird2007obi,
     Author = {Christian Bird and Alex Gourley and Prem Devanbu and Anand Swaminathan and Greta Hsu},
     Title = {{Open Borders? Immigration in Open Source Projects} },
     Booktitle = {Proceedings of the Fourth International Workshop on Mining Software Repositories},
@@ -488,16 +563,20 @@ PostgresSQL, Perl, and Apache ANT.  We then validate them with software
     Location = {Minneapolis, Minnesota, USA},
 }
 </pre>
-	<div id="hide_bird2007obi"><a href="javascript:">Hide</a></div>
+		<div id="hide_bird2007obi"><a href="javascript:">Hide</a></div>
+	</div>
 </div>
 
-<p>Christian Bird, Alex Gourley, Prem Devanbu, Michael Gertz, Anand Swaminathan. Mining Email Social Networks. In Proceedings of the Third International Workshop on Mining software repositories (MSR 06), Shanghai, China, 2006.<br>
-<a href='papers/msr06.pdf'>PDF</a>
-
-<a id="show_bird2006mes" href="javascript:">show bibtex</a>
-
-<div id="hidden_bird2006mes" class="initial_hidden">
-	<pre class="bibtex">@inproceedings{bird2006mes,
+<div class="pub">
+	<p><span class='authors'>Christian Bird, Alex Gourley, Prem Devanbu, Michael Gertz, Anand Swaminathan</span>. <span class='title'>Mining Email Social Networks</span>. In <span class='venue'>Proceedings of the Third International Workshop on Mining software repositories</span> <span class='abbrv'>(MSR 06)</span>, <span class='location'>Shanghai, China</span>, <span class='data'>2006</span>.</p>
+	<div>
+		<a href='papers/msr06.pdf' class='boxed_link'>PDF</a>
+		
+		<a id="show_bird2006mes" class="boxed_link" href="javascript:">BibTeX</a>
+	</div>
+	
+	<div id="hidden_bird2006mes" class="initial_hidden">
+		<pre class="bibtex">@inproceedings{bird2006mes,
     Author = {Christian Bird and Alex Gourley and Prem Devanbu and Michael Gertz and Anand Swaminathan},
     Title = {{Mining Email Social Networks} },
     Booktitle = {Proceedings of the Third International Workshop on Mining software repositories},
@@ -507,16 +586,20 @@ PostgresSQL, Perl, and Apache ANT.  We then validate them with software
     Location = {Shanghai, China},
 }
 </pre>
-	<div id="hide_bird2006mes"><a href="javascript:">Hide</a></div>
+		<div id="hide_bird2006mes"><a href="javascript:">Hide</a></div>
+	</div>
 </div>
 
-<p>Christian Bird, Alex Gourley, Prem Devanbu, Michael Gertz, Anand Swaminathan. Mining Email Social Networks in Postgres. In Proceedings of the Third International Workshop on Mining software repositories (Challenge Track) (MSR 06), Shanghai, China, 2006.<br>
-<a href='papers/msrchallenge2006.pdf'>PDF</a>
-
-<a id="show_bird2006mesp" href="javascript:">show bibtex</a>
-
-<div id="hidden_bird2006mesp" class="initial_hidden">
-	<pre class="bibtex">@inproceedings{bird2006mesp,
+<div class="pub">
+	<p><span class='authors'>Christian Bird, Alex Gourley, Prem Devanbu, Michael Gertz, Anand Swaminathan</span>. <span class='title'>Mining Email Social Networks in Postgres</span>. In <span class='venue'>Proceedings of the Third International Workshop on Mining software repositories (Challenge Track)</span> <span class='abbrv'>(MSR 06)</span>, <span class='location'>Shanghai, China</span>, <span class='data'>2006</span>.</p>
+	<div>
+		<a href='papers/msrchallenge2006.pdf' class='boxed_link'>PDF</a>
+		
+		<a id="show_bird2006mesp" class="boxed_link" href="javascript:">BibTeX</a>
+	</div>
+	
+	<div id="hidden_bird2006mesp" class="initial_hidden">
+		<pre class="bibtex">@inproceedings{bird2006mesp,
     Author = {Christian Bird and Alex Gourley and Prem Devanbu and Michael Gertz and Anand Swaminathan},
     Title = {{Mining Email Social Networks in Postgres} },
     Booktitle = {Proceedings of the Third International Workshop on Mining software repositories (Challenge Track)},
@@ -526,7 +609,8 @@ PostgresSQL, Perl, and Apache ANT.  We then validate them with software
     Location = {Shanghai, China},
 }
 </pre>
-	<div id="hide_bird2006mesp"><a href="javascript:">Hide</a></div>
+		<div id="hide_bird2006mesp"><a href="javascript:">Hide</a></div>
+	</div>
 </div>
 
 
@@ -542,6 +626,11 @@ PostgresSQL, Perl, and Apache ANT.  We then validate them with software
 _uacct = "UA-3146004-1";
 urchinTracker();
 </script>
+</div>
+
+<small><a href="http://colorschemedesigner.com/#08423aW--g0g0">Color Scheme</a>
+</small>
+</div>
 
 </body>
 
