@@ -1,0 +1,26 @@
+
+proj : texproject.vim: catching LatexSuiteFileType event
+env : envmacros.vim: Catching LatexSuiteFileType event
+comp : compiler.vim: Catching LatexSuiteFileType event
+fold : folding.vim: catching LatexSuiteFileType
+brak : brackets.vim: Catching LatexSuiteFileType event
+view : texviewer.vim: Catching LatexSuiteFileType event
+main : main.vim: Catching LatexSuiteFileType event
+main : SetTeXOptions: sourcing maps
+comp : +Tex_SetTeXCompilerTarget: setting target to [dvi] for Compiler
+comp : +Tex_SetTeXCompilerTarget: setting target to [dvi] for Viewr
+comp : compiler/tex.vim: sourcing this file
+pack : packages.vim: Catching LatexSuiteFileType event
+pack : +Tex_pack_updateall
+pack : :Tex_pack_updateall: split
+pack : +Tex_ScanForPackages
+pack : :Tex_ScanForPackages: Begining scans in [preamble.tex], beginline = 0
+pack : :Tex_ScanForPackages: beginning scan for \usepackage lines
+pack : :Tex_ScanForPackages: End scan \usepackage, detected packages = 
+pack : :Tex_ScanForPackages: Beginning scan for \newcommand's
+pack : :Tex_ScanForPackages: Beginning scan for \newenvironment's
+pack : found newenvironment on 60
+pack : -Tex_ScanForPackages
+pack : :Tex_pack_updateall: detected [] in first run
+pack : :Tex_pack_updateall: throwing LatexSuiteScannedPackages event
+pack : -Tex_pack_updateall

@@ -1,0 +1,16 @@
+/*.aux
+/*.log
+/*.pdf
+/diagrams/*.png
+*.swp
+/*.lot
+/*.bbl
+/*.blg
+/*.lop
+/*.lof
+/*.lol
+/*.toc
+*.bak
+.xpdf-reload
+/*.out
+.*.gnuplot-output
