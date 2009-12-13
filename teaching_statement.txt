@@ -1,0 +1,16 @@
+
+Currently, few undergraduate institutions provide any empirical background
+to computer science and software engineering students.  ISO 9000 and CMM levels
+require that a process be not only recorded and measured, but also 
+analyzed and use to improve.  Most students interested in computer science
+will become developers of some sort, and software engineering is a capstone
+course at many institutions.  Thus, this type of analysis is required to
+be a good software engineer and will give students a leg up in the work force
+
+In addition, the state of empirical evaluation at the graduate level in
+computer science is still quite weak compared to other science
+disciplines.  Students need to learn how to perform a case study,
+what types of empirical methods or required in different contexts, etc.
+This is independent of the area within computer science that is being
+studied.  Whether a student is evaluating a tool or comparing a new technique to
+a previous one, a strong empirical background is needed.
