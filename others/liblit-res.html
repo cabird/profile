@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Benjamin Liblit: Research Statement</title><link rev="made" href="mailto:dkueym702@sneakemail.com"/><link rel="stylesheet" href="common.css" type="text/css"/><meta name="author" content="Benjamin Liblit"/></head><body>
+
+  <h1>Research Statement</h1><h2>Benjamin Liblit</h2>
+
+  <p>I spent four years working as a professional software engineer
+  before becoming a computer science graduate student.  I look back on
+  those years as an extended field study in the practice of commercial
+  software design, because it is the challenges and needs of the
+  professional programmer that inspire my research.  My chief interest
+  is in making it easier to build complex systems that work, that work
+  better tomorrow than they do today, and that can be maintained and
+  adapted over time in an imperfect and dynamic world.</p>
+
+  <p>An imperfect world has a great deal of imperfect software.  My
+  doctoral research has focused on techniques for finding and fixing
+  errors in complex software systems, with particular focus on those
+  pernicious bugs that escape static analysis.  In a commercial
+  environment, many of these bugs are found by hapless end users.
+  Users may not be technically astute, and have traditionally had poor
+  mechanisms for providing feedback to developers.  The strength of
+  end users is their numbers, which far exceed the quality assurance
+  resources any development organization can bring to bear.
+  Furthermore, the bugs seen by users are the very definition of
+  &#x201C;real&#x201D;: in an imperfect world with finite engineering
+  resources, the users&#x2019; problems are the ones that matter most.
+  My goal has been to leverage the numerical might of large user
+  communities to support and even direct the bug hunting process.</p>
+
+  <p>In collaboration with colleagues in statistical machine learning,
+  I have been developing a suite of techniques collectively referred
+  to as <i>statistical debugging</i>.  Whereas traditional
+  debugging entails detailed, manual inspection of a single
+  misbehaving process, statistical debugging uses automated data
+  mining techniques to isolate bugs across thousands or millions of
+  runs.  The process begins with sampled instrumentation that monitors
+  sparse but statistically fair random subsets of dynamic program
+  behavior.  Little is revealed about any single run, and the data is
+  inherently noisy.  However, given a large population of runs, one
+  can ask how the behavior of successful runs differs from the
+  behavior of runs that failed (e.g.&#xA0;crashed or produced
+  incorrect results).  We have documented several approaches to
+  identifying these failure-correlated differences, from a simple
+  process of elimination to feature selection via regularized logistic
+  regression and related statistical models that cleanly handle both
+  deterministic and non-deterministic failures.  Most recently we have
+  demonstrated an approach related to likelihood ratio testing that is
+  able to isolate multiple causes of multiple failures in a single
+  application.  The main algorithm selects and ranks predicates on
+  program behavior whose truth significantly increases the likelihood
+  of subsequent failure.  Working with members of the open source
+  community, I am putting theory into practice with the <a href="http://www.cs.berkeley.edu/~liblit/sampler/">Cooperative Bug
+  Isolation Project</a>: prebuilt instrumented binaries of popular
+  applications are made available for use by the general public, with
+  secure feedback reports collected by our servers for analysis.</p>
+
+  <p>A sampled, statistical approach to bug isolation offers many
+  benefits.  Because my approach observes dynamic behavior throughout
+  execution, it is possible to find the causes of bugs that escape
+  both static analysis as well as postmortem (core dump) debugging,
+  including troublesome non-deterministic bugs such as C heap
+  corruption.  My instrumenting compiler is quite easy to deploy, as
+  no explicit specification or manual annotation is required.  The
+  programmer can impose custom specifications of correctness, or
+  create domain-specific monitoring schemes, but this is not
+  mandatory.  Simply labeling all crashes as &#x201C;bad&#x201D; and all
+  non-crashes as &#x201C;good&#x201D; is a perfectly reasonable basis
+  for feedback analysis.  Lastly, a user-directed design provides
+  <i>bug triage</i> that is directly connected to the
+  reality of users&#x2019; experiences.  The system is naturally drawn
+  to problems that affect the most users most often.  This lets a
+  development team direct its energy where it will do the most
+  good.</p>
+
+  <p>Statistical debugging nicely illustrates my preferred research
+  style:  a theoretically well founded center both inspired and
+  validated by practical experience.  For statistical debugging, the
+  foundational theories draw both from program analysis and
+  compilation as well as machine learning.  In earlier projects, my
+  work has rested upon context-free graph reachability, constraint
+  systems, type inference, and other core computer science
+  methodologies.  The theoretical core lets me know my solutions are
+  valid; full implementation and deployment lets me know they are
+  useful.</p>
+
+  <p>In the near term, I am eager to further explore the potential of
+  automatic bug isolation along two principal avenues: (1)
+  improvements to the instrumentor and (2) improvements to the data
+  analysis.  Progress on the instrumentor will yield the same or
+  higher quality data from fewer executions.  For example, I would
+  like to be able to fine tune the sampling rate for individual points
+  in a program.  Not all parts of a program are equally interesting,
+  and bugs often hide in rarely-executed code.  I expect be able to
+  reduce the number of runs required by at least an order of
+  magnitude, perhaps more, through the use of coverage-directed
+  non-uniform sampling.  Progress on data analysis will let us make
+  better use of the runs we do have.  Here there is an opportunity to
+  use traditional program analysis in conjunction with statistical
+  modeling.  While I use a number of program analyses at
+  instrumentation insertion time, the data mining portion is
+  relatively ignorant of program structure.  The machine learning
+  community is quite used to working with black-box systems, but here
+  one has the advantage of being able to expose the program code.  I
+  see considerable room for the development of more sophisticated
+  statistical models that directly exploit static program analysis to
+  isolate the root causes of problems more quickly and accurately.</p>
+
+  <p>I believe that there are many applications for lightweight
+  sampling of user executions beyond bug isolation in stand-alone
+  programs.  For example, there is no reason why one could not
+  instrument many different components of a complex, distributed
+  system and apply both statistical and program analytic models to the
+  behavior of the aggregate system.  As a member of the <a href="http://titanium.cs.berkeley.edu/">Titanium project</a>, which
+  focused on modern programming techniques for clusters of
+  workstations, I was exposed to some of the difficulties in
+  programming and debugging distributed systems.  I am interested in
+  working with specialists in computer architecture, operating
+  systems, networking, and distributed computing to understand how one
+  can better capture the dynamic behavior (and misbehavior) of complex
+  systems.  Such windows into the dynamic workings of complex systems
+  support far more than just bug hunting, of course: performance
+  monitoring, anomaly detection, reengineering, and numerous other
+  development tasks stand to benefit.</p>
+
+  <p>More broadly, there is a real need for research that recognizes
+  the special properties of computing in the large.  This is true not
+  just for bug hunting but for the whole range of tasks involved in
+  building and maintaining complex software systems.  At the most
+  basic level, program analyses must carefully balance depth and
+  fidelity of results against practical and theoretic limits to
+  scalability.  My work on <a href="http://research.microsoft.com/spa/#projects">Generalized
+  One-Level Flow</a> (<span class="acronym">golf</span>) has targeted just such
+  a &#x201C;sweet spot&#x201D; to scale context-sensitive analysis to
+  millions of lines of code.  That sweet spot exists because of the
+  ways in which human programmers use (and do not use) facilities of
+  their programming languages.  This is not something one can derive
+  solely from the formal definition of a language; it requires an
+  understanding how those formalisms play out in practice.</p>
+
+  <p>Ultimately, the grand challenge is to deal with both the size and
+  the heterogeneity of modern computing.  Understanding a million
+  lines of C code is one thing.  Throw clients, servers, middleware,
+  databases, network protocols, scripts, glue code, and half a dozen
+  different languages into the mix and you have a rather different
+  class of problems.  Traditionally software researchers have shied
+  away from such environments; they seem too ad hoc and require
+  too much engineering investment to capture all the interacting
+  parts.  We are starting to see ventures into this heterogeneous
+  domain, but much work remains to be done.  I believe that solutions
+  here are possible: that we can scale theory to match with practice.
+  I look forward to expanding both my knowledge and the state of the
+  art in this area in the future.</p>
+
+</body></html>
