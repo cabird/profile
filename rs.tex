@@ -26,6 +26,8 @@
 \definecolor{gray}{rgb}{0.4,0.4,0.4}
 %\definecolor{gray}{rgb}{1.0,1.0,1.0}
 
+\newcommand\Section[1]{\section*{#1}}
+\newcommand\Subsection[1]{\subsubsection*{#1}}
 
 \begin{document}
 \thispagestyle{fancy}
@@ -77,7 +79,7 @@ prominent and play important roles.  However, as Conway proposed in 1968, I
 believe that the social aspects of software engineering are intimately tied
 with the technical artifact itself.  My research interests lie largely in the
 relationship between characteristics of software (e.g. architecture, language,
-layout, domain) and the coordination and communication that happens in the
+process used, domain) and the coordination and communication that happens in the
 teams that develop and maintain it.
 
 I am also largely interested using rigorous empirical methods to evaluate
@@ -86,185 +88,171 @@ of quantitative analysis in software engineering lags tremendously behind
 other fields such as econometrics, organizational behavior, and sociology.
 In the best case, misapplied empirical methods leave research questions
 unanswered, while in the worst case they lead to wrong answers which are believed
-to be empirically correct.
+to be empirically correct upon which further research may rest.  Software
+companies change their practices and perform self-analysis based on results
+of empirical research, thus results that are based on incorrect data or even
+over-generalizes results has a very real effect on both researchers and 
+practitioners.
 
-\subsubsection*{Background and Current Work}
+\Section{Background and Current Work}
 
-Open Source Software (OSS) projects have proliferated wildly over the past decade.
-While the vast majority of OSS projects either fail, 
+I'm interested in how projects tick.  In order to study software development,
+one needs access to project data such as communication, source code change
+activity, issue tracking information, etc.  Unfortunately, it is difficult 
+and time consuming to obtain this information from commercial entities for
+a number of reasons.
 
+Open Source Software (OSS) projects have proliferated wildly over the past
+decade.  While the vast majority of OSS projects either fail, or are unable (or
+are unintended) to gain a large user and developer base, there are still a
+large number of projects whose use, size (in terms of developers and source
+code), complexity, and code quality rival their commercial counterparts.  These
+select few (though they do still number in the tens to hundreds) such as the
+Linux kernel, Apache, Postgres, Python, and Firefox, are worthy of study
+because they represent stable codebases developed by large developer teams.
+These teams deal with nearly all of the challenges faced by other large
+developmen teams: coordination of many developers, changing requirements,
+complaints for users, fixing bugs, dealing with maintenance issues, bogged down
+by architectural decisions, etc.  Fortunately for many researchers, the data and
+meta-data associated with these projects is publicly available, providing
+an opportunity for software engineering researchers.
 
+\Subsection{Mining Methods}
 
-It is natural that most large and complex systems are created from a set 
-of smaller components, each of which is simpler than the system as a whole. 
-The functioning of a complex system depends on the interaction between its 
-constituent components. Parallelism is a standard technique used to scale the
-performance of a system. In a parallel system each individual component is 
-identical in nature and can perform all the tasks of the larger system, 
-albeit usually at a slower rate. Of course it is naive to expect that
-we could simply bunch together a number of parallel components and get high performance.
-In particular, the performance of any parallel system is governed by --- 1) The
-architecture used to connect the many components and 2) the 
-resource management (load balancing) algorithm used to 
-allocate tasks amongst the parallel components. 
+My research has focused on techniques for mining data from software projects
+and analyzing gathered data to answer questions about software engineering.
 
-There exists a rich body of previous work in the field of Computer Architecture, 
-Distributed Systems {\it \&}  Theoretical Computer Science, which answer a number of 
-fundamental questions regarding the performance of load balancing algorithms and 
-the design of parallel architectures.
-However this has not happened in the field of networking. 
-Academia and Industry in particular (rushed by the exponential growth in networking) 
-have compromised by using ad hoc parallel solutions. This has resulted in systems
-which provide little or no performance guarantees.
-For example --- most Internet core routers in use today do not give any 
-guarantees on bounding packet delay.
-It is easy to see how this unhappy state of affairs can adversely affect 
-future advances in the Internet.
+The preferred method for communication in most OSS projects is via
+developer mailing lists.  This allows all people involved to view
+topics under discussion and to jump in when desired.  It also allows
+project members to return to a discussion to determine who made project
+decisions and why they were made.  As such, the contents of these archived
+mailing lists are useful for research.
 
-We need to understand the general principles of designing large systems,
-which give performance guarantees. These guarantees could be statistical, say, guaranteeing less
-than 0.001\% packet loss on a network, or deterministic, say, never more than 1 $\mu$s of packet
-delay across a network. Only recently has there been growing interest in the 
-theory and design of scalable networking systems.
-In my Ph.D thesis, I attempt to lay a theoretical framework for this field.
-Most of my work has greatly benefited from interaction with a number of colleagues and my advisor.
-I describe my work below.
+There are issues in mining such data, however.  Unlike commercial settings most
+contributors use multiple email addresses when participating in projects, which
+can lead one to attribute messages to unique identities even though they were
+sent by the same person.  My research introduced this problem and presented the
+first mining techniques for dealing with this email aliasing issue and also
+related issues in linking mailing list personalities with accounts source code
+management (SCM) systems.  I used this to create and examine of the
+first mined developer social networks.  
+We mined data from a number of projects and used social network analysis
+to quantify the behaviour and ``importance'' of OSS project members.
+We found that there is a strong link between communication behavior and
+development activity for project developers, and that there is less of a
+relationship for project documenters.  Thus, the need for communication and
+coordination to accomplish one's task is strongly affected by the role that a
+participant plays in a project.  This has strong implications for...
 
-%\subsection*{Load Balancing and Parallelism for the Internet}
+As most OSS projects rely on volunteer labor, the process by which work gifts
+are accepted by the project is important (lame word....).  Volunteer
+contributions often come in the form of ``patches'' which are reified changes
+to source code that can be posted to a mailing list or otherwise delivered to
+the inner circle of developers who have write access to the source code.  I
+introduced a method for both identifying such contributions to OSS projects and
+detecting if they were accepted into the official code base for the project
+even if minor modifications were made to the patch (which they often are).  We
+used this data in conjunction with data gathered previously to answer the
+question ``What does it take to gain admittance to the inner circle of
+committing developers?'' The surprising answer for all of the projects studied,
+which we deliberately chose to cover diverse domains and governance styles, was
+that the likelihood is not only dependent on social status and contrbutions
+made, but also non-monotonically linked with time that a participant has
+spent with the project.
 
-\subsubsection*{\small An Analytical Framework to Analyze Router Architectures}
+I have also studied an emerging trend in OSS development, distributed version
+control, and it's effect on coordination and process in projects.  As the main
+channel by which changes to software are stored and conveyed, the version
+control system is tied to the process that a software team used.  We pioneered
+mining data from distributed source control and published a guide listing the
+opportunities as well as hurdles associated with mining data from distributed
+SCM's along with solutions to such problems.
 
-In the past decade, router design has enjoyed both widespread academic interest and
-commercial success. I ask the following question --- {\em Is there a common
-technique, which allows us to analyze router architectures that give deterministic 
-guarantees?}
-I observed the existence of such a technique called constraint sets, in the course of solving 
-two open problems about scaling router capacity ---
+From my experience doing research, I have found that relying on data in a
+purely quantitative fashion can lead to wrong conclusions or at best, hides
+opportunities to understand it better.  We therefore used a quantitative
+approach to determine why so many OSS projects were switching from a
+centralized SCM system to a distributed one.  By interviewing developers from a
+number of projects and identifying the differences in development activity
+prior to and following their switch, we were able to identify the benefits that
+projects enjoyed, or hope to enjoy by such a move.  Many of these benefits came
+down to affecting how developers were able to coordinate their activities
+and share their changes.
 
-\begin{enumerate}
-
-\item {\em Is it possible to emulate a fast ideal router, using only slower speed routers?}
-
-\item {\em Is it possible to emulate an ideal centralized shared memory router using only distributed memories?}
-
-\end{enumerate}
-
-Constraint sets are a generalization of the Pigeon-hole principle applied to
-routers. I showed that router design can be considered as a game where arriving
-pigeons (packets) are load balanced amongst pigeon-holes (memories). 
-It is surprising that the above problems can be solved \cite{pps, ppsmcast, dsm} in a simple
-manner using the Pigeon-hole principle because they refute many commonly 
-accepted myths about router design. 
-Also the method of analysis is eye-opening because it captures the structural 
-requirements of any router. 
-I came up with a generic model for a class of routers called Single Buffered Routers. 
-I showed how the Pigeon-hole principle can be applied in the analysis of Single Buffered
-Routers that give deterministic guarantees.  Later, I extended the analysis to 
-routers with two stages of buffering \cite{csets}. 
-Thus our model and analysis technique
-presently incorporates almost all the router architectures in use in the
-core of the Internet today and shows how router capacity can be scaled in
-an efficient manner.
-
-
-\subsubsection*{\small Deterministic Architectures for Packet Processing}
-
-All network equipment perform packet processing. However 
-it is still not well understood, primarily due to the variety of
-different processing tasks.
-These tasks place a heavy demand on instruction and memory bandwidth, which 
-prevents them from being implemented on general-purpose network processors.
-While specific solutions exist, in most cases it is not known whether they
-are optimal, whether they are complete i.e. support all necessary packet processing features and whether they
-give any performance guarantees. I look at three different aspects of this problem ---
-
-\begin{enumerate}
-
-\item {\em Optimal and flexible packet buffers, which eliminate cache misses}
+\Subsection{Communication and Coordination}
 
 
-Packet buffers are built using cache hierarchies. As is well known, caching
-can only give statistical guarantees on packet access time, resulting in unpredictable packet
-latency.
-In contrast, I proposed deterministic algorithms, which exploit the characteristics 
-of memory requirements for networking to design a memory hierarchy, which eliminates cache misses. 
-I showed how the optimal buffer caching algorithm can be modeled using difference equations and
-used adversarial traffic patterns to show that it is optimal \cite{buffer}.
-This resulting memory architecture supports the high access speeds of the cache while
-having the large storage capacity of main memory, obviating the need for any special purpose memory
-for networking.
-Later, I showed how the cache hierarchy could be designed to allow 
-flexibility in choosing any buffer access latency.
-A number of router companies such as Cisco, Juniper as well as main memory manufacturers 
-like Infineon, Rambus and Micron have shown interest in this technique.
+I have performed a number of empirical studies on communication and coordination
+in software engineering.
 
-\item {\em Optimal and deterministic architectures for statistics and state maintenance}
+While many have studied the globally distributed software development, I
+performed the first results that examined the effect of distributed development
+on post-release failures, one of the most important characteristics of
+software.  My research on the development of Windows Vista showed that while
+there are difficulties inherent in globally distributed software development,
+such as cultural differences and lack of easy synchronous communicating, the
+difference in software quality between components that are developed in one
+location and those that are spread abroad is nearly all attributable to the
+size of the development team.  Put simply, a component that is developed by twenty
+people in one buildng and twenty people in scattered across the globe have the
+same number of post-release failures.
 
-I (along with a colleague) showed using potential functions how there is 
-a direct relation between the optimal architectures for buffering
-and maintaining statistics counters \cite{stats}. 
-Similarly I showed analytically how an algorithm, which gives deterministic 
-delay bounds could be designed for maintaining connection state. 
+One of the problems with any case study (and one often overlooked by the
+authors of such a work) is that it is unclear how well the results generalize
+and how much they are affected by any number of variables.  In an effort to
+understand distributed development better, I have also examined distributed
+development in the context of other projects, some open source, and some which
+represent a hybrid process which incorporates open source style development.
+The results of my analysis have led to the following conclusion:
 
-\item {\em A complete and flexible architecture for packet classification}
-
-Packet classification requirements vary widely.
-For example, firewalls need classification on packet headers, while an
-intrusion detection device requires classification of the packet content. 
-Previous research has focused on being able to classify at very
-high rates. In contrast, I (along with a number of colleagues) 
-focused on developing a classifier, which is flexible and complete i.e. it could be programmed to
-perform a number of classification tasks and give deterministic performance guarantees.
-As a first step, we identified the elementary building blocks for packet
-classification in terms of an abstract language. We then designed a parallel hardware architecture
-to implement this 
-language. This resulted in a commercial implementation of a chip set
-(presently marketed by PMC-Sierra) called ClassiPI \cite{classipi}.
-Among others, the ClassiPI chip set is currently in use in Cisco's
-Content Services Switches.
+When projects have a non-trivial number of distributed components, there is
+little difference in quality between distributed and collocated components.
+However, when only a few of the components are distributed, such components
+suffer from a software process in which the effects of distribtued development
+are not taken into account and have many more post release bugs.  The
+implications are clear, a company cannot move from a a collocated development
+style to distributed development without modifying processes accordingly.
+However, the move \textbf{can} be made with little effect on code quality.
 
 
-\end{enumerate}
+\Subsection{Data Quality}
 
-\subsubsection*{\small Distributed and Greedy Algorithms for Packet Switching}
+I am also interested in the quality of data that is used in empirical software
+engineering.  Corrupted or incomplete data can lead to incorrect results which
+can affect both future research and practitioners who may modify their
+practices according to them.  To demonstrate this problem, we gathered bug data
+from many projects, identified bias in the data, and showed how this bias can
+lead to false conclusions and biased bug location predictions.
 
-Switching theory is replete with the analysis of optimal algorithms, which can give 
-ideal performance, but have large complexity. What are of interest are practical algorithms that can 
-be easily implemented. I answer the following open questions, which throw light on two classes of 
-practical algorithms.
+BugCache is an award winning bug prediction technique based on tracking the
+locality of bugs and their fixes.  We showed that the bug databases for many
+OSS projects are incomplete, in that many bugs that are marked as fixed cannot
+be accurately ``linked'' to the correcting change in the project SCM.  Through
+the use of rigorous statistical methods we showed that such links are missing
+in a way that is heavily biased in almost all projects and that when used on
+such biased data, BugCache only predicts similarly biased bugs.  One vitally
+important dimensions of bias in bug data is severity.  More severe bugs are
+less likely to be linked to their changes.  Thus, a bug prediction method will
+tend to predict less severe bugs much more accurately than more severe ones,
+which is likely the exact opposite of what a practitioner would use it for.
 
-\begin{enumerate}
-\item {\em Is there a distributed switching algorithm, which gives performance guarantees?}
+I believe that it is possible to overcome this problem, however, and am
+currently working on ways to combat it.  I have developed tools for efficiently
+working with both source code and bug data and have used them with project
+developers to recreate missing links which can then be used to determine both
+\textbf{why} data was missing in the first palce and \textbf{how} to deal with
+it's absence after the fact.
 
-The crossbar is the most common switching fabric in the core of the Internet. However,
-the known switching algorithms required to give deterministic performance 
-guarantees are centralized and hence have a high communication overhead.
-I (along with a colleague) analyzed the feasibility of distributed algorithms for a
-modification of the crossbar fabric called the buffered crossbar.
-We derive analytically using combinatorial arguments and counting techniques the
-conditions under which a suite of distributed algorithms can give 
-both statistical and deterministic
-guarantees respectively. 
-Since our algorithms need only local state, do not require communication with each other, 
-and can operate independently on each input and output port, they are readily implementable.
-Our results show that Internet routers built using crossbars, such as Cisco routers, can 
-be upgraded in a practical manner using our distributed 
-algorithms on buffered crossbars and give ideal performance \cite{buffxbar}.
 
-\item {\em When can greedy algorithms give optimal switching performance?}
+\Section{Social Empirical Software Engineering -- A Research Agenda}
 
-Contrary to intuition, it is known in queueing theory that a greedy
-switching algorithm such as the maximum size matching which
-maximizes the instantaneous throughput of the switch may not
-maximize the long-term switch throughput. Hence, greedy algorithms
-are not in use in practice.
-However greedy algorithms are of practical interest due to their low implementation complexity.
-I show using Lyapunov functions the conditions under which
-such algorithms give 100\% throughput \cite{msm}.
 
-\end{enumerate}
+Games (more than developers... TONS of content)
 
-\subsection*{Network Architecture ---  A Research Agenda}
+Web Applications (many tiers)
+
+Noisy Data...
 
    In the course of my research, I have noticed that the overhead (in terms
 of size, power and cost) of designing networking components, which give 
