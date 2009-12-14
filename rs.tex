@@ -14,11 +14,11 @@
 %\marginsize{3cm}{2cm}{1cm}{1cm}
 %\marginsize{0.85in}{0.85in}{0.625in}{0.625in}
 
-\advance\oddsidemargin-0.65in
+\advance\oddsidemargin-1in
+%\advance\oddsidemargin-0.65in
 %\advance\evensidemargin-1.5cm
 \textheight9.2in
-\textwidth6.75in
-\newcommand\bb[1]{\mbox{\em #1}}
+\textwidth6.5in
 \def\baselinestretch{1.05}
 %\pagestyle{empty}
 
@@ -136,14 +136,9 @@ sent by the same person.  My research introduced this problem and presented the
 first mining techniques for dealing with this email aliasing issue and also
 related issues in linking mailing list personalities with accounts source code
 management (SCM) systems.  I used this to create and examine of the
-first mined developer social networks.  
-We mined data from a number of projects and used social network analysis
-to quantify the behaviour and ``importance'' of OSS project members.
-We found that there is a strong link between communication behavior and
-development activity for project developers, and that there is less of a
-relationship for project documenters.  Thus, the need for communication and
-coordination to accomplish one's task is strongly affected by the role that a
-participant plays in a project.  This has strong implications for...
+first mined developer social networks.  Attributes of these networks were
+used (and found to be statistically significant) in a number of empirical studies
+later in my career.
 
 As most OSS projects rely on volunteer labor, the process by which work gifts
 are accepted by the project is important (lame word....).  Volunteer
@@ -152,14 +147,7 @@ to source code that can be posted to a mailing list or otherwise delivered to
 the inner circle of developers who have write access to the source code.  I
 introduced a method for both identifying such contributions to OSS projects and
 detecting if they were accepted into the official code base for the project
-even if minor modifications were made to the patch (which they often are).  We
-used this data in conjunction with data gathered previously to answer the
-question ``What does it take to gain admittance to the inner circle of
-committing developers?'' The surprising answer for all of the projects studied,
-which we deliberately chose to cover diverse domains and governance styles, was
-that the likelihood is not only dependent on social status and contrbutions
-made, but also non-monotonically linked with time that a participant has
-spent with the project.
+even if minor modifications were made to the patch (which they often are).  
 
 I have also studied an emerging trend in OSS development, distributed version
 control, and it's effect on coordination and process in projects.  As the main
@@ -169,22 +157,47 @@ mining data from distributed source control and published a guide listing the
 opportunities as well as hurdles associated with mining data from distributed
 SCM's along with solutions to such problems.
 
+
+\Subsection{Communication and Coordination}
+
+The mining of data is only a means to an end however.  The goal of such
+effort has always been to use such data to learn about how software
+projects work.  To that end, I have performed a number of empirical studies
+to answer questions about the relationship of social aspects of projects
+with the software itself.
+
+We used social network analysis on mined mailing list data from a number of projects 
+to quantify the behaviour and ``importance'' of OSS project members.
+We found that there is a strong link between communication behavior and
+development activity for project developers, and that there is less of a
+relationship for project documenters.  Thus, the need for communication and
+coordination to accomplish one's task is strongly affected by the role that a
+participant plays in a project.  This has strong implications for...
+
+We used both social network data and patch contrbution and acceptance data in
+conjunction with data gathered previously to answer the question ``What does it
+take to gain admittance to the inner circle of committing developers?'' The
+surprising answer for all of the projects studied, which we deliberately chose
+to cover diverse domains and governance styles, was that the likelihood is not
+only dependent on social status and contributions made, but also
+non-monotonically linked with time that a participant has spent with the
+project.  Specifically, members need project-specific expertise as well as
+community respect, something that increases with time, in order to become a
+full fledged developer.  In contrast, commitment, which arguably wanes over
+time, is also needed.  We observed a ``peak'' time at which participants become
+project developers.  While these findings represent OSS development, there are
+clear analogs and implications for other styles of development.
+
 From my experience doing research, I have found that relying on data in a
 purely quantitative fashion can lead to wrong conclusions or at best, hides
 opportunities to understand it better.  We therefore used a quantitative
 approach to determine why so many OSS projects were switching from a
 centralized SCM system to a distributed one.  By interviewing developers from a
-number of projects and identifying the differences in development activity
+number of projects and determining the differences in development activity
 prior to and following their switch, we were able to identify the benefits that
 projects enjoyed, or hope to enjoy by such a move.  Many of these benefits came
-down to affecting how developers were able to coordinate their activities
-and share their changes.
-
-\Subsection{Communication and Coordination}
-
-
-I have performed a number of empirical studies on communication and coordination
-in software engineering.
+down to affecting how developers were able to coordinate their activities and
+share their changes.
 
 While many have studied the globally distributed software development, I
 performed the first results that examined the effect of distributed development
@@ -214,6 +227,17 @@ are not taken into account and have many more post release bugs.  The
 implications are clear, a company cannot move from a a collocated development
 style to distributed development without modifying processes accordingly.
 However, the move \textbf{can} be made with little effect on code quality.
+
+I have also explored coordination in contexts other than software engineering.
+As an example, I studied academic collaboration by examining patterns of
+co-authorship of papers in computer science.  One of the key insights of this
+work was that disciplines that are more theoretical, such as theory and
+cryptography, have communities which tend to collaborate more freely than
+disciplines of practice, which include distributed systems and software
+engineering, where we observed highly modular collaboration patterns.  However,
+theoretical disciplines also do not draw researchers that are as
+multidisciplinary as others, such as the data mining community, which sees
+work from researchers who are experts in a variety of other fields
 
 
 \Subsection{Data Quality}
@@ -245,75 +269,112 @@ developers to recreate missing links which can then be used to determine both
 it's absence after the fact.
 
 
+
 \Section{Social Empirical Software Engineering -- A Research Agenda}
 
 
-Games (more than developers... TONS of content)
+I believe that the answer to many software engineering questions is in fact
+``It depends.'' There is no best software process or best programming
+language.  Agile and scrum work quite well for some projects, but won't for all
+of them.  Sometimes adding people to software project actually \textbf{is} the
+best decision.  Thus, searching for universal answers to such questions may be
+misleading.  There is real value in determining what the answers to questions
+actually depend on.  I have found, for instance, that when certain processes
+are used, software quality \textbf{does not} depend on geographic distribution.
+I \textbf{have} found that in both open source and industrial contexts,
+patterns of socio-technical relationships are indicative of failure prone
+software components.  I plan to investigate what attributes of software
+projects affect coordination needs and the effects of social structure and in what
+ways. 
 
-Web Applications (many tiers)
+Game development and web applications are areas of software engineering that
+remain underrepresented in research.  Therfore, there is little reason to believe
+that prior results hold in such settings.  Yet both of these areas are growing
+segments of the software industry in terms of money, talent, and market share.
+Studies of these domains have benefit in two primary ways.  Identifying the
+differences in these domains relative to other development fields help to
+understand what software engineering principles and results are unlikely to
+hold.  In contrast, when results from prior studies are supported
+in these domains, this is evidence that such results are universal and broadly
+applicable, a major contribution to the body of software engineering knowledge.
 
-Noisy Data...
+The video game industry represents \$10's of billions annually. Indeed
+companies such as Microsoft, Sony, Nintendo, and EA spend hundreds of
+millions of dollars each year developing gaming software for computers and
+consoles.  However, game development differs from the development of typical
+products in some important ways.
 
-   In the course of my research, I have noticed that the overhead (in terms
-of size, power and cost) of designing networking components, which give 
-performance guarantees is small. 
-This is mainly due to two reasons. First, the inherent nature of 
-networking makes many of these problems tractable. Second, a number of
-hardware advances in Architecture, insights in Algorithms {\it \&} Combinatorics, 
-as well as analysis techniques from Probability, {\it \&} Queueing Theory 
-aid in the design of elegant and simple solutions.
-I envisage the field of {\it Network Architecture} created from the 
-ground up, building upon the foundations of a number of fields
-including those mentioned above.
+\begin{enumerate}
 
-In the near future, I am interested in the 
-principles involved in the design of basic networking 
-components. These include
-hardware components (e.g. scalable memories, 
-network processor and co-processor architectures) and 
-software techniques (e.g. network algorithms, packet processing 
-techniques). 
-  Simultaneously, I intend to understand how large components, which use
-the above building blocks can be architected.
-My research will focus on how these basic and large
-components can be built in a scalable manner while maintaining 
-performance guarantees. 
-In particular, examples of large components that I have a keen
-interest in are switches 
-(e.g. packet and circuit switches, multi-service routers etc.), 
-security devices (e.g. firewalls and intrusion detection 
-systems), network maintenance devices (e.g. measurement,
-management infrastructure) and application aware devices
-(e.g. web server load balancers, proxies) etc. 
+\item Content - Most games can be split into an engine, which represents executable code,
+    and data content.  Compared to other software domains, a disproportionately large
+    amount of money, time, talent, and space on content.  Yet there are surely problems,
+    "bugs", that occur in the content.  Much of software engineering research, such as
+    bug prediction techniques, awareness tools, and recommender systems, use attributes
+    of and relationships in source code.  Thus, these techniques are of limited value
+    in a game development context.  I plan to explore the relationship between content
+    and enging as well as other intra-content relationships in an effort to devise new
+    methods for bug prediction, team member awareness, and expert recommendation.
 
-In the future, though performance and scalability will remain key,
-I also intend to look at issues such as {\it fault tolerance, graceful degradation,
-reliability and uptime} of networking systems, which will become more relevant. 
-I also believe that as systems become increasingly large and 
-inter-dependent, {\it simplicity in design and component 
-re-use} will be major factors.
-Parallelism can play a key role here.
-Indeed, many of our proposed solutions, involve component re-use and 
-parallelism, which can aid and abet the above.
+\item Team Makeup - Due to the large amount of content, a sizeable proportion of team members
+    are not software developers, but rather, story-writers, graphic artists, sound engineers,
+    etc.  One might well expect that the communication and coordination needs of members
+    in such roles differs from software developers in the project.  It may be that similar
+    to the difference between documentation and development, there is less of a coordination
+    requirement for non-developers, or these members may simply require different communication
+    patterns to complete their tasks.  I will observe and record
+    interactions and information needs in order to characterize the differences in these roles
+    and correlate them with outcomes such as software bugs and release delays.  This will lead
+    to an increased understanding of the dynamics in game development teams.
+
+\item Closed Systems - Though slowly changing, most gaming software runs in a relatively closed
+    system.  Console games run on a very restricted set of hardware.  The state of ``installed''
+    software is also constrained.  Except for portions of the console operating systems, 
+    components within a game software stack are unlikely to be upgraded on the fly, causing
+    library dependency headaches.  Relative to other applications that are data directed (Adobe
+    Reader, Web Browsers, Microsoft Office), the set of data is either known in advance or,
+    in the case of downloadable content, screened and and modified if needed prior to deployment.
+    How do these differences affect the testing needed to assure quality and stability?  
+
+\end{enumerate}
+
+Web applications are becoming more and more complex and prevalent.  The vast
+majority of everyday computing tasks can be accomplished with any notebook
+equipped with a web browser.  Javascript (the primary language of web
+applications) is now one of the the world's most used and executed programming
+languages.  Development of these applications has many differences from
+traditional development.  I list here just a few.
+
+\begin{enumerate}
+
+\item Updates - If any notion of ``deployment to the user'' exists in the context of web applications,
+    is occurs when a user access a site and the data and client side code is downloaded to the 
+    browser.  This is in stark contrast to traditional development where a relatively static
+    product is downloaded and installed on a user's machine.  If changes need to be made to a web
+    application, there is no need to ship out a new release to users or even supply a patch or hotfix
+    via some update mechanism.  Accordingly, the excessive cost of such deployment mechanisms is also
+    absent (though deployment and hosting of web applications is hardly a free enterprise).  This gives
+    development teams greater flexibility in terms of timelines, and release cycles.  Teams may decide
+    to ship new features as they become available rather than hit a coordinated release.  Bugs can be fixed
+    much more quickly.  Google has claimed that it actually tests new features by sending a fraction of it's
+    users to a newer version of an application and examining the results.
+
+\item Monitoring - Since web applications are hosted on server's owned by the company, usage of the software
+    can be monitored much more closely than traditional applications.  While companies have used limited
+    user studies, opt-in data gathering systems, and crash reporting applications, it has been difficult
+    to determine how an application is being used ``in the field.'' Much as watson and other crash
+    reporting software has changed how development decisions are made with Microsoft and other companies,
+    the ability to see what parts of an application are being used, what is causing crashes, and where
+    performance degrades is valuable for a number of reasons.  
+
+\end{enumerate}
 
 
-My research will involve a good mix of futuristic and present 
-day research. 
-One part of my work will focus on fundamentally different proposals and
-radical solutions. As an example
---- can we finally achieve real-time streaming over the Internet,
-assuming that the various network components give performance guarantees?
-In contrast, I intend to devote the other part of my work 
-on practical systems, which have immediate relevance and impact in Industry.
-I intend to work closely with a number of
-researchers in related fields. Similarly, I intend to
-collaborate with Industry in understanding and developing solutions
-for practical problems. I believe my past experience of research
-work done jointly with a number of colleagues as well as my prior record
-of participation with Industry will help me achieve this. 
-I am excited at the
-prospect of learning, contributing, giving shape and making an
-impact in this upcoming and challenging field.  
+I also plan to investigate methods of dealing with data quality issues.  My
+research has succeeded in showing the ways in which poor data can lead to
+incorrect or biased results.  The next steps include devising methods for
+increasing the quality of data and finding techniques that are as robust to
+noisy data as possible.
 
 
 \vspace{0.5cm}
