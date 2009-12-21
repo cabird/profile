@@ -74,134 +74,122 @@
 %\footnotemark
 %\footnotetext{Check This}
 
-As software projects grow in terms of size and complexity, so do the teams of
-people that contribute to it in any of a myriad of ways.  As this phenomenon
-becomes more pronounced, the social aspects of software development become more
-prominent and play important roles.  However, as Conway proposed in 1968, I
-believe that the social aspects of software engineering are intimately tied
-with the technical artifact itself.  My research interests lie largely in the
-relationship between characteristics of software (e.g. architecture, language,
-process used, domain) and the coordination and communication in the
-teams that develop and maintain it.
+As software projects grow in size and complexity, so do the teams of
+people that contribute to it.  As this happens, both
+the the effectiveness of the engineers and the quality of the software produced 
+become heavily dependent on the social and structural aspects of the development
+teams.  As Conway proposed in 1968, the organizational and
+structural characteristics of software engineering are intimately tied with the
+technical artifact itself.  My research interests lie largely in the
+relationship between characteristics of software (e.g.  architecture, language,
+process used, domain) and the coordination and communication in the teams that
+develop and maintain it.  \texttt{jim says: You need to do a better job of saying
+why this is important. What could we do that we can't do now?  What problems
+would your research solve?  Why will it lead to fundamental changes in how we
+develop software?}
+
+In order to study software development, one needs access to project data such
+as communication, source code change activity, issue tracking information,
+organizational data, and geographical locations.  Open Source Software (OSS)
+projects have proliferated wildly over the past decade.  While the vast
+majority of OSS projects either fail to gain a large user and developer base,
+there are still a large number of projects whose use, size (in terms of both
+developers and source code), complexity, and code quality rival their
+commercial counterparts.  These select few such as the Linux kernel, Apache,
+Postgres, Python, and Firefox, are worthy of study because they represent
+stable codebases developed by teams that deal with many of the same challenges
+faced by other large development teams.  As an increasingly prevalent
+development style, OSS is important to study in it's own rite, but we can also
+learn from comparing results of open source and commercial software.
+Fortunately the data and meta-data associated with these projects is publicly
+available, providing an exciting opportunity.
 
 I am also interested in the use of rigorous empirical methods to evaluate
 questions about software engineering processes.  Over the last few years,
 researchers in our field have begun applying more advanced, modern methods
 developed in fields such as bio-informatics, econometrics, and organizational
-behavior, e.g., statistical network analysis, hazard rate models, and 
-principal component regression.  I believe that such methods will yield
-valuable insight, but that they must also be used with caution and understanding.
-Software companies change their practices and perform self-analysis based on results
-of such research; results that are based on incorrect data or that are
-over-generalized have a very real effect on both researchers and 
-practitioners.
+behavior, e.g., statistical network analysis, hazard rate models, and principal
+component regression.  These new trends are beginning to have impact as
+software companies are beginning to change their practices and perform
+self-analysis based on the results of such research.  My research is at the
+heart of this trend.
 
 \Section{Background and Current Work}
 
-In order to study software development, one needs access to project data such
-as communication, source code change activity, issue tracking information,
-organizational data, and geographical locations.  
+My past work has focused on how software developers work together and what factors influence their
+effectiveness in large teams.  
 
-Open Source Software (OSS) projects have proliferated wildly over the past
-decade.  While the vast majority of OSS projects either fail, or are unable (or
-are unintended) to gain a large user and developer base, there are still a
-large number of projects whose use, size (in terms of both developers and
-source code), complexity, and code quality rival their commercial
-counterparts.  These select few such as the Linux kernel, Apache, Postgres,
-Python, and Firefox, are worthy of study because they represent stable
-codebases developed by large developer teams that deal with many of the same
-challenges faced by other large development teams.  Fortunately the
-data and meta-data associated with these projects is publicly available,
-providing an exciting opportunity for researcher.
+We used social network analysis on mined mailing list data from a number of
+projects to quantify the behaviour and ``importance'' of OSS project members.
+One of the things that we found was a strong link between communication
+behavior and development activity for project developers, and that there is
+less of a relationship for project documenters, indicating that the need for
+communication and coordination in accomplishing tasks is strongly related to
+the role that a participant plays.
 
-\Subsection{Mining Methods}
+I've also examined the organizational structure of developers within OSS
+projects by adapting clustering methods from the field of complex networks in
+physics to identify tight knit teams.  I found that structure is actually much
+more similar to commercial contexts than previously thought, with clear teams
+of closely collaborating people tackling cohesive tasks. However, we observed
+that team formation is more organic and the team makeup is more dynamic than in
+commercial settings.
 
-My research has focused on techniques for mining data from software projects
-and then analyzing this data to answer questions about software engineering.  I
-have pioneered a number of mining techniques which have been successful in
-obtaining data needed for my analysis and have also been adopted by other researchers.
+We used social network status and patch contribution and acceptance data to
+answer the question ``What does it take to become a core OSS project
+developer?'' We chose projects from diverse domains and governance styles, and
+the surprising answer for all of them was that the likelihood is not only
+dependent on social status and contributions made, but also has a curvilinear
+relationship with time that a participant has spent with the project.
+Specifically, members need project-specific expertise and community respect,
+both of which increase with time, in addition to commitment, which arguably
+wanes over time.  We observed ``peak'' time at which participants become
+project developers.  These findings from OSS have been corroborated by
+discussions with managers in commercial settings where similar phenomena were
+observed.  Due to the need to develop project-specific knowledge and contacts
+and also a tendency for an employee's focus and enthusiasm to wane, there is a
+peak period of productivity.
 
-The preferred method for communication in most OSS projects is via developer
-mailing lists.  This allows all people involved to view topics under discussion
-and to participate when desired.  As such, the contents of these archived
-mailing lists represent the discussion history of a project and are useful for
-research.
-There are issues in mining such data, however.  Unlike commercial settings,
-most contributors use multiple email addresses when participating in projects,
-which can lead one to attribute messages to many unique identities even though
-they were sent by the same person.  My research introduced this problem and
-presented the first mining techniques for overcoming it, which I used to create
-and examine the first mined developer communication social networks.  Attributes of these
-networks were used (and found to be statistically significant) in a number of
-empirical studies.
+Socio-technical relationships are also strongly related to software quality.  I
+built socio-technical networks, composed of developers and software components,
+and found that the topological properties of these networks could be used to
+predict failure-prone components with precision and recall levels around 90\%.
+My results were consistent across Windows Vista and 6 major releases of the
+Eclipse project, indicating a result that spans development styles.  In
+addition, I devised data transformations that would allow practictioners to use
+a model built on a prior release to predict fault-prone modules in unreleased
+software.
 
-Volunteer contributions in OSS often come in the form of ``patches'' which are
-reified changes to source code.  I introduced a method for both identifying
-such contributions and detecting if they were accepted even in the presence of
-minor modifications, a common occurrence.  This data has been instrumental in
-examining the contribution acceptance criteria and 
-requirements needed for participants to become core project
-developers.
-
-I have also studied an emerging trend in OSS development, distributed version
-control, and it's effect on coordination and process in projects.  As the main
-channel by which changes to software are stored and conveyed, the version
-control system constrains the process that a software team uses.  We pioneered
-mining data from distributed source control and published a guide listing the
-opportunities as well as hurdles associated with mining data from distributed
-SCMs along with solutions to such problems.
-
-
-\Subsection{Communication and Coordination}
-
-The mining of data is only a means to an end.  The goal of such
-effort has always been to use the gathered data to learn about how software
-projects work.  To that end, I have performed a number of empirical studies
-to answer questions about the relationship of social aspects of projects
-with the software itself.
-
-We used social network analysis on mined mailing list data from a number of projects 
-to quantify the behaviour and ``importance'' of OSS project members.
-We found that there is a strong link between communication behavior and
-development activity for project developers, and that there is less of a
-relationship for project documenters, indicating that the need for communication and
-coordination in accomplishing tasks is strongly affected by the role that a
-participant plays.
-
-We used both social network data and patch contribution and acceptance data in
-conjunction with data gathered previously to answer the question ``What does it
-take to become a core OSS project developer?'' The surprising answer for all of
-the projects studied, which we deliberately chose to cover diverse domains and
-governance styles, was that the likelihood is not only dependent on social
-status and contributions made, but also non-monotonically linked with time that
-a participant has spent with the project.  Specifically, members need
-project-specific expertise and community respect, both of which increase with
-time, in addition to commitment, which arguably wanes over time.  We observed
-``peak'' time at which participants become project developers.  While these
-findings represent OSS, there are clear analogs and implications
-for other styles of development.
-
-I have found that relying on data in a
-purely quantitative fashion can lead to wrong conclusions or at best, hides
-opportunities to understand it better.  Thus, I used a qualitative approach of
-interviewing lead developers from OSS
-projects that had switched to distributed SCMs in an effort to understand what
-benefits they hoped to gain and then performed a quantitive study
-assessing hypotheses regarding the effects on developer practices.
+A research strategy that combines qualitative and quantitative methods can be
+highly effective because each compensates for the weaknesses of the other.
+This is a common strategy in social science, usually called a ``multi-method''
+approach.  I used such an approach when studying an emerging trend in
+OSS development, distributed version control, and it's effect on coordination
+and process in projects.  As the main channel by which changes to software are
+stored and conveyed, the version control system constrains the process that a
+software team uses.  I began by interviewing lead developers from OSS projects
+that had switched to distributed SCMs in an effort to understand what benefits
+they hoped to gain and then performed a quantitive study assessing hypotheses
+regarding the effects on developer practices.
 
 While many have studied the globally distributed software development, I
 published the first results that examined the effect of distributed development
 on post-release failures.  My research on the development of Windows Vista
 showed that while there are difficulties inherent in globally distributed
-software development, certain processes can mitigate their affects.  I found
-that the difference in software quality between components that were developed
-in one location and those that were spread abroad was nearly all attributable
-to the size of the development team rather than distribution level.  However, one of the problems with any
-case study is that it is unclear how well the results generalize and how much
-they are affected by any number of variables.   I have therefore examined
-distributed development it the the context of other projects that use varying
-development styles. The results of my analysis have led to the following
-conclusion:
+software development, processes such as daily synchronous contact, migration of
+expertise, and consistent tools can mitigate their affects.  I found that the
+difference in software quality between components that were developed in one
+location and those that were spread abroad was nearly all attributable to the
+size of the development team rather than distribution level.  This work was
+recognized as a SIGSOFT distinguished paper at the top software engineering
+conference and was invited to appear as the first software engineering research
+paper in the \emph{Research Highlights} section of Communications of the ACM.
+
+One of the problems with any case study is that it is unclear how well the
+results generalize and how much they are affected by any number of variables.
+I have therefore examined distributed development in the the context of other
+projects that use varying development styles.  My results thus far support
+the hypothesis that:
 
 When projects have a non-trivial number of distributed components, there is
 little difference in quality between distributed and collocated components.
@@ -210,29 +198,69 @@ process which relies on collocation, leading to many more post release bugs.  A
 company cannot hope to successfully move from a collocated development style to
 distributed development without modifying processes accordingly.
 
-I have also explored coordination in contexts other than software engineering.
-As an example, I studied academic collaboration by examining patterns of
-co-authorship of papers in computer science.  One of the key insights of this
-work was that disciplines that are more theoretical, such as theory and
-cryptography, have communities which tend to collaborate more freely than
-disciplines of practice, which include distributed systems and software
-engineering, where we observed highly modular collaboration patterns.
+I have also explored collaboration in contexts other than software engineering
+in an effort to understand what principles are more general, and how these forms of
+collaboration differ.  As an example, I studied academic collaboration by
+examining patterns of co-authorship of papers in computer science.  One of the
+key insights of this work was that disciplines that are more theoretical, such
+as theory and cryptography, have communities which tend to collaborate more
+freely than disciplines of practice, which include distributed systems and
+software engineering, where we observed highly modular collaboration patterns.
 
+\Subsection{Experimental Methods}
 
-\Subsection{Effects of Data Quality}
+Some of these studies of software engineering have required types of data that
+has not existed to this point. I have had to develop new techniques for
+obtaining and analyzing required data, which have been accepted in the
+community and adopted by other researchers.
+
+The preferred method for communication in most OSS projects is via developer
+mailing lists.  This allows all people involved to view topics under discussion
+and to participate when desired.  As such, the contents of these archived
+mailing lists represent the discussion history of a project and are useful for
+research.  There are issues in mining such data, however.  Unlike commercial
+settings, most contributors use multiple email addresses when participating in
+projects, which can lead one to attribute messages to many unique identities
+even though they were sent by the same person.  My research introduced this
+problem and presented the first mining techniques for overcoming it, which I
+used to create and examine the first mined developer communication social
+networks.  Attributes of these networks were used (and found to be
+statistically significant) in a number of empirical studies.  Since that time,
+many other researchers have adopted my method and
+this work has received nearly 100 citations.
+
+Volunteer contributions in OSS often come in the form of ``patches'' which are
+reified changes to source code.  I introduced a method for both identifying
+such contributions and detecting if they were accepted even in the presence of
+minor modifications, a common occurrence.  This data was instrumental in
+examining the contribution acceptance criteria and requirements needed for
+participants to become core project developers.  Again, my techniques have
+been adopted by others in their own research and publications.
+
+Distributed version control differs from prior version control systems in many
+ways.  Branching and merging is well supported, occurs \textbf{much} more
+frequently, and is recorded in the repository.  Data flow between repositories,
+authorship information, and audit trails are recorded more precisely as well.
+But there are also potential dangers for miners; the history can be revised and
+some data may be hidden from view.  We pioneered mining data from distributed
+source control and published a guide listing the opportunities as well as
+hurdles associated with mining data from distributed SCMs along with solutions
+to such problems.  We also used such data to examine how use of distributed version 
+control can enable project processes not possible before.
 
 I am also interested in the quality of data that is used in empirical software
 engineering.  Corrupted or incomplete data can lead to incorrect results which
 can affect both future research and practitioners who may modify their
 practices according to them.  To demonstrate this problem, we gathered bug data
-from many projects, identified bias in the data, and showed how this bias can
-lead to false conclusions and biased bug location predictions.
-We showed that the bug databases for many
-OSS projects are incomplete, in that many bugs that are marked as fixed cannot
-be accurately ``linked'' to the correcting change in the project SCM.  Through
-the use of rigorous statistical methods we showed that such links are missing
-in a way that is heavily biased and that the bug prediction techniques are 
-sensitive to such bias, making their utility limited in practice.
+from many projects, identified ascertainment bias in the data, and showed how
+this bias can lead to false conclusions and biased bug location predictions.
+We showed that the bug databases for many OSS projects are incomplete, in that
+many bugs that are marked as fixed cannot be accurately ``linked'' to the
+correcting change in the project SCM.  We showed that such links are missing in
+a way that is heavily biased, e.g. data is missing more often for more severe
+bugs than less severe. Further, bug prediction techniques are sensitive
+to such problems; when trained on such data, they are more accurate at predicting
+less severe bugs.
 
 I believe that it is possible to overcome this problem, however, and am
 currently working on ways to combat it.  I have developed tools for efficiently
@@ -243,12 +271,10 @@ it's absence after the fact.
 
 \Section{Future Work}
 
-I believe that the answer to many software engineering questions is in fact
+The answer to many software engineering questions is actually
 ``It depends.'' There is no best software process or best programming
 language.  Agile and scrum work quite well for some projects, but won't work for all
-of them.  Sometimes adding people to software project actually \textbf{is} the
-best decision.  Searching for universal answers to such questions may be
-misleading.  There is value in determining what the answers to questions
+of them.  My research focuses on determining what the answers to questions
 actually depend on.  I have found, for instance, that when certain processes
 are used, software quality \textbf{does not} depend on geographic distribution.
 I \textbf{have} found that in both open source and industrial contexts,
@@ -259,13 +285,13 @@ with outcomes.
 
 \Subsection{Studying Diverse Domains}
 
-Game development and web applications are areas of software engineering that
-remain underrepresented in research.  Yet both of these areas are
-growing segments of the software industry in terms of money, talent, and market
-share.  Identifying the differences in these domains relative to other
-fields helps to understand what software engineering principles and
-results are unlikely to hold, while affirming results from prior studies give
-evidence that such findings are universal and broadly applicable.
+Game development and web applications present new challenges that we are not
+equipped as a field to deal with.  However, both areas are growing segments of
+the software industry in terms of money, talent, and market share.  As little
+research addresses these domains, stuf...  Studying these domains can lend an understanding
+of which software engineering principles are dependent on domain  (is it \textbf{ever}
+a good decision to add people to a late project?) and which are more broadly applicable.
+
 
 The video game industry represents \$10's of billions annually. However, game
 development differs from the development of typical products in some important
@@ -274,37 +300,38 @@ ways.
 \begin{enumerate}
 
 \item Content - Most games are split into an engine, which represents executable code,
-    and data content.  Compared to other software domains, a disproportionately large
+    and data content. Compared to other software domains, a disproportionately large
     amount of money, time, talent, and space is devoted on content.  
     Many software engineering research techniques, such as
     bug prediction techniques, awareness tools, and recommender systems, use attributes
-    of source code.  Thus, these techniques are of limited value
-    in a game development context.  I plan to explore the relationship between content
+    of source code. Thus, these techniques are of limited value
+    in a game development context where many of the tasks and contributors are
+    not related directly to the code. I plan to explore the relationship between content
     and code relationships in an effort to devise new
     methods for bug prediction, team member awareness, and expert recommendation.
 
 \item Team Makeup - A sizeable proportion of team members
-    are not software developer.  One might well expect that the communication and coordination needs of members
-    in content creation and testing roles differ from software developers.  I plan to observe, record, and mine
+    are not software developers, including artists, story line, and other content creators.
+    One might well expect that the communication and coordination needs of members
+    in content creation and content testing roles differ from software developers.  I plan to observe, record, and mine
     interactions, socio-technical relationships, and information 
     needs in order to characterize the differences in these roles
     and correlate them with outcomes, leading 
     to an increased understanding of the dynamics in game development teams.
 
-\item Closed Systems - Though slowly changing, most gaming software runs in a relatively closed
-    system.  Console games run on a very restricted set of hardware.  The set of ``installed''
-    software is also constrained.  Relative to other applications 
-    that are data directed such as web browsers and office applications, 
-    the set of data for games is either known in advance or,
-    in the case of downloadable content, controlled.
-    How do these differences affect the testing needed to assure quality and stability?  
+\item Closed Systems - In the past most gaming software has run in a relatively closed
+    system. Console games run on a very restricted set of hardware and the set of ``installed''
+    software is constrained.  However, this is changing as games are moving online,
+    must support downloadable content, and are supporting more complex and varied input 
+    mechanisms.  As games move to a more open and less predictable world,
+    how do these differences affect the testing needed to assure quality and stability?  
 
 \end{enumerate}
 
 Web applications are becoming more and more complex and prevalent.  The vast
 majority of everyday computing tasks can be accomplished via any notebook
 equipped with a web browser.  The architecture of these applications often spans a number of
-machines from the client to a web server to a back store.  Development of these
+machines from the client to a web server to a backend data store.  Development of these
 applications has many differences from traditional development.
 
 \begin{enumerate}
@@ -315,20 +342,24 @@ applications has many differences from traditional development.
     whenever they are accessed by a browser.  Many web applications 
     claim to update production code multiple times per week and 
     test new features by observing the effects of enabling them for a subset of their users. 
-    This gives development teams greater flexibility in terms of timelines and release cycles. 
+    This gives development teams greater flexibility in terms of timelines and release cycles, but
+    also creates great risk, as a bug on one server can (and has) make an application unusable
+    for the entire user-base.
     I plan to investigate the opportunities and costs associated with this key difference.
 
 \item Monitoring - Since web applications are hosted on servers, usage of the software
     can be monitored much more closely than traditional applications.  While companies have used limited
     user studies, opt-in data gathering systems, and crash reporting applications, it is difficult
-    to determine how an application is being used ``in the field.'' 
-    The ability to see what parts of an application are being used, what is causing crashes, and where
-    performance degrades has many many benefits.  This data can be used to direct resource allocation and for
-    feature planning.  It can also provide rich information about failures such as how many users 
-    are being affected and what the contexts of failure are.  
+    to determine how an application is being used ``in the field.'' For instance, crash reporting
+    can provide the context of a program failure, but gives no indication of what parts of an application
+    are used heavily and \textbf{not} failing, or even what proportion of users are experiencing problems.
+    The ability to see what parts of an application are being used most, where
+    performance degrades, and how features are misused has many benefits.  
+    This data can be used to direct resource allocation and for
+    feature planning.  It can also provide rich information about failures such as what proportion of users 
+    are being affected and what the contextual differences between failures and non-failures are.
 
 \end{enumerate}
-
 
 \Subsection{Dealing with Data Quality Issues}
 
@@ -346,12 +377,8 @@ in a release cycle when developers are more diligent about keeping records?  Und
 for analyzing it.
 
 \vspace{0.5cm}
-%\begin{flushright}
-%Sundar Iyer
-%\end{flushright}
 
 \end{small}
-%\newpage
 
 \begin{footnotesize}
 
