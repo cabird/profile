@@ -74,19 +74,20 @@
 %\footnotemark
 %\footnotetext{Check This}
 
-As software projects grow in size and complexity, so do the teams of
-people that contribute to it.  As this happens, both
-the the effectiveness of the engineers and the quality of the software produced 
-become heavily dependent on the social and structural aspects of the development
-teams.  As Conway proposed in 1968, the organizational and
-structural characteristics of software engineering are intimately tied with the
-technical artifact itself.  My research interests lie largely in the
-relationship between characteristics of software (e.g.  architecture, language,
-process used, domain) and the coordination and communication in the teams that
-develop and maintain it.  \texttt{jim says: You need to do a better job of saying
-why this is important. What could we do that we can't do now?  What problems
-would your research solve?  Why will it lead to fundamental changes in how we
-develop software?}
+\texttt{Software quality is important.  Teams need to produce high quality
+software in a timely manner because so much money and other important stuff is
+depending on it} As software projects grow in size and complexity, so do the
+teams of people that contribute to it.  As this happens, team structure and
+process  become critical determinants of programmer productivity, as well as
+software quality.  Conway and others have argued that good design and
+modularization leads to more effective division of labour and knowledge in
+large, complex systems, and thus better quality and productivity outcomes.  My
+work has been among the earliest to empirically study the relationships between
+software characteristics, team dynamics, and software engineering outcomes in
+commercial and open-source software projects.  Long term, my research will
+provide empirically grounded  principles that govern the effective co-design of
+software and development teams. 
+
 
 In order to study software development, one needs access to project data such
 as communication, source code change activity, issue tracking information,
@@ -99,8 +100,8 @@ commercial counterparts.  These select few such as the Linux kernel, Apache,
 Postgres, Python, and Firefox, are worthy of study because they represent
 stable codebases developed by teams that deal with many of the same challenges
 faced by other large development teams.  As an increasingly prevalent
-development style, OSS is important to study in it's own rite, but we can also
-learn from comparing results of open source and commercial software.
+development style, OSS is important to study, not only in it's own right, but also
+in comparison with commercial software.
 Fortunately the data and meta-data associated with these projects is publicly
 available, providing an exciting opportunity.
 
@@ -109,76 +110,22 @@ questions about software engineering processes.  Over the last few years,
 researchers in our field have begun applying more advanced, modern methods
 developed in fields such as bio-informatics, econometrics, and organizational
 behavior, e.g., statistical network analysis, hazard rate models, and principal
-component regression.  These new trends are beginning to have impact as
-software companies are beginning to change their practices and perform
-self-analysis based on the results of such research.  My research is at the
-heart of this trend.
+component regression.  More notably, these research trends are beginning to
+influence the practice of software development in industry.  My research is at
+the heart of these trends.
 
 \Section{Background and Current Work}
 
-My past work has focused on how software developers work together and what factors influence their
-effectiveness and the quality of their software when working together in large teams.  As such
-I have examined the relationships between software engineers and the code that they develop, contribute, discuss,
-release, fix, and maintain, to ask and answer a number of questions:
-When do developers need to coordinate their changes?  What are the communication
-patterns of the most productive developers?  How does one become a ``core'' project developer?
-How do contribution patterns in large projects affect code quality? Is a team affected by
-geographic distribution? Does open source really work by having everyone working on 
-everything?  I have had success in studying large software projects in order to 
-answer these questions.
-
-We used social network analysis on mined mailing list data from a number of
-projects to quantify the behaviour and ``importance'' of OSS project members.
-One of the things that we found was a strong link between communication
-behavior and development activity for project developers, and that there is
-less of a relationship for project documenters, indicating that the need for
-communication and coordination in accomplishing tasks is strongly related to
-the role that a participant plays.
-
-I've also examined the organizational structure of developers within OSS
-projects by adapting clustering methods from the field of complex networks in
-physics to identify tight knit teams.  I found that structure is actually much
-more similar to commercial contexts than previously thought, with clear teams
-of closely collaborating people tackling cohesive tasks. However, we observed
-that team formation is more organic and the team makeup is more dynamic than in
-commercial settings.
-
-We used social network status and patch contribution and acceptance data to
-answer the question ``What does it take to become a core OSS project
-developer?'' We chose projects from diverse domains and governance styles, and
-the surprising answer for all of them was that the likelihood is not only
-dependent on social status and contributions made, but also has a curvilinear
-relationship with time that a participant has spent with the project.
-Specifically, members need project-specific expertise and community respect,
-both of which increase with time, in addition to commitment, which arguably
-wanes over time.  We observed ``peak'' time at which participants become
-project developers.  These findings from OSS have been corroborated by
-discussions with managers in commercial settings where similar phenomena were
-observed.  Due to the need to develop project-specific knowledge and contacts
-and also a tendency for an employee's focus and enthusiasm to wane, there is a
-peak period of productivity.
-
-Socio-technical relationships are also strongly related to software quality.  I
-built socio-technical networks, composed of developers and software components,
-and found that the topological properties of these networks could be used to
-predict failure-prone components with precision and recall levels around 90\%.
-My results were consistent across Windows Vista and 6 major releases of the
-Eclipse project, indicating a result that spans development styles.  In
-addition, I devised data transformations that would allow practictioners to use
-a model built on a prior release to predict fault-prone modules in unreleased
-software.
-
-A research strategy that combines qualitative and quantitative methods can be
-highly effective because each compensates for the weaknesses of the other.
-This is a common strategy in social science, usually called a ``multi-method''
-approach.  I used such an approach when studying an emerging trend in
-OSS development, distributed version control, and it's effect on coordination
-and process in projects.  As the main channel by which changes to software are
-stored and conveyed, the version control system constrains the process that a
-software team uses.  I began by interviewing lead developers from OSS projects
-that had switched to distributed SCMs in an effort to understand what benefits
-they hoped to gain and then performed a quantitive study assessing hypotheses
-regarding the effects on developer practices.
+How are large software teams oragnized? What factors of team organization
+influence productivity and quality?  I have examined the relationships between
+software engineers and the code that they develop, contribute, discuss,
+release, fix, and maintain, to ask and answer a number of questions: When do
+developers need to coordinate their changes?  What are the communication
+patterns of the most productive developers?  How does one become a ``core''
+project developer?  How do contribution patterns in large projects affect code
+quality? Is a team affected by geographic distribution? Does open source really
+work by having everyone working on everything?  I have had success in studying
+large software projects in order to answer these questions.
 
 While many have studied the globally distributed software development, I
 published the first results that examined the effect of distributed development
@@ -205,6 +152,66 @@ However, when only a few of pieces are distributed, they suffer from a software
 process which relies on collocation, leading to many more post release bugs.  A
 company cannot hope to successfully move from a collocated development style to
 distributed development without modifying processes accordingly.
+
+Socio-technical relationships are strongly related to software quality.  I
+built socio-technical networks, composed of developers and software components,
+and found that the topological properties of these networks could be used to
+predict failure-prone components with precision and recall levels around 90\%.
+My results were consistent across Windows Vista and 6 major releases of the
+Eclipse project, indicating a result that spans development styles.  In
+addition, I devised data transformations that would allow practictioners to use
+a model built on a prior release to predict fault-prone modules in unreleased
+software.
+
+I've also examined the organizational structure of developers within OSS
+projects by adapting clustering methods from the field of complex networks in
+physics to identify tight knit teams.  I found that structure is actually much
+more similar to commercial contexts than previously thought, with clear teams
+of closely collaborating people tackling cohesive tasks. However, we observed
+that team formation is more organic and the team makeup is more dynamic than in
+commercial settings.
+
+I have observed other key differences between commerical and OSS settings.  In
+a study of the effect of ownership on software quality, we found that low
+ownership levels of code entities lead to high pre and post-release failures in
+commercial-style development.  The effect is much less pronounced in more
+open-source style projects; We found that failures are related to team size
+much more than the level of ownership by members of teams.  
+
+We used social network status and patch contribution and acceptance data to
+answer the question ``What does it take to become a core OSS project
+developer?'' We chose projects from diverse domains and governance styles, and
+the surprising answer for all of them was that the likelihood is not only
+dependent on social status and contributions made, but also has a curvilinear
+relationship with time that a participant has spent with the project.
+Specifically, members need project-specific expertise and community respect,
+both of which increase with time, in addition to commitment, which arguably
+wanes over time.  We observed ``peak'' time at which participants become
+project developers.  These findings from OSS have been corroborated by
+discussions with managers in commercial settings where similar phenomena were
+observed.  Due to the need to develop project-specific knowledge and contacts
+and also a tendency for an employee's focus and enthusiasm to wane, there is a
+peak period of productivity.
+
+We used social network analysis on mined mailing list data from a number of
+projects to quantify the behaviour and ``importance'' of OSS project members.
+One of the things that we found was a strong link between communication
+behavior and development activity for project developers, and that there is
+less of a relationship for project documenters, indicating that the need for
+communication and coordination in accomplishing tasks is strongly related to
+the role that a participant plays.
+
+A research strategy that combines qualitative and quantitative methods can be
+highly effective because each compensates for the weaknesses of the other.
+This is a common strategy in social science, usually called a ``multi-method''
+approach.  I used such an approach when studying an emerging trend in
+OSS development, distributed version control, and it's effect on coordination
+and process in projects.  As the main channel by which changes to software are
+stored and conveyed, the version control system constrains the process that a
+software team uses.  I began by interviewing lead developers from OSS projects
+that had switched to distributed SCMs in an effort to understand what benefits
+they hoped to gain and then performed a quantitive study assessing hypotheses
+regarding the effects on developer practices.
 
 I have also explored collaboration in contexts other than software engineering
 in an effort to understand what principles are more general, and how these forms of
@@ -279,31 +286,33 @@ it's absence after the fact.
 
 \Section{Future Work}
 
-The answer to many software engineering questions is actually
-``It depends.'' There is no best software process or best programming
-language.  Agile and scrum work quite well for some projects, but won't work for all
-of them.  My research focuses on determining what the answers to questions
-actually depend on.  I have found, for instance, that when certain processes
-are used, software quality \textbf{does not} depend on geographic distribution.
-I \textbf{have} found that in both open source and industrial contexts,
-patterns of socio-technical relationships are indicative of failure prone
-software components.  I plan to investigate what attributes of software
-projects affect coordination needs and the relationship of social structure 
-with outcomes.
+The answer to many software engineering questions is actually ``It depends.''
+There is no best software process or best programming language.  Agile and
+scrum work quite well for some projects, but not for others.  My research
+focuses on the follow-up question, ``Yes, it depends, but on what?'' I have
+found, for instance, that when certain processes are used, software quality
+\textbf{does not} depend on geographic distribution.  I \textbf{have} found
+that in both open source and industrial contexts, patterns of socio-technical
+relationships are indicative of failure prone software components.  I plan to
+investigate what attributes of software projects affect coordination needs and
+the relationship of social structure with outcomes.
 
 \Subsection{Studying Diverse Domains}
 
-Game development and web applications present new challenges that we are not
-equipped as a field to deal with.  However, both areas are growing segments of
-the software industry in terms of money, talent, and market share.  As little
-research addresses these domains, stuf...  Studying these domains can lend an understanding
-of which software engineering principles are dependent on domain  (is it \textbf{ever}
-a good decision to add people to a late project?) and which are more broadly applicable.
-
+Games and web applications are growing in importance, and are attracting
+enormous investments in terms of time, money, and talent. However, there are
+still as yet very few studies of development projects in these areas. Are these
+domains like traditional software engineering? If not, how are they different?
+The answers to these questions help us determine what principles are more
+universal and which are specific to characteristics of software projects.  This
+can, in turn, aid plannng and governance of software projects by informing
+stakeholders of how decisions may affect productivity and quality, and ultimately
+timelines and cost.
 
 The video game industry represents \$10's of billions annually. However, game
 development differs from the development of typical products in some important
-ways.
+ways.  Are the principles of software engineering presented in prior research
+affected by these differences?
 
 \begin{enumerate}
 
@@ -368,6 +377,7 @@ applications has many differences from traditional development.
     are being affected and what the contextual differences between failures and non-failures are.
 
 \end{enumerate}
+
 
 \Subsection{Dealing with Data Quality Issues}
 
