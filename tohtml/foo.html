@@ -8,6 +8,14 @@
 
 <script>
     $(document).ready(function(){
+        $('#show_posnett2009dpm').click(function(){$('#hidden_posnett2009dpm').show('slow')});
+        $('#hide_posnett2009dpm').click(function(){$('#hidden_posnett2009dpm').hide('slow')});
+        $('#show_bird2009gdd').click(function(){$('#hidden_bird2009gdd').show('slow')});
+        $('#hide_bird2009gdd').click(function(){$('#hidden_bird2009gdd').hide('slow')});
+        $('#show_bird2009oev').click(function(){$('#hidden_bird2009oev').show('slow')});
+        $('#hide_bird2009oev').click(function(){$('#hidden_bird2009oev').hide('slow')});
+        $('#show_rigby2009cgd').click(function(){$('#hidden_rigby2009cgd').show('slow')});
+        $('#hide_rigby2009cgd').click(function(){$('#hidden_rigby2009cgd').hide('slow')});
         $('#show_bird2009pat').click(function(){$('#hidden_bird2009pat').show('slow')});
         $('#hide_bird2009pat').click(function(){$('#hidden_bird2009pat').hide('slow')});
         $('#show_bird2009pat_abstract').click(function(){$('#hidden_bird2009pat_abstract').show('slow')});
@@ -58,7 +66,6 @@
     }
 </script>
 <style>
-<<<<<<< HEAD:tohtml/foo.html
         div.initial_hidden { display:none;  
                margin:10px; width:600px;}
         pre.bibtex {overflow-x:scroll; background:#D0D0D0;}
@@ -83,14 +90,6 @@
 	.title {font-weight:bold;}
 	.venue {font-style:italic;}
 
-=======
-        div.initial_hidden { display:none; margin:10px; width:600px;}
-        pre.bibtex {overflow-x:scroll; background:#F0F0F0;}
-        p.abstract {background:#F0F0F0; width: 400px;}
-	body {text-align: center; background:#F0F0F0;}
-	#container {padding:20px; margin: 0 auto; width: 700px; text-align: left;
-		background:#FFFFFF;}
->>>>>>> 41f3a0d01a0bbd8eb8ac4998b900b2dc2992bf96:tohtml/foo.html
 </style>
     
 </head>
@@ -98,40 +97,67 @@
 <body>
 <div>
 	<div id="container">
-<<<<<<< HEAD:tohtml/foo.html
-=======
-
->>>>>>> 41f3a0d01a0bbd8eb8ac4998b900b2dc2992bf96:tohtml/foo.html
                 <div align="center"><h1>Christian Bird</h1></div>
 <div align="center"><br><img src="me.jpeg"><br>
 </div>
 <br>
 <strong>Background</strong>
-<p>I am currently a Computer Science Ph.D. student at the University Of California, Davis.  I got my bachelor's degree in CS from <a href="http://www.byu.edu">Brigham Young University</a> in 2003.  I've worked at Caldera, Lineo, Embedix, Motorola, and Freescale so I'm a bit of
-a Linux geek and an Open Source proponent.  I've also dabbled in the OSS world myself in the <a href="http://www.riverbankcomputing.co.uk/pyqt/">PyQt</a>, <a href="http://kate.kde.org/">Kate</a>, and <a href="http://moinmoin.wikiwikiweb.de/">MoinMoin</a> projects.</p>
+
+<p>I am currently a Computer Science Ph.D. student at the University Of
+California, Davis.  I received my bachelor's degree in CS from <a
+    href="http://www.byu.edu">Brigham Young University</a> in 2003.  I've
+worked at Caldera, Lineo, Embedix, Motorola, and Freescale.  I've also dabbled
+in the OSS world in the <a
+    href="http://www.riverbankcomputing.co.uk/pyqt/">PyQt</a>, <a
+    href="http://kate.kde.org/">Kate</a>, and <a
+    href="http://moinmoin.wikiwikiweb.de/">MoinMoin</a> projects.  Since Fall
+of 2004 I have been in Graduate School at UC Davis studying software
+engineering under Prem Devanbu.
+I received my Master's degree in 2008 and will complete my Ph.D. in Spring,
+2010.</p>
 
 <strong>Research</strong>
 <p>I'm interested in software engineering and programming languages.
 I'm lucky to be working with my (sometimes wacky, but always fun)
 advisor <a href="http://www.cs.ucdavis.edu/%7Edevanbu/">Prem Devanbu</a>,
 mining and analyzing bug data, mailing list archives, and source code
-repository history from OSS projects. We're hoping to use social
+repository history from both OSS and commercial projects. We've hoping to use social
 network analysis techniques to understand, among other things, how the
 social network structure of developers of a software project is related
-to the structure of the software itself (hoping to validate <a href="http://en.wikipedia.org/wiki/Conway%27s_Law">Conway's Law</a>).</p>
+to the quality and the structure of the software itself 
+(hoping to validate <a href="http://en.wikipedia.org/wiki/Conway%27s_Law">Conway's Law</a>).</p>
+
+<p> I've had the opportunity of working with many wonderful people and at some
+amazing places during the course of my research.  I owe a debt of gratitude to
+those who have taught me and allowed me to work with them. </p>
+<ul>
+    <li>Harald Gall, Abraham Bernstein, and Adrian Bachman at the University of Zurich</li>
+    <li>Nachiappan Nagappan, Brendan Murphy, Tom Zimmermann, and Andy Begel during two internships at Microsoft Research</li>
+    <li>Clay Williams, Patrick Wagstrom, Peri Tarr, and Tim Klinger during an internship at IBM Research</li>
+    <li>Peter Rigby and Daniel German at the University of Victoria</li>
+    <li>Prem Devanbu, Zhendong Su, Vladimir Filkov, Raissa D'Souza, Earl Barr, Daryl Posnett, Eirik Aune,
+    Patrick Duffy, Alex Gourley, Zach Saul, and David Pattison at the University of California, Davis</li>
+</ul>
 
 <a href="cv.pdf"><strong>Curriculum vitae</strong></a>
 <br>
 <br>
 
 <strong>Current Professional Activities</strong>
+<br>
+<br>
+I am currently on the program committees for
 <ul>
-
-<li> I am on the program committee for 
-<a href="http://msr.uwaterloo.ca/msr2010/index.html"> 
-7th Working Conference on Mining Software Repositories</a>. Please consider submitting!
+<li> <a href="http://msr.uwaterloo.ca/msr2010/index.html"> 
+    7th Working Conference on Mining Software Repositories</a>.</li>
+<li> <a href="http://sequoia.cs.byu.edu/?page=reser2010"> 
+    1st International Workshop on Replication in Empirical Software Engineering Research</a>.</li>
+<li> <a href="http://orac.ece.utexas.edu/pub/icse-floss/"> 
+3rd International Workshop on Emerging Trends in Free/Libre/Open Source Software Research and Development</a>.
 </ul>
-
+Please consider submitting!
+<br>
+<br>
 <strong>Publications</strong> 
 <br> 
 <p> Since I'm funded on a grant from the NSF, the
@@ -143,9 +169,87 @@ example).  I therefore list them below.
 </p>
 
         <div class="pub">
-	<p><span class='authors'>Christian Bird, Nachiappan Nagappan, Premkumar Devanbu, Harald Gall, Brendan Murphy</span>. <span class='title'>Putting it All Together: Using Socio-Technical Networks to Predict Failures</span>. In <span class='venue'>Proceedings of the 17th International Symposium on Software Reliability Engineering</span> <span class='abbrv'>(ISSRE 09)</span>, <span class='location'>Bengaluru-Mysuru, India</span>, <span class='data'>2009</span>.</p>
+	<p><span class='authors'>Daryl Posnett, Christian Bird, Premkumar Devanbu</span>. <span class='title'>Do Pattern (or Meta-pattern) Roles Influence Change-Proneness?</span>. , <span class='data'>2009</span>.</p>
 	<div>
 		
+		
+		<a id="show_posnett2009dpm" class="boxed_link" href="javascript:">BibTeX</a>
+	</div>
+	
+	<div id="hidden_posnett2009dpm" class="initial_hidden">
+		<pre class="bibtex">@article{posnett2009dpm,
+    Author = {Daryl Posnett and Christian Bird and Premkumar Devanbu},
+    Title = {{Do Pattern (or Meta-pattern) Roles Influence Change-Proneness?}},
+    Year = {2009},
+}
+</pre>
+		<div id="hide_posnett2009dpm"><a href="javascript:">Hide</a></div>
+	</div>
+</div>
+
+<div class="pub">
+	<p><span class='authors'>Christian Bird, Nachiappan Nagappan</span>. <span class='title'>Geographically Distributed Development and It's Effects in Open Source Software</span>. , <span class='data'>2009</span>.</p>
+	<div>
+		
+		
+		<a id="show_bird2009gdd" class="boxed_link" href="javascript:">BibTeX</a>
+	</div>
+	
+	<div id="hidden_bird2009gdd" class="initial_hidden">
+		<pre class="bibtex">@inproceedings{bird2009gdd,
+    Author = {Christian Bird and Nachiappan Nagappan},
+    Title = {{Geographically Distributed Development and It's Effects in Open Source Software}},
+    Year = {2009},
+}
+</pre>
+		<div id="hide_bird2009gdd"><a href="javascript:">Hide</a></div>
+	</div>
+</div>
+
+<div class="pub">
+	<p><span class='authors'>Christian Bird, Nachiappan Nagappan, Premkumar Devanbu, Harald Gall, Brendan Murphy</span>. <span class='title'>On the Effect of Ownership in Varying Software Processes</span>. , <span class='data'>2009</span>.</p>
+	<div>
+		
+		
+		<a id="show_bird2009oev" class="boxed_link" href="javascript:">BibTeX</a>
+	</div>
+	
+	<div id="hidden_bird2009oev" class="initial_hidden">
+		<pre class="bibtex">@inproceedings{bird2009oev,
+    Author = {Christian Bird and Nachiappan Nagappan and Premkumar Devanbu and Harald Gall and Brendan Murphy},
+    Title = {{On the Effect of Ownership in Varying Software Processes}},
+    Year = {2009},
+}
+</pre>
+		<div id="hide_bird2009oev"><a href="javascript:">Hide</a></div>
+	</div>
+</div>
+
+<div class="pub">
+	<p><span class='authors'>Peter C. Rigby, Earl T. Barr, Christian Bird, Daniel M. German
+		and Premkumar Devanbu</span>. <span class='title'>Collaboration and Governance with Disributed Version Control</span>. , <span class='data'>2009</span>.</p>
+	<div>
+		
+		
+		<a id="show_rigby2009cgd" class="boxed_link" href="javascript:">BibTeX</a>
+	</div>
+	
+	<div id="hidden_rigby2009cgd" class="initial_hidden">
+		<pre class="bibtex">@article{rigby2009cgd,
+    Author = {Peter C. Rigby and Earl T. Barr and Christian Bird and Daniel M. German
+		and Premkumar Devanbu},
+    Title = {{Collaboration and Governance with Disributed Version Control}},
+    Year = {2009},
+}
+</pre>
+		<div id="hide_rigby2009cgd"><a href="javascript:">Hide</a></div>
+	</div>
+</div>
+
+<div class="pub">
+	<p><span class='authors'>Christian Bird, Nachiappan Nagappan, Premkumar Devanbu, Harald Gall, Brendan Murphy</span>. <span class='title'>Putting it All Together: Using Socio-Technical Networks to Predict Failures</span>. In <span class='venue'>Proceedings of the 17th International Symposium on Software Reliability Engineering</span> <span class='abbrv'>(ISSRE 09)</span>, <span class='location'>Bengaluru-Mysuru, India</span>, <span class='data'>2009</span>.</p>
+	<div>
+		<a href='papers/bird2009pat.pdf' class='boxed_link'>PDF</a>
 		<a id='show_bird2009pat_abstract' class='boxed_link' href='javascript:'>Astract</a>
 		<a id="show_bird2009pat" class="boxed_link" href="javascript:">BibTeX</a>
 	</div>
@@ -191,7 +295,7 @@ rates as high as 85%.</p>
 	<p><span class='authors'>Christian Bird, Adrian Bachmann, Eirik Aune, John Duffy, Abraham Bernstein and
 	Vladimir Filkov, Premkumar Devanbu</span>. <span class='title'>Fair and Balanced? Bias in Bug-Fix Datasets</span>. In <span class='venue'>Proceedings of the the Seventh joint meeting of the European Software Engineering Conference and the ACM SIGSOFT Symposium on The Foundations of Software Engineering</span> <span class='abbrv'>(ESEC/FSE 09)</span>, <span class='location'>Amsterdam, Netherlands</span>, <span class='data'>2009</span>.</p>
 	<div>
-		<a href='papers/bird2009fbb' class='boxed_link'>PDF</a>
+		<a href='papers/bird2009fbb.pdf' class='boxed_link'>PDF</a>
 		<a id='show_bird2009fbb_abstract' class='boxed_link' href='javascript:'>Astract</a>
 		<a id="show_bird2009fbb" class="boxed_link" href="javascript:">BibTeX</a>
 	</div>
@@ -334,7 +438,7 @@ interconnected within itself.</p>
 <div class="pub">
 	<p><span class='authors'>Christian Bird, Nachiappan Nagappan, Premkumar Devanbu, Harald Gall, Brendan Murphy</span>. <span class='title'>Does Distributed Development Affect Software Quality? An Empirical   Case Study of Windows Vista</span>. In <span class='venue'>Communications of the ACM</span>, <span class='date'>August 2009</span>.</p>
 	<div>
-		
+		<a href='papers/http://portal.acm.org/citation.cfm?id=1536639' class='boxed_link'>PDF</a>
 		<a id='show_bird2009dddb_abstract' class='boxed_link' href='javascript:'>Astract</a>
 		<a id="show_bird2009dddb" class="boxed_link" href="javascript:">BibTeX</a>
 	</div>
@@ -366,6 +470,9 @@ prior work in this area.</p>
     Author = {Christian Bird and Nachiappan Nagappan and   Premkumar Devanbu and Harald Gall and Brendan Murphy},
     Title = {{Does Distributed Development Affect Software Quality? An Empirical   Case Study of Windows Vista} },
     Journal = {Communications of the ACM},
+    Volume = {52},
+    Number = {8},
+    Pages = {85--93},
     Publisher = {ACM},
     Month = {August},
     Year = {2009},
@@ -640,12 +747,9 @@ _uacct = "UA-3146004-1";
 urchinTracker();
 </script>
 </div>
-<<<<<<< HEAD:tohtml/foo.html
 
 <small><a href="http://colorschemedesigner.com/#08423aW--g0g0">Color Scheme</a>
 </small>
-=======
->>>>>>> 41f3a0d01a0bbd8eb8ac4998b900b2dc2992bf96:tohtml/foo.html
 </div>
 
 </body>

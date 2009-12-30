@@ -158,7 +158,7 @@ def parseField(text)
 	end
 end
 
-def makePage(bibFile, htmlFile)
+def makePage(bibFile)
 	keys, entries = parseFile bibFile
 	template = open("template.html").read()
 	clickFuncs = []
@@ -216,4 +216,4 @@ EOF
 
 end
 
-makePage(ARGV[0], ARGV[1])
+makePage(ARGV[0])
