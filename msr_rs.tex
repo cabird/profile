@@ -292,9 +292,9 @@ it's absence after the fact.
 The answer to many software engineering questions is actually ``It depends.''
 There is no best software process or best programming language.  Agile and
 scrum work quite well for some projects, but not for others.  My research
-focuses on the follow-up question, ``Yes, it depends, but on what?'' I've observed,
-for instance, that when certain processes are used, software quality
-\textbf{does not} depend on geographic distribution.  In contrast, I \textbf{have} found
+focuses on the follow-up question, ``Yes, it depends, but on what?'' I have
+found, for instance, that when certain processes are used, software quality
+\textbf{does not} depend on geographic distribution.  I \textbf{have} found
 that in both open source and industrial contexts, patterns of socio-technical
 relationships are indicative of failure prone software components.  I plan to
 investigate what attributes of software projects affect coordination needs and
@@ -311,39 +311,6 @@ universal and which are specific to characteristics of software projects.  This
 can, in turn, aid plannng and governance of software projects by informing
 stakeholders of how decisions may affect productivity and quality, and ultimately
 timelines and cost.
-
-Web applications are becoming more and more complex and prevalent.  The vast
-majority of everyday computing tasks can be accomplished via any notebook
-equipped with a web browser.  The architecture of these applications often spans a number of
-machines from the client to a web server to a backend data store.  Development of these
-applications has many differences from traditional development.
-
-\begin{enumerate}
-
-\item Live Hosting - 
-    In stark contrast to traditional development where a relatively static
-    product is downloaded and installed on a user's machine, web applications are repeatedly ``deployed''
-    whenever they are accessed by a browser.  Many web applications 
-    claim to update production code multiple times per week and 
-    test new features by observing the effects of enabling them for a subset of their users. 
-    This gives development teams greater flexibility in terms of timelines and release cycles, but
-    also creates great risk, as a bug on one server can (and has) make an application unusable
-    for the entire user-base.
-    I plan to investigate the opportunities and costs associated with this key difference.
-
-\item Monitoring - Since web applications are hosted on servers, usage of the software
-    can be monitored much more closely than traditional applications.  While companies have used limited
-    user studies, opt-in data gathering systems, and crash reporting applications, it is difficult
-    to determine how an application is being used ``in the field.'' For instance, crash reporting
-    can provide the context of a program failure, but gives no indication of what parts of an application
-    are used heavily and \textbf{not} failing, or even what proportion of users are experiencing problems.
-    The ability to see what parts of an application are being used most, where
-    performance degrades, and how features are misused has many benefits.  
-    This data can be used to direct resource allocation and for
-    feature planning.  It can also provide rich information about failures such as what proportion of users 
-    are being affected and what the contextual differences between failures and non-failures are.
-
-\end{enumerate}
 
 The video game industry represents \$10's of billions annually. However, game
 development differs from the development of typical products in some important
@@ -380,6 +347,40 @@ affected by these differences?
     how do these differences affect the testing needed to assure quality and stability?  
 
 \end{enumerate}
+
+Web applications are becoming more and more complex and prevalent.  The vast
+majority of everyday computing tasks can be accomplished via any notebook
+equipped with a web browser.  The architecture of these applications often spans a number of
+machines from the client to a web server to a backend data store.  Development of these
+applications has many differences from traditional development.
+
+\begin{enumerate}
+
+\item Live Hosting - 
+    In stark contrast to traditional development where a relatively static
+    product is downloaded and installed on a user's machine, web applications are repeatedly ``deployed''
+    whenever they are accessed by a browser.  Many web applications 
+    claim to update production code multiple times per week and 
+    test new features by observing the effects of enabling them for a subset of their users. 
+    This gives development teams greater flexibility in terms of timelines and release cycles, but
+    also creates great risk, as a bug on one server can (and has) make an application unusable
+    for the entire user-base.
+    I plan to investigate the opportunities and costs associated with this key difference.
+
+\item Monitoring - Since web applications are hosted on servers, usage of the software
+    can be monitored much more closely than traditional applications.  While companies have used limited
+    user studies, opt-in data gathering systems, and crash reporting applications, it is difficult
+    to determine how an application is being used ``in the field.'' For instance, crash reporting
+    can provide the context of a program failure, but gives no indication of what parts of an application
+    are used heavily and \textbf{not} failing, or even what proportion of users are experiencing problems.
+    The ability to see what parts of an application are being used most, where
+    performance degrades, and how features are misused has many benefits.  
+    This data can be used to direct resource allocation and for
+    feature planning.  It can also provide rich information about failures such as what proportion of users 
+    are being affected and what the contextual differences between failures and non-failures are.
+
+\end{enumerate}
+
 
 \Subsection{Dealing with Data Quality Issues}
 
