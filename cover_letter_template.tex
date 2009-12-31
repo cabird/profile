@@ -1,0 +1,70 @@
+\documentclass[12pt]{newlfm} 
+\usepackage{xspace}
+\usepackage{url}
+
+%\newcommand{\jobposition}{tenure track thing}
+%\newcommand{\joblocation}{university of oregon}
+
+\newlfmP{stdletter,orderfromdateto,addrfromemail,addrfromphone}
+
+\newsavebox{\ucdlogo} 
+\sbox{\ucdlogo}{\parbox[t]{2.0in}{\includegraphics[scale=.4,ext=.pdf]{uc_davis_logo}}}% 
+\Lheader{\usebox{\ucdlogo}}
+
+\emailfrom{cabird@ucdavis.edu}
+\phonefrom{(530) 220-0189}
+\namefrom{Christian Bird} 
+\addrfrom{
+Christian Bird \\
+635 S. Central Ave.\\
+Stockton, CA 95204\\
+}
+
+\unprtop{20pt}
+\topmarginskip{0pt}
+\addrfromskipbefore{0pt}
+\dateskipbefore{5pt}
+\dateskipafter{5pt}
+\sigskipbefore{20pt}
+\sigsize{1pt}
+
+
+\begin{document}
+\greetto{Dear Sir/Madam,} 
+\closeline{Sincerely yours,}
+
+\begin{newlfm} 
+
+
+Please find enclosed herewith my application for the the position of
+\jobposition \joblocation.
+
+I plan to receive my Ph.D. degree from the University of California, Davis in
+the Spring of 2010.  My advisor is Professor Premkumar Devanbu, and my area of
+interest is Software Engineering, more specifically in empirical studies of
+software teams and the relationships of processes with outcomes such as
+productivity and software quality.  I also have an emphasis in programming
+languages and theory.
+
+I am a citizen of the United States.
+
+I am including the following documents:
+
+\begin{enumerate}
+\item Curriculum Vitae, including a list of five references
+\item Statement of Research
+\item Statement of Teaching
+\end{enumerate}
+
+All of my publications are available at:
+
+{\small \url{http://wwwcsif.cs.ucdavis.edu/~bird}}
+
+Please feel free to contact me via telephone or email if any additional
+information is required, or to make arrangementss if an interview is desired.
+I appreciate your consideration of my application.  I look forward to hearing from
+you.
+
+\end{newlfm} 
+\end{document} 
+
