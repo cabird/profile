@@ -1,0 +1,178 @@
+\documentclass[9pt]{article}
+% Seems like it does not support 9pt and less. Anyways I should stick to 10pt.
+%\documentclass[a4paper, 9pt]{article}
+\topmargin-2.0cm
+
+\usepackage{fancyhdr}
+\usepackage{pagecounting}
+\usepackage[dvips]{color}
+\usepackage{microtype}
+
+\newenvironment{packed_enum}{%
+\vspace{-4pt}
+\begin{enumerate}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}{\end{enumerate}
+\vspace{-4pt}%
+}
+
+
+
+
+\advance\oddsidemargin-1in
+\textheight9.5in
+\textwidth6.5in
+\def\baselinestretch{1.0}
+%\pagestyle{empty}
+
+\newcommand{\hsp}{\hspace*{\parindent}}
+\definecolor{gray}{rgb}{0.4,0.4,0.4}
+%\definecolor{gray}{rgb}{1.0,1.0,1.0}
+
+\newcommand\Section[1]{\vspace{6pt}\noindent\textbf{#1}\vspace{4pt}}
+\newcommand\Subsection[1]{\subsubsection*{\small #1}}
+
+\begin{document}
+\thispagestyle{empty}
+%\pagenumbering{gobble}
+%\fancyhead[location]{text} 
+% Leave Left and Right Header empty.
+\lhead{}
+\rhead{}
+%\rhead{\thepage}
+\renewcommand{\headrulewidth}{0pt} 
+\renewcommand{\footrulewidth}{0pt} 
+
+\begin{small}
+
+%\vspace*{0.1cm}
+\begin{center}
+{\LARGE \bf Research Statement}\\
+\vspace*{0.2cm}
+{\large Christian Bird}\\
+\vspace*{0cm}
+\texttt{\normalsize cabird@ucdavis.edu}
+\end{center}
+
+As software
+projects grow in size and complexity, so do the development teams.  As this
+hateam structure and process  become critical determinants of programmer
+productivity, as well as software quality.  Conway and others have argued that
+good design and modularization leads to more effective division of labor and
+knowledge in large, complex systems, and thus better quality and productivity
+outcomes.  My work has been among the earliest to empirically study the
+relationships between software characteristics, team dynamics, and software
+engineering outcomes in commercial and open-source software projects.  
+
+How are large software teams organized? What factors of team organization
+influence productivity and quality?  I have examined the relationships between
+software engineers and the code that they develop, contribute, discuss,
+release, fix, and maintain, to ask and answer questions such as: When do
+developers need to coordinate their changes?  What are the communication
+patterns of the most productive developers?  How do contribution patterns in
+large projects affect code quality? Is a team affected by geographic
+distribution?  Long term, my research will provide empirically grounded
+principles that govern the effective co-design of software and development
+teams. 
+
+I am also interested in the use of rigorous empirical methods to evaluate
+questions about software engineering processes.  Over the last few years,
+researchers in our field have begun applying more advanced, modern methods
+developed in fields such as bio-informatics, econometrics, and organizational
+behavior, e.g., statistical network analysis, hazard rate models, and principal
+component regression.  More notably, these research trends are beginning to
+influence the practice of software development in industry.  My research is at
+the heart of these trends.
+
+
+\Section{Research Plan}
+
+Games and web applications are growing in importance, and are attracting
+enormous investments in terms of time, money, and talent. However, there are
+still as yet very few studies of development projects in these areas. Are these
+domains like traditional software engineering? If not, how are they different?
+The answers to these questions help us determine what principles are more
+universal and which are specific to characteristics of software projects.  This
+can, in turn, aid planning and governance of software projects by informing
+stakeholders of how decisions may affect productivity and quality, and ultimately
+time lines and cost.
+
+Web applications are becoming more and more complex and prevalent.  The
+architecture of these applications often spans a number of machines from the
+client to a web server to a back-end data store.  Development of these
+applications has many differences from traditional development.
+
+\begin{packed_enum}
+
+\item \emph{Live Hosting} - 
+%
+    In stark contrast to traditional development where a relatively static
+    product is downloaded and installed on a user's machine, web applications
+    are repeatedly ``deployed'' whenever they are accessed by a browser.  This
+    gives development teams greater flexibility in terms of release cycles, 
+    but also creates great risk, as a bug on one server can
+    (and has) make an application unusable for the entire user-base.  I plan to
+    investigate the opportunities and costs associated with this key
+    difference.
+
+\item \emph{Monitoring} - 
+%
+    Since web applications are hosted on servers, usage of the software can be
+    monitored much more closely than traditional applications.  Crash reporting
+    for desktop applications can provide the context of a program failure, but
+    gives no indication of what parts of an application are used heavily and
+    \textbf{not} failing, or even what proportion of users are experiencing
+    problems.  I plan to explore uses for this data, such as resource allocation,
+    feature planning.
+    
+\end{packed_enum}
+
+The video game industry represents \$10's of billions annually. However, game
+development differs from the development of typical products in some important
+ways.  Are the principles of software engineering presented in prior research
+affected by these differences?
+
+\begin{packed_enum}
+
+\item \emph{Content} - 
+%
+    Most games are split into an engine, which represents executable code, and
+    data content. Compared to other software domains, a disproportionately
+    large amount of money, time, talent, and space is devoted on content.
+    I plan to explore the relationship between content and code
+    relationships in an effort to devise new methods for bug prediction, team
+    member awareness, and recommendation systems, which traditionally are
+    dependent on source code attributes.
+
+\item \emph{Team Makeup} - 
+%
+    A sizeable proportion of team members are not software developers,
+    including artists, story line, and other content creators.  One might well
+    expect that the communication and coordination needs of members in content
+    creation and content testing roles differ from software developers.  I plan
+    to observe, record, and mine interactions, socio-technical relationships,
+    and information needs in order to characterize the differences in these
+    roles and correlate them with outcomes, leading to an increased
+    understanding of the team dynamics.
+
+\item \emph{Closed Systems} -
+%
+    In the past most gaming software has run in a relatively closed system.
+    Console games run on a very restricted set of hardware and the set of
+    ``installed'' software is constrained.  However, this is changing as games
+    are moving online, must support downloadable content, and are supporting
+    more complex and varied input mechanisms.  Do these differences affect the
+    testing needed to assure quality and stability?  
+
+\end{packed_enum}
+
+My research will include devising methods of gathering data
+and applying both quantitative and qualitative empirical techniques 
+to these domains.
+
+\end{small}
+
+\end{document}
+
