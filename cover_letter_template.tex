@@ -34,11 +34,12 @@ Davis, CA 95616
 \sigskipafter{0pt}
 \sigsize{0pt}
 
-\PhrRe{foobar}
+
+
 
 \begin{document}
 \greetto{%
-\hspace{20pt}\textbf{Re:} Application for the position of \jobposition\\
+\hspace{20pt}\textbf{Re:} Application for the position of \@jobposition \\
 \vspace{15pt}
 Dear Sir/Madam,} 
 \closeline{Sincerely yours,}
@@ -46,7 +47,8 @@ Dear Sir/Madam,}
 \begin{newlfm} 
 
 Please find enclosed herewith my application for the the position of
-\jobposition \joblocation.
+\@jobposition 
+\@joblocation.
 
 I plan to receive my Ph.D. degree from the University of California, Davis in
 the Spring of 2010.  My advisor is Professor Premkumar Devanbu, and my area of
@@ -56,13 +58,7 @@ programming languages and theory.
 
 I am a citizen of the United States.
 
-I am including the following documents:
-
-\begin{enumerate}
-\item Curriculum Vitae, including a list of five references
-\item Statement of Research
-\item Statement of Teaching
-\end{enumerate}
+\@enclosedtext
 
 All of my publications are available at:
 

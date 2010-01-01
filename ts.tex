@@ -3,9 +3,9 @@
 %\documentclass[a4paper, 9pt]{article}
 \topmargin-2.0cm
 
-\usepackage{fancyhdr}
-\usepackage{pagecounting}
-\usepackage[dvips]{color}
+%\usepackage{fancyhdr}
+%\usepackage{pagecounting}
+%\usepackage[dvips]{color}
 
 % Color Information from - http://www-h.eng.cam.ac.uk/help/tpl/textprocessing/latex_advanced/node13.html
 
@@ -21,38 +21,15 @@
 \textwidth6.5in
 %\def\baselinestretch{0.99}
 %  \pagestyle{empty}
-\setlength{\parskip}{5pt plus 1pt minus 1pt} 
+\setlength{\parskip}{5pt} 
 
-\newcommand{\hsp}{\hspace*{\parindent}}
-\definecolor{gray}{rgb}{0.4,0.4,0.4}
+%\newcommand{\hsp}{\hspace*{\parindent}}
+%\definecolor{gray}{rgb}{0.4,0.4,0.4}
 %\definecolor{gray}{rgb}{1.0,1.0,1.0}
 
 \begin{document}
-%\thispagestyle{fancy}
-%\pagenumbering{gobble}
-%\fancyhead[location]{text} 
-% Leave Left and Right Header empty.
-\lhead{}
-\rhead{}
-%\rhead{\thepage}
-\renewcommand{\headrulewidth}{0pt} 
-\renewcommand{\footrulewidth}{0pt} 
-%\fancyfoot[C]{\footnotesize \textcolor{gray}{http://wwwcsif.ucdavis.edu/$\sim$bird/index.html}}
 
-%\pagestyle{myheadings}
-%\markboth{Sundar Iyer}{Sundar Iyer}
-
-%\pagestyle{fancy}
-%\lhead{\textcolor{gray}{\it Christian Bird, Research Statement}}
-%\rhead{\textcolor{gray}{\thepage/\totalpages{}}}
-%\rhead{\thepage}
-%\renewcommand{\headrulewidth}{0pt} 
-%\renewcommand{\footrulewidth}{0pt} 
-%\fancyfoot[C]{\footnotesize http://www.stanford.edu/$\sim$sundaes/application} 
-%\ref{TotPages}
-
-% This kind of makes 10pt to 9 pt.
-%\begin{small}
+\pagestyle{empty}
 
 %\vspace*{0.1cm}
 \begin{center}
@@ -72,13 +49,19 @@
 %\footnotemark
 %\footnotetext{Check This}
 
-While I originally entered computer science because I found it interesting and
-rewarding in its own right, I have had many opportunities for teaching along
-the way and have found that I genuinely enjoy teaching things that I am
-passionate about.  After having taken classes from many instructors, and
-observing others, as well as attending talks, invited lectures, and keynotes, I
-have learned that an audience is engaged and retains the most when the
-person presenting material is enthusiastic and passionate about the subject.
+
+Although I originally entered computer science because of my own interests,
+I have had many opportunities to
+teach others along the way.  As an undergraduate, I was a teaching assistant in
+algorithms and data structures and in graduate school I taught the discussion
+sections and held regular office hours for the undergraduate programming
+languages course.  I have also given guest lectures for a number of graduate
+courses.  Through these experiences, I've discovered that I genuinely enjoy teaching
+things that I am passionate about.  After having taken classes from many
+instructors, and observing others, as well as attending talks, invited
+lectures, and keynotes, I have learned that an audience is engaged and retains
+the most when the person presenting material is enthusiastic and passionate
+about the subject.
 
 My wife received an undergraduate degree in education and has been a teacher
 for 6 years.  During my teaching responsibilities, I have had the benefit of
@@ -96,59 +79,53 @@ of fundamentals aids students because it helps them see how they are used in
 practice and most people learn better by doing than only reading or listening.
 I have experienced this in my own career.  I found DFAs and NFAs confusing when
 encountering them in my freshman year of college.  However, after studying
-their uses in regular languages and writing a program to convert an NFA to a DFA and execute it on
-an input string, I understood \emph{how} they worked, \emph{when} they could
-and should be used, and \emph{why} one would want to convert an NFA to a DFA.
-While students learn in different ways and I hope to accomodate all, I plan to
-begin by teaching fundamentals and following up with practical exercises and
-discussion of current practice.
+their uses in regular languages and writing a program to convert an NFA to a
+DFA and execute it on an input string, I understood \emph{how} they worked,
+\emph{when} they could and should be used, and \emph{why} one would want to
+convert an NFA to a DFA.  While students learn in different ways and I plan to
+accomodate all, I plan to begin by teaching fundamentals and following up with
+practical exercises and discussion of current practice.
 
-My research discipline is software engineering and I hope to teach in this
+My research discipline is software engineering and I plan to teach in this
 area.  As results from software engineering research transfer to practice in
-industry, the set of skills that a software engineer needs is changing. Fresh
-graduates entering the profession should be familiar not only with programming
-and software development processes, but also empirical methods that can help
-improve productivity and software quality.  Many recent developments are simple
-to implement and can help in a software production environment, such as:
-identifying the most failure prone modules prior to deployment, determining
-what communication channels should exist based team and software structure, and
-identifying cross-cutting concerns early in the software development
-life-cycle.  The Capability Maturity Model (CMM), a metric by which
-software development organizations are measured, requires that processes and
-outcomes be measured and analyzed.  These are skills that I acquired after
-entering the workforce and beginning graduate school, but which \emph{should}
-be taught at the undergraduate level.  Teaching these skills will help new
-graduates differentiate themselves from other job candidates and will raise
-the quality of software engineering in general.
+industry, software engineers are need new skills. Fresh graduates entering the
+profession should be familiar not only with programming and software
+development processes, but also empirical methods that can help improve
+productivity and software quality.  Many recent research developments can
+benefit software production environment, including: identifying the most
+failure prone modules prior to deployment, determining what communication
+channels should exist based team and software structure, and identifying
+cross-cutting concerns early in the life-cycle.  The Capability Maturity Model,
+a metric by which software development organizations are measured, requires
+that processes and outcomes be measured and analyzed.  These are skills that I
+acquired after entering the workforce and beginning graduate school, but which
+\emph{should} be taught at the undergraduate level.  These skills will help
+differentiate new graduates and will raise the quality of software engineering
+in general.
 
 While I look forward to teaching classes on software engineering at the
 graduate and undergraduate level, my interests and knowledge in computer
-science is more broad.  My minor area in graduate school is in theory, and I
+science is more broad.  My minor emphasis in graduate school is in theory, and I
 would enjoy and feel comfortable teaching classes on programming languages,
-algorithms and data structures, and theory of computation as well as
+compilers, algorithms and data structures, and theory of computation as well as
 introductory computer science courses.
 
 I have been fortunate to work with an advisor who is not only a bright
 researcher, but also a gifted mentor.  Prem has seen it as his responsibility
-to help me become an independent and critical thinker.  While an advisor should
-never need to micro-manage graduate students, the backgrounds of different
-students is diverse and some will need more guidance up front than others.
-Often, my advisor has acted as a wonderful motivator.  On multiple occasions
-early in my career, I would arriave at a weekly meeting disappointed with
-recent results of experiments or the feeling that we had been ``scooped''.  In
-every case, I came away re-energized, seeing the situation in a new light, and
-with new ideas to move forward with.  I now have a peer relationship with my
-advisor and often debate the merits of different ideas, results, and approaches
-as we discuss papers we have read or research plans for the future.  I plan to
-use a similar approach as I advise graduate students.  Beyond assisting in
-teaching university courses, I have had the opportunity to work with and mentor
-both undergraduates and fellow graduate students who have worked with me on
-research projects.  This process has been rewarding as I have been able to help
-students as they tackle real world problems, face unforeseen challenges, and
-finally write up their results for publication.  I hope to continue to guide
-students in their own endeavors, whether they be careers in research or
-practice.
-
+to help me become an independent and critical thinker.  My advisor has also
+acted as a wonderful motivator.  On multiple occasions early in my career, I
+would arrive at a weekly meeting disappointed with recent results.  In every case, I came
+away re-energized, seeing the situation in a new light, and with new ideas to
+move forward with.  I now have a peer relationship with my advisor and often
+debate the merits of different ideas, results, and approaches as we discuss
+papers we have read or research plans for the future.  I will use a similar
+approach as I advise graduate students. Beyond assisting in teaching university
+courses, I have had the opportunity to work with and mentor both undergraduates
+and graduate students.  This process has been rewarding as I have been
+able to help students as they tackle real world problems, face unforeseen
+challenges, and finally write up their results for publication.  I will
+continue to guide students in their own endeavors, whether they be careers in
+research or practice.
 
 \end{document}
 

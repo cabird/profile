@@ -14,7 +14,7 @@ rs.pdf: rs.tex
 ts.pdf: ts.tex
 	pdflatex ts
 
-%-cl.pdf: %-cl.tex cover_letter_template.tex
+%-cl.pdf: %-cl.tex cover_letter_template.tex cover_letter_defs.tex
 	pdflatex $<
 
 push: bird_cv.pdf
