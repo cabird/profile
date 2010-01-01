@@ -1,6 +1,9 @@
 COVER_LETTERS=$(subst tex,pdf,$(wildcard *-cl.tex))
 
-all: bird_cv.pdf rs.pdf ts.pdf cover_letter.pdf $(COVER_LETTERS) references.pdf pub_list.pdf
+all: bird_cv.pdf rs.pdf ts.pdf $(COVER_LETTERS) references.pdf pub_list.pdf
+
+clean:
+	rm -f *-cl.pdf *aux *blg *bbl *log *dvi bird_cv.pdf pub_list.pdf references.pdf rs.pdf ts.pdf all_cites.pdf
 
 all_cites.bbl: all_cites.tex all_cites.tex bird.bib
 	pdflatex all_cites
