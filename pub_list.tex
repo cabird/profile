@@ -1,0 +1,76 @@
+\documentclass[margin,line,article]{res}
+%\usepackage{sectsty}
+%\allsectionsfont{\sffamily}
+\usepackage{bibentry}
+\usepackage{url}
+\usepackage{verbatim}
+
+
+\oddsidemargin -.5in
+\evensidemargin -.5in
+\textwidth=6.0in
+\itemsep=0in
+\parsep=0in
+
+\newenvironment{noindentlist}{
+  \begin{list}{}{%
+      \setlength{\itemsep}{0in}
+      \setlength{\parsep}{0in} \setlength{\parskip}{0in}
+      \setlength{\topsep}{0in} \setlength{\partopsep}{0in} 
+      \setlength{\leftmargin}{0in}}}{\end{list}}
+
+\newenvironment{list1}{
+  \begin{list}{}{%
+      \setlength{\itemsep}{0in}
+      \setlength{\parsep}{0in} \setlength{\parskip}{0in}
+      \setlength{\topsep}{0in} \setlength{\partopsep}{0in} 
+      \setlength{\leftmargin}{0.17in}}}{\end{list}}
+
+\newenvironment{list2}{
+  \begin{list}{$\bullet$}{%
+      \setlength{\itemsep}{0in}
+      \setlength{\parsep}{0in} \setlength{\parskip}{0in}
+      \setlength{\topsep}{0in} \setlength{\partopsep}{0in} 
+      \setlength{\leftmargin}{0.2in}}}{\end{list}}
+
+
+\begin{document}
+\bibliographystyle{myacm}
+\nobibliography{bird}
+
+\name{Christian Bird\vspace*{.1in}}
+
+\begin{resume}
+
+\section{Publications}
+
+\bibentry{bird2009pat}
+
+\bibentry{bird2009fbb}
+
+\bibentry{bird2009dddb}
+
+\bibentry{bird2009ddd}
+
+\bibentry{bird2009ppm}
+
+\bibentry{bird2009sdr}
+
+\bibentry{bird2008lss}
+
+\bibentry{pattison2008twp}
+
+\bibentry{saul2007rrw}
+
+\bibentry{bird2007dps}
+
+\bibentry{bird2007obi}
+
+\bibentry{ogawa2007vsi}
+
+\bibentry{bird2006mes}
+
+\bibentry{bird2006mesp}
+
+\end{resume}
+\end{document}

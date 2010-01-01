@@ -5,6 +5,8 @@
 *.todo
 *.pdfsync
 paper.pdf
+/*.pdf
+!uc_davis_logo.pdf
 *~
 *.sw?
 /.gvim-init.vim
