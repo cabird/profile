@@ -1,7 +1,7 @@
 COVER_LETTERS=$(subst tex,pdf,$(wildcard *-cl.tex))
 BUNDLES=$(subst tex,pdf,$(wildcard *-bundle.tex))
 
-all: $(COVER_LETTERS) $(BUNDLES) bird_cv.pdf rs.pdf ts.pdf references.pdf pub_list.pdf rs-short.pdf 
+all: $(COVER_LETTERS) $(BUNDLES) bird_cv.pdf rs.pdf ts.pdf references.pdf pub_list.pdf rs-short.pdf rsts.pdf
 
 clean:
 	rm -f $(COVER_LETTERS) $(BUNDLES) *aux *blg *bbl *log *dvi \
@@ -35,6 +35,9 @@ rs-short.pdf: rs-short.tex
 
 ts.pdf: ts.tex
 	pdflatex ts
+
+rsts.pdf: rs.pdf ts.pdf
+	gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=rsts.pdf rs.pdf ts.pdf
 
 %-cl.pdf: %-cl.tex cover_letter_template.tex cover_letter_defs.tex
 	pdflatex $<
