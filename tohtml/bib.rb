@@ -52,7 +52,8 @@ class Entry
 
 	def toHTML
 		cfields = {}
-		@fields.each { |k, v| cfields[k] = v.gsub(/[\}\{]/, "").strip }
+		@fields.each { |k, v| cfields[k] = v.gsub(/[\}\{]/, "").strip.gsub(/\\\%/, "%") }
+		cfields.each { |k, v| cfields[$1] = v if k =~ /html_(.*)/ }
 		s = "<span class='authors'>" + cfields["author"].split(" and ").map{|x| x.strip}.join(", ") + "</span>. "
 		s += "<span class='title'>" + cfields["title"] + "</span>. "
 		s += "In <span class='venue'>#{cfields['booktitle']}</span>" if cfields.key? "booktitle"
@@ -165,6 +166,7 @@ def makePage(bibFile)
 	bibLines = []
 	keys.each_with_index do |key, index|
 		entry = entries[key]
+		next if entry.fields.key? "skip"
 		clickFuncs << "$('#show_#{key}').click(function(){$('#hidden_#{key}').show('slow')});"
 		clickFuncs << "$('#hide_#{key}').click(function(){$('#hidden_#{key}').hide('slow')});"
 
@@ -179,12 +181,13 @@ def makePage(bibFile)
 		absCode = ""
 		absLink = ""
 
-		if entry.fields.key? "abstract"
+		if entry.fields.key?("abstract") || entry.fields.key?("html_abstract")
 			clickFuncs << "$('#show_#{key}_abstract').click(function(){$('#hidden_#{key}_abstract').show('slow')});"
 			clickFuncs << "$('#hide_#{key}_abstract').click(function(){$('#hidden_#{key}_abstract').hide('slow')});"
-			absText = entry.fields["abstract"].gsub(/[\{\}]/, "").strip 
-			absText.gsub!(/\n\n/, "<br><br>")	
-			absLink = "<a id='show_#{key}_abstract' class='boxed_link' href='javascript:'>Astract</a>"
+
+			absText = entry.fields["abstract"]	
+			absText = absText.gsub(/[\{\}]/, "").strip.gsub!(/\n\n/, "<br><br>")	
+			absLink = "<a id='show_#{key}_abstract' class='boxed_link' href='javascript:'>Abstract</a>"
 			absCode = <<EOF
 <div id="hidden_#{key}_abstract" class="initial_hidden">
 	<p class="abstract">#{absText}</p>

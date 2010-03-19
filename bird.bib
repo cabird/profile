@@ -10,44 +10,132 @@
 @inproceedings{posnett2010tmm,
     Author = {Daryl Posnett and Christian Bird and Premkumar Devanbu},
     Title = {{Thex: Mining Metapatterns in Java}},
-    Year = {2010}
+	Booktitle = {Proceedings of the Seventh Working Conference on Mining Software Repositories},
+	publisher = {IEEE Computer Society},
+	location = {Cape Town, South Africa},
+	acceptance = {31\%},
+    Year = {2010},
+    abstract = {
+
+        Design patterns are codified solutions to common object-oriented design
+            (OOD) problems in software development.  One of the proclaimed
+            benefits of the use of design patterns is that they decouple
+            functionality and enable different parts of a system to change
+            frequently without undue disruption throughout the system.  These
+            OOD  patterns have received a wealth of attention in the research
+            community since their introduction; however, identifying them in
+            source code is a difficult problem.  In contrast, metapatterns have
+            similar effects on software design, by enabling portions of the
+            system to be extended or modified easily, but are purely structural
+            in nature, and thus easier to detect.  Our long-term goal is to
+            evaluate the effects of  different OOD patterns on coordination in
+            software teams as well as outcomes such as developer productivity
+            and software quality.  In this paper we present Thex, a metapattern
+            detector which scales to large codebases and works on any Java
+            bytecode.  We evaluate Thex by examining its performance on
+            codebases with known design patterns (and therefore metapatterns)
+            and find that it performs quite well, with recall of over 90\%.
+
+    }
+
+        
 }
 
 @inproceedings{rahman2010cws,
     Author = {Foyzur Rahman and Christian Bird and Premkumar Devanbu},
     Title = {{Clones: What \emph{is} that Smell?}},
-    Year = {2010}
+    html_title = {{Clones: What <em>is</em> that Smell?}},
+	Booktitle = {Proceedings of the Seventh Working Conference on Mining Software Repositories},
+	publisher = {IEEE Computer Society},
+	location = {Cape Town, South Africa},
+	acceptance = {31\%},
+    Year = {2010},
+    abstract = {},
+    html_abstract = {
+
+        Clones are generally considered bad programming practice in software
+        engineering folklore. They are identified as a bad smell and a
+        major contributor to project maintenance difficulties. Clones
+        inherently cause code bloat, thus increasing project size and
+        maintenance costs. In this work, we try to validate the
+        conventional wisdom empirically to see whether cloning makes code
+        more defect prone.
+
+        This paper analyses relationship between cloning and defect proneness.
+        We find that, first,  the great majority of bugs are not significantly
+        associated with clones. Second, we find that clones may be less defect
+        prone than non-cloned code.  Finally,  we find little evidence that
+        clones with more copies are actually more error prone.  Our findings
+        don't support the claim that clones are really a "bad smell".  Perhaps
+        we can clone, <em>and</em> breathe easy, at the same time.  
+    }
 }
 
 @inproceedings{nia2010vna,
     Author = {Roozbeh Nia and Christian Bird and Premkumar Devanbu and Vladimir Filkov},
     title = {Validity of Network Analyses in Open Source Projects},
-    year={2010}
+	Booktitle = {Proceedings of the Seventh Working Conference on Mining Software Repositories},
+	publisher = {IEEE Computer Society},
+	acceptance = {31\%},
+	location = {Cape Town, South Africa},
+    year={2010},
+    abstract = {
+
+    Social  network  methods are frequently used to analyze networks derived
+        from Open Source Project communication and collaboration data. Such
+        studies typically discover patterns in the information flow between
+        contributors or contributions in these projects. Social network metrics
+        have also been used to predict defect occurrence.  However, such
+        studies often ignore or side-step the issue of whether (and in what
+        way) the metrics and networks of study are influenced by
+        inadequate or missing data.
+
+    In previous studies email archives of OSS projects have provided a useful
+    trace of the communication and co-ordination activities of the
+    participants.  These traces have been used to construct social networks
+    that are then subject to various types of analysis.  However, during the
+    construction of these networks, some assumptions are made, that may not
+    always hold; this leads to incomplete, and sometimes incorrect networks.
+    THe question then becomes, do these errors affect the validity of the
+    ensuing analysis?  In this paper we specifically examine the stability of
+    network metrics in the presence of inadequate and missing data. The issues
+    that we study are: 1) the effect of paths with broken information flow
+    (i.e. consecutive edges which are out of temporal order) on measures of
+    centrality of nodes in the network, and 2) the effect of missing links on
+    such measures. We demonstrate on three different OSS projects that while
+    these issues do change network topology, the metrics used in the analysis
+    are stable with respect to such changes. 
+
+    }
 }
 
 @article{posnett2010dpm,
     Author = {Daryl Posnett and Christian Bird and Premkumar Devanbu},
     Title = {{Do Pattern (or Meta-pattern) Roles Influence Change-Proneness?}},
-    Year = {2009}
+    Year = {2010},
+    skip = {yes}
 }
 
 @inproceedings{bird2010gdd,
 	Author = {Christian Bird and Nachiappan Nagappan},
-	Title = {{Geographically Distributed Development and It's Effects in Open Source Software}},
-	Year = {2010}
+	Title = {{Geographically Distributed Development and Its Effects in Open Source Software}},
+	Year = {2010},
+    skip = {yes}
 }
 
 @inproceedings{bird2010oev,
 	Author = {Christian Bird and Nachiappan Nagappan and Premkumar Devanbu and Harald Gall and Brendan Murphy},
 	Title = {{On the Effect of Ownership in Varying Software Processes}},
-	Year = {2010}
+	Year = {2010},
+    skip = {yes}
 }
 
 @article{rigby2010cgd,
 	Author = {Peter C. Rigby and Earl T. Barr and Christian Bird and Daniel M. German
 		and Premkumar Devanbu},
 	Title = {{Collaboration and Governance with Disributed Version Control}},
-	Year = {2010}
+	Year = {2010},
+    skip = {yes}
 }
 
 @inproceedings{bird2009pat,
@@ -204,7 +292,7 @@ interconnected within itself.}
 	pages = {85--93},
 	pdf = {http://portal.acm.org/citation.cfm?id=1536639},
 	Year = {2009},
-	acceptance = {Revised addition of ICSE paper invited to Research Highlights in CACM},
+	acceptance = {Revised edition of ICSE paper invited to Research Highlights in CACM},
 	abstract = {Existing literature on distributed 
 development in software engineering, and other fields discuss various challenges, 
 including cultural barriers, expertise transfer difficulties, and communication 
