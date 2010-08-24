@@ -7,6 +7,103 @@
 
 %s% Saved with string encoding Unicode (UTF-8) 
 
+@inproceedings{barr2010sg,
+    Author = {Earl Barr and Christian Bird and Eric Hyatt and Tim Menzies and Gregorio Robles},
+    Title = {{On the Shoulders of Giants}},
+    Booktitle = {{FSE/SDP Workshop on the Future of Software Engineering Research}},
+    Year = {2010},
+    acceptance = {65\%},
+    pdf = {barr2010sg.pdf},
+    Abstract = {
+
+    Science rests on peer review and the wide-spread dissemination of
+        knowledge.  Software engineering research will advance further and
+        faster if the sharing of data and tools were easier and more
+        wide-spread.  Pragmatic concerns hinder the realization of this ideal:
+        the time and effort required and the risk of being scooped.  We examine
+        the costs and benefits of facilitating sharing in our field in an
+        effort to help the community understand what problems exist and find a
+        solution.  We examine how other fields, such as medicine and physics,
+    handle sharing, describe the value of sharing for replication and
+        innovation, and address practical concerns such as standards and
+        warehousing.  To launch what we hope will become an ongoing discussion
+        of solutions in our community, we present some ways forward that
+        mitigate the risk of sharing --- partial sharing, registry, escrow, and
+        market.
+    }
+}
+
+@inproceedings{bird2010lee,
+    Author = {Christian Bird},
+    Title = {{Linkster: Enabling Efficient Manual Mining}},
+    Booktitle = {Demonstration Track, Proceedings of the 17th SIGSOFT Symposium on Foundations of Software Engineering},
+	Publisher = {ACM},
+	Year = {2010},
+	acceptance = {accepted for formal demonstration, 21\%},
+	abbrv = {FSE 10},
+    pdf = {bird2010lee.pdf},
+    Abstract = {
+
+    While many uses of mined software engineering data are automatic in nature,
+    some techniques and studies either require, or can be improved, by manual
+    methods.  Unfortunately, manually inspecting, analyzing, and annotating
+    mined data can be difficult and tedious, especially when information
+    from multiple sources must be integrated.  Oddly, while there are
+    numerous tools and frameworks for automatically mining and analyzing
+    data, there is a dearth of tools which facilitate manual methods.  To
+    fill this void, we have developed Linkster, a tool which integrates
+    data from bug databases, source code repositories, and mailing list
+    archives to allow manual inspection and annotation.  Linkster has
+    already been used successfully by an OSS project lead to obtain data
+    for one empirical study.
+
+    }
+}
+
+@incollection{bird2010cc,
+    Author = {Christian Bird},
+    Editor = {Andy Oram and Greg Wilson},
+    bookTitle = {{Making Software}},
+    Publisher = {O'Reilly},
+    title = {{Conway's Corollary}},
+    Year = {2010 (to appear)},
+}
+
+@inproceedings{bachmann2010mlb,
+    Author = {Adrian Bachmann and Christian Bird and Foyzur Rahman and 
+        Premkumar Devanbu and Abraham Bernstein},
+    Title = {{The Missing Links: Bugs and Bug-fix Commits}},
+	Booktitle = {SIGSOFT '10/FSE-18: Proceedings of the 16th ACM SIGSOFT Symposium  on Foundations of Software Engineering},
+	Publisher = {ACM},
+	Year = {2010},
+	acceptance = {20\%},
+	abbrv = {FSE 10},
+	pdf = {bachman2010mlb.pdf},
+    Abstract = {
+    Empirical studies of software defects rely on links between bug databases and
+    program code repositories.  This linkage is typically based on bug-fixes
+    identified in manually-entered commit logs.  Unfortunately, developers do not
+    always report which commits perform bug-fixes.  Prior work suggests that such
+    links can be a biased sample of the entire population of fixed bugs.  The
+    validity of statistical hypotheses-testing  based on linked data could well be
+    affected by bias.  Given the  wide use of  linked defect data, it is vital to
+    gauge the nature and extent of the bias, and try to develop testable theories
+    and models of the bias.  To do this, we must establish ground truth:
+    manually analyze a complete version history corpus, and nail down those commits
+    that fix defects, and those that are not.  This is a difficult task, requiring
+    an expert to compare versions, analyze changes,  find related bugs in the bug
+    database, reverse-engineer missing links, and finally record their work for use
+    later. This  effort must be repeated for hundreds of commits to obtain a useful
+    sample of reported and unreported bug-fix commits.  We make several
+    contributions.  First, we present Linkageur, a tool to facilitate link
+    reverse-engineering.  Second, we evaluate this tool, engaging a core developer
+    of the Apache Webserver project to exhaustively annotate over all five hundred
+    commits that occurred during a six week period.  Finally, we analyze this
+    comprehensive data set, showing that there are serious and consequential
+    problems in the data. 
+    }
+}
+
 @inproceedings{posnett2010tmm,
     Author = {Daryl Posnett and Christian Bird and Premkumar Devanbu},
     Title = {{Thex: Mining Metapatterns in Java}},
@@ -15,6 +112,7 @@
 	location = {Cape Town, South Africa},
 	acceptance = {31\%},
     Year = {2010},
+	pdf = {posnett2010tmm.pdf},
     abstract = {
 
         Design patterns are codified solutions to common object-oriented design
@@ -41,6 +139,37 @@
         
 }
 
+@inproceedings{rahman2010cws-esem,
+    Author = {Foyzur Rahman and Christian Bird and Premkumar Devanbu},
+    Title = {{Clones: What \emph{is} that Smell?}},
+    html_title = {{Clones: What <em>is</em> that Smell?}},
+	Booktitle = {Proceedings of the fourth International Symposium on Empirical Software Engineering and Measurement},
+	publisher = {IEEE Computer Society},
+	location = {Bolzano, Italy},
+	acceptance = {invited paper},
+    Year = {2010},
+	pdf = {rahman2010cws.pdf},
+    html_abstract = {
+
+        Clones are generally considered bad programming practice in software
+        engineering folklore. They are identified as a bad smell and a
+        major contributor to project maintenance difficulties. Clones
+        inherently cause code bloat, thus increasing project size and
+        maintenance costs. In this work, we try to validate the
+        conventional wisdom empirically to see whether cloning makes code
+        more defect prone.
+
+        This paper analyses relationship between cloning and defect proneness.
+        We find that, first,  the great majority of bugs are not significantly
+        associated with clones. Second, we find that clones may be less defect
+        prone than non-cloned code.  Finally,  we find little evidence that
+        clones with more copies are actually more error prone.  Our findings
+        don't support the claim that clones are really a "bad smell".  Perhaps
+        we can clone, <em>and</em> breathe easy, at the same time.  
+    }
+}
+
+
 @inproceedings{rahman2010cws,
     Author = {Foyzur Rahman and Christian Bird and Premkumar Devanbu},
     Title = {{Clones: What \emph{is} that Smell?}},
@@ -48,9 +177,9 @@
 	Booktitle = {Proceedings of the Seventh Working Conference on Mining Software Repositories},
 	publisher = {IEEE Computer Society},
 	location = {Cape Town, South Africa},
-	acceptance = {31\%},
+	acceptance = {31\% Best Paper Award 1\%},
     Year = {2010},
-    abstract = {},
+	pdf = {rahman2010cws.pdf},
     html_abstract = {
 
         Clones are generally considered bad programming practice in software
@@ -78,6 +207,7 @@
 	publisher = {IEEE Computer Society},
 	acceptance = {31\%},
 	location = {Cape Town, South Africa},
+    pdf = {nia2010vna.pdf},
     year={2010},
     abstract = {
 
@@ -133,7 +263,7 @@
 @article{rigby2010cgd,
 	Author = {Peter C. Rigby and Earl T. Barr and Christian Bird and Daniel M. German
 		and Premkumar Devanbu},
-	Title = {{Collaboration and Governance with Disributed Version Control}},
+	Title = {{Collaboration and Governance with Distributed Version Control}},
 	Year = {2010},
     skip = {yes}
 }
@@ -211,7 +341,7 @@ biased data}
 	Publisher = {IEEE Computer Society},
 	Title = {{The Promises and Perils of Mining Git}},
 	Year = {2009},
-	acceptance = {30\%},
+	acceptance = {28\%},
 	location = {Vancouver, Canada},
 	abbrv = {MSR 09},
 	pdf = {bird2009ppm.pdf},
@@ -409,7 +539,7 @@ PostgresSQL, Perl, and Apache ANT.  We then validate them with software
 	Publisher = {ACM},
 	Title = {{Recommending Random Walks} },
 	Year = {2007},
-	acceptance = {17\% nominated for Best Paper},
+	acceptance = {17\%, nominated for Best Paper},
 	abbrv = {FSE 07},
 	pdf = {fse-2007.pdf}
 }

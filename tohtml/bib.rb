@@ -185,8 +185,8 @@ def makePage(bibFile)
 			clickFuncs << "$('#show_#{key}_abstract').click(function(){$('#hidden_#{key}_abstract').show('slow')});"
 			clickFuncs << "$('#hide_#{key}_abstract').click(function(){$('#hidden_#{key}_abstract').hide('slow')});"
 
-			absText = entry.fields["abstract"]	
-			absText = absText.gsub(/[\{\}]/, "").strip.gsub!(/\n\n/, "<br><br>")	
+			absText = entry.fields["html_abstract"]	|| entry.fields["abstract"]
+			absText = absText.gsub(/[\{\}]/, "").strip.gsub(/\n\n/, "<br><br>")	
 			absLink = "<a id='show_#{key}_abstract' class='boxed_link' href='javascript:'>Abstract</a>"
 			absCode = <<EOF
 <div id="hidden_#{key}_abstract" class="initial_hidden">
