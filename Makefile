@@ -1,9 +1,9 @@
 COVER_LETTERS=$(subst tex,pdf,$(wildcard *-cl.tex))
 BUNDLES=$(subst tex,pdf,$(wildcard *-bundle.tex))
 
-cv: bird_cv.pdf
+all: $(COVER_LETTERS) $(BUNDLES) bird_cv.pdf rs.pdf ts.pdf references.pdf pub_list.pdf rs-short.pdf #rsts.pdf
 
-all: $(COVER_LETTERS) $(BUNDLES) bird_cv.pdf rs.pdf ts.pdf references.pdf pub_list.pdf rs-short.pdf rsts.pdf
+cv: bird_cv.pdf
 
 clean:
 	rm -f $(COVER_LETTERS) $(BUNDLES) *aux *blg *bbl *log *dvi \
@@ -44,7 +44,7 @@ rsts.pdf: rs.pdf ts.pdf
 %-cl.pdf: %-cl.tex cover_letter_template.tex cover_letter_defs.tex
 	pdflatex $<
 
-%-bundle.pdf: %-bundle.tex $(COVER_LETTERS) rs.pdf rs-short.pdf ts.pdf bird_cv.pdf
+%-bundle.pdf: %-bundle.tex $(COVER_LETTERS) rs.pdf rs-short.pdf ts.pdf bird_cv.pdf references.pdf
 	pdflatex $<
 
 push: bird_cv.pdf
