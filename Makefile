@@ -1,7 +1,7 @@
 COVER_LETTERS=$(subst tex,pdf,$(wildcard *-cl.tex))
 BUNDLES=$(subst tex,pdf,$(wildcard *-bundle.tex))
 
-all: $(COVER_LETTERS) $(BUNDLES) bird_cv.pdf rs.pdf ts.pdf references.pdf pub_list.pdf rs-short.pdf #rsts.pdf
+all: bird_cv.pdf #$(COVER_LETTERS) $(BUNDLES) bird_cv.pdf rs.pdf ts.pdf references.pdf pub_list.pdf rs-short.pdf #rsts.pdf
 
 cv: bird_cv.pdf
 
