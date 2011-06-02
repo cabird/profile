@@ -16,7 +16,7 @@ all_cites.bbl: all_cites.tex bird.bib
 	pdflatex all_cites
 	bibtex all_cites
 
-bird_cv.pdf: bird_cv.tex bird.bib all_cites.bbl
+bird_cv.pdf: bird_cv.tex bird.bib all_cites.bbl revnum.sty
 	cp all_cites.bbl bird_cv.bbl
 	pdflatex bird_cv
 	pdflatex bird_cv
