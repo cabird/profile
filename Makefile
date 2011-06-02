@@ -12,11 +12,9 @@ clean:
 		bird_cv.pdf pub_list.pdf references.pdf rs.pdf ts.pdf all_cites.pdf rs-short.pdf
 
 all_cites.bbl: all_cites.tex bird.bib
+	python buildallcites.py bird.bib > all_cites.tex
 	pdflatex all_cites
 	bibtex all_cites
-
-all_cites.tex: bird.bib
-	python buildallcites.py bird.bib > all_cites.tex
 
 bird_cv.pdf: bird_cv.tex bird.bib all_cites.bbl
 	cp all_cites.bbl bird_cv.bbl

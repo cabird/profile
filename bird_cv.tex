@@ -4,6 +4,7 @@
 \usepackage{bibentry}
 \usepackage{url}
 \usepackage{verbatim}
+\usepackage{revnum}
 
 \oddsidemargin -.5in
 \evensidemargin -.5in
@@ -34,6 +35,8 @@
       \setlength{\leftmargin}{0.2in}}}{\end{list}}
 
 \newcommand{\timespan}[1]{#1}
+
+\newcommand{\showpaper}[1]{\item \bibentry{#1}}
 
 \begin{document}
 \bibliographystyle{myacm}
@@ -126,54 +129,66 @@ US National Merit Scholar and Scholarship
 \item Awarded in 1996 for complete undergraduate career.
 \end{list2}
 
+\vspace{20pt}
+
 \section{Refereed Publications}
 
-\bibentry{parnin2011jga}
+\newcounter{reviewedpubs}
+\setcounter{reviewedpubs}{23}
 
-\bibentry{bird2011tbg}
+\begin{revnumerate}[\value{reviewedpubs}]
 
-\bibentry{posnett2011dpm}
+\showpaper{bird2011dtm}
 
-\bibentry{barr2010sg}
+\showpaper{parnin2011jga}
 
-\bibentry{bachmann2010mlb}
+\showpaper{bird2011tbg}
 
-\bibentry{posnett2010tmm}
+\showpaper{posnett2010esi}
 
-\bibentry{nia2010vna}
+\showpaper{barr2010sg}
 
-\bibentry{rahman2010cws}
+\showpaper{bachmann2010mlb}
 
-\bibentry{bird2009pat}
+\showpaper{posnett2010tmm}
 
-\bibentry{bird2009fbb}
+\showpaper{nia2010vna}
 
-\bibentry{bird2009dddb}
+\showpaper{rahman2010cws}
 
-\bibentry{bird2009ddd}
+\showpaper{bird2009pat}
 
-\bibentry{bird2009ppm}
+\showpaper{bird2009fbb}
 
-\bibentry{bird2009sdr}
+\showpaper{bird2009dddb}
 
-\bibentry{bird2008lss}
+\showpaper{bird2009ddd}
 
-\bibentry{pattison2008twp}
+\showpaper{bird2009ppm}
 
-\bibentry{saul2007rrw}
+\showpaper{bird2009sdr}
 
-\bibentry{bird2007dps}
+\showpaper{bird2008lss}
 
-\bibentry{bird2007obi}
+\showpaper{pattison2008twp}
 
-\bibentry{ogawa2007vsi}
+\showpaper{saul2007rrw}
 
-\bibentry{bird2006mes}
+\showpaper{bird2007dps}
 
-\bibentry{bird2006mesp}
+\showpaper{bird2007obi}
+
+\showpaper{ogawa2007vsi}
+
+\showpaper{bird2006mes}
+
+\showpaper{bird2006mesp}
+
+\end{revnumerate}
 
 \begin{comment}
 \section{Papers Awaiting Review}
+
 
 \bibentry{bird2010oev}
 
@@ -186,16 +201,29 @@ US National Merit Scholar and Scholarship
 
 \section{Book Chapters}
 
-\bibentry{bird2010cc}
+\newcounter{bookchapters}
+\setcounter{bookchapters}{1}
+
+\begin{revnumerate}[\value{bookchapters}]
+
+\showpaper{bird2010cc}
+
+\end{revnumerate}
 
 \section{Invited Papers, Demo papers, etc.}
 
-\bibentry{bird2011ese}
+\newcounter{miscpapers}
+\setcounter{miscpapers}{3}
 
-\bibentry{rahman2010cws-esem}
+\begin{revnumerate}[\value{miscpapers}]
 
-\bibentry{bird2010lee}
+\showpaper{bird2011ese}
 
+\showpaper{rahman2010cws-esem}
+
+\showpaper{bird2010lee}
+
+\end{revnumerate}
 
 
 \section{Invited Talks}
