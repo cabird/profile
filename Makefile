@@ -11,7 +11,7 @@ clean:
 	rm -f $(COVER_LETTERS) $(BUNDLES) *aux *blg *bbl *log *dvi all_cites* \
 		bird_cv.pdf pub_list.pdf references.pdf rs.pdf ts.pdf all_cites.pdf rs-short.pdf
 
-all_cites.bbl: all_cites.tex bird.bib
+all_cites.bbl: bird.bib bird.bib
 	python buildallcites.py bird.bib > all_cites.tex
 	pdflatex all_cites
 	bibtex all_cites
