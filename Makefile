@@ -15,6 +15,8 @@ all_cites.bbl: bird.bib bird.bib
 	python buildallcites.py bird.bib > all_cites.tex
 	pdflatex all_cites
 	bibtex all_cites
+	pdflatex all_cites
+	pdflatex all_cites
 
 bird_cv.pdf: bird_cv.tex bird.bib all_cites.bbl revnum.sty
 	cp all_cites.bbl bird_cv.bbl
