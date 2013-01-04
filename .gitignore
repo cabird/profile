@@ -1,11 +1,11 @@
 *.aux
-*.log
 *.bbl
 *.blg
 *.todo
 *.pdfsync
 paper.pdf
 /*.pdf
+!bird_cv.pdf
 !uc_davis_logo.pdf
 *~
 *.sw?
