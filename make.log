@@ -1,0 +1,355 @@
+cp all_cites.bbl bird_cv.bbl
+pdflatex bird_cv
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9)
+entering extended mode
+(C:\Users\cbird.REDMOND\Documents\GitHub\cv\bird_cv.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2009-06-19, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, lao, latin, lat
+vian, lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerm
+an, ngerman-x-2009-06-19, nynorsk, oriya, panjabi, pinyin, polish, portuguese, 
+romanian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swis
+sgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, u
+senglishmax, welsh, loaded.
+(C:\Users\cbird.REDMOND\Documents\GitHub\cv\res.cls
+Document Style `res' <26 Sep 89>.
+Document Class: res 2000/05/19 v1.4b Resume class
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\article.cls"
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size10.clo"))
+No auxiliary output files.
+
+)
+(C:\Users\cbird.REDMOND\AppData\Roaming\MiKTeX\2.9\tex\latex\natbib\bibentry.st
+y) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ltxmisc\url.sty")
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\verbatim.sty")
+(C:\Users\cbird.REDMOND\Documents\GitHub\cv\revnum.sty)
+
+LaTeX Warning: Unused global option(s):
+    [article,letterpaper].
+
+No file bird_cv.aux.
+(C:\Users\cbird.REDMOND\Documents\GitHub\cv\bird_cv.bbl) [1{C:/Users/cbird.REDM
+OND/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+
+LaTeX Warning: Citation `bacchelli2013eoc' undefined on input line 143.
+
+
+LaTeX Warning: Citation `murphyhill2013dbf' undefined on input line 145.
+
+
+LaTeX Warning: Citation `parnin2012auj' undefined on input line 147.
+
+
+LaTeX Warning: Citation `bird2012avb' undefined on input line 149.
+
+
+LaTeX Warning: Citation `hindle2012rri' undefined on input line 151.
+
+
+LaTeX Warning: Citation `shihab2012ebs' undefined on input line 153.
+
+
+LaTeX Warning: Citation `bird2012www' undefined on input line 155.
+
+
+LaTeX Warning: Citation `barr2012cid' undefined on input line 157.
+
+
+LaTeX Warning: Citation `zimmermann2012ccs' undefined on input line 159.
+
+
+LaTeX Warning: Citation `rahman2012cwt' undefined on input line 161.
+
+
+LaTeX Warning: Citation `menzies2011ise' undefined on input line 163.
+
+
+LaTeX Warning: Citation `zeller2011ffl' undefined on input line 165.
+
+
+LaTeX Warning: Citation `hong2011uds' undefined on input line 167.
+
+[2]
+
+LaTeX Warning: Citation `bird2011dtm' undefined on input line 169.
+
+
+LaTeX Warning: Citation `parnin2011jga' undefined on input line 171.
+
+
+LaTeX Warning: Citation `bird2011tbg' undefined on input line 173.
+
+
+LaTeX Warning: Citation `posnett2010esi' undefined on input line 175.
+
+
+LaTeX Warning: Citation `barr2010sg' undefined on input line 177.
+
+
+LaTeX Warning: Citation `bachmann2010mlb' undefined on input line 179.
+
+
+LaTeX Warning: Citation `posnett2010tmm' undefined on input line 181.
+
+
+LaTeX Warning: Citation `nia2010vna' undefined on input line 183.
+
+
+LaTeX Warning: Citation `rahman2010cws' undefined on input line 185.
+
+
+LaTeX Warning: Citation `bird2009pat' undefined on input line 187.
+
+
+LaTeX Warning: Citation `bird2009fbb' undefined on input line 189.
+
+
+LaTeX Warning: Citation `bird2009dddb' undefined on input line 191.
+
+[3]
+
+LaTeX Warning: Citation `bird2009ddd' undefined on input line 193.
+
+
+LaTeX Warning: Citation `bird2009ppm' undefined on input line 195.
+
+
+LaTeX Warning: Citation `bird2009sdr' undefined on input line 197.
+
+
+LaTeX Warning: Citation `bird2008lss' undefined on input line 199.
+
+
+LaTeX Warning: Citation `pattison2008twp' undefined on input line 201.
+
+
+LaTeX Warning: Citation `saul2007rrw' undefined on input line 203.
+
+
+LaTeX Warning: Citation `bird2007dps' undefined on input line 205.
+
+
+LaTeX Warning: Citation `bird2007obi' undefined on input line 207.
+
+
+LaTeX Warning: Citation `ogawa2007vsi' undefined on input line 209.
+
+
+LaTeX Warning: Citation `bird2006mes' undefined on input line 211.
+
+
+LaTeX Warning: Citation `bird2006mesp' undefined on input line 213.
+
+[4]
+
+LaTeX Warning: Citation `bird2010cc' undefined on input line 222.
+
+
+LaTeX Warning: Citation `bird2011scc' undefined on input line 230.
+
+
+LaTeX Warning: Citation `bird2011ese' undefined on input line 232.
+
+
+LaTeX Warning: Citation `rahman2010cws-esem' undefined on input line 234.
+
+
+LaTeX Warning: Citation `bird2010lee' undefined on input line 236.
+
+[5] [6] [7] [8] [9]
+
+LaTeX Warning: There were undefined references.
+
+ )<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:
+/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Pr
+ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Progra
+m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Fi
+les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files 
+(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x
+86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86
+)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on bird_cv.pdf (9 pages, 160852 bytes).
+Transcript written on bird_cv.log.
+pdflatex bird_cv
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9)
+entering extended mode
+(C:\Users\cbird.REDMOND\Documents\GitHub\cv\bird_cv.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2009-06-19, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, lao, latin, lat
+vian, lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerm
+an, ngerman-x-2009-06-19, nynorsk, oriya, panjabi, pinyin, polish, portuguese, 
+romanian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swis
+sgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, u
+senglishmax, welsh, loaded.
+(C:\Users\cbird.REDMOND\Documents\GitHub\cv\res.cls
+Document Style `res' <26 Sep 89>.
+Document Class: res 2000/05/19 v1.4b Resume class
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\article.cls"
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size10.clo"))
+No auxiliary output files.
+
+)
+(C:\Users\cbird.REDMOND\AppData\Roaming\MiKTeX\2.9\tex\latex\natbib\bibentry.st
+y) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ltxmisc\url.sty")
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\verbatim.sty")
+(C:\Users\cbird.REDMOND\Documents\GitHub\cv\revnum.sty)
+
+LaTeX Warning: Unused global option(s):
+    [article,letterpaper].
+
+No file bird_cv.aux.
+(C:\Users\cbird.REDMOND\Documents\GitHub\cv\bird_cv.bbl) [1{C:/Users/cbird.REDM
+OND/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+
+LaTeX Warning: Citation `bacchelli2013eoc' undefined on input line 143.
+
+
+LaTeX Warning: Citation `murphyhill2013dbf' undefined on input line 145.
+
+
+LaTeX Warning: Citation `parnin2012auj' undefined on input line 147.
+
+
+LaTeX Warning: Citation `bird2012avb' undefined on input line 149.
+
+
+LaTeX Warning: Citation `hindle2012rri' undefined on input line 151.
+
+
+LaTeX Warning: Citation `shihab2012ebs' undefined on input line 153.
+
+
+LaTeX Warning: Citation `bird2012www' undefined on input line 155.
+
+
+LaTeX Warning: Citation `barr2012cid' undefined on input line 157.
+
+
+LaTeX Warning: Citation `zimmermann2012ccs' undefined on input line 159.
+
+
+LaTeX Warning: Citation `rahman2012cwt' undefined on input line 161.
+
+
+LaTeX Warning: Citation `menzies2011ise' undefined on input line 163.
+
+
+LaTeX Warning: Citation `zeller2011ffl' undefined on input line 165.
+
+
+LaTeX Warning: Citation `hong2011uds' undefined on input line 167.
+
+[2]
+
+LaTeX Warning: Citation `bird2011dtm' undefined on input line 169.
+
+
+LaTeX Warning: Citation `parnin2011jga' undefined on input line 171.
+
+
+LaTeX Warning: Citation `bird2011tbg' undefined on input line 173.
+
+
+LaTeX Warning: Citation `posnett2010esi' undefined on input line 175.
+
+
+LaTeX Warning: Citation `barr2010sg' undefined on input line 177.
+
+
+LaTeX Warning: Citation `bachmann2010mlb' undefined on input line 179.
+
+
+LaTeX Warning: Citation `posnett2010tmm' undefined on input line 181.
+
+
+LaTeX Warning: Citation `nia2010vna' undefined on input line 183.
+
+
+LaTeX Warning: Citation `rahman2010cws' undefined on input line 185.
+
+
+LaTeX Warning: Citation `bird2009pat' undefined on input line 187.
+
+
+LaTeX Warning: Citation `bird2009fbb' undefined on input line 189.
+
+
+LaTeX Warning: Citation `bird2009dddb' undefined on input line 191.
+
+[3]
+
+LaTeX Warning: Citation `bird2009ddd' undefined on input line 193.
+
+
+LaTeX Warning: Citation `bird2009ppm' undefined on input line 195.
+
+
+LaTeX Warning: Citation `bird2009sdr' undefined on input line 197.
+
+
+LaTeX Warning: Citation `bird2008lss' undefined on input line 199.
+
+
+LaTeX Warning: Citation `pattison2008twp' undefined on input line 201.
+
+
+LaTeX Warning: Citation `saul2007rrw' undefined on input line 203.
+
+
+LaTeX Warning: Citation `bird2007dps' undefined on input line 205.
+
+
+LaTeX Warning: Citation `bird2007obi' undefined on input line 207.
+
+
+LaTeX Warning: Citation `ogawa2007vsi' undefined on input line 209.
+
+
+LaTeX Warning: Citation `bird2006mes' undefined on input line 211.
+
+
+LaTeX Warning: Citation `bird2006mesp' undefined on input line 213.
+
+[4]
+
+LaTeX Warning: Citation `bird2010cc' undefined on input line 222.
+
+
+LaTeX Warning: Citation `bird2011scc' undefined on input line 230.
+
+
+LaTeX Warning: Citation `bird2011ese' undefined on input line 232.
+
+
+LaTeX Warning: Citation `rahman2010cws-esem' undefined on input line 234.
+
+
+LaTeX Warning: Citation `bird2010lee' undefined on input line 236.
+
+[5] [6] [7] [8] [9]
+
+LaTeX Warning: There were undefined references.
+
+ )<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:
+/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Pr
+ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Progra
+m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Fi
+les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files 
+(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x
+86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86
+)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on bird_cv.pdf (9 pages, 160852 bytes).
+Transcript written on bird_cv.log.
