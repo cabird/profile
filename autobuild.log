@@ -28,22 +28,17 @@ x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x86
 KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/MiKTeX
  2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2.9
 /fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on all_cites.pdf (5 pages, 108978 bytes).
+Output written on all_cites.pdf (5 pages, 109005 bytes).
 Transcript written on all_cites.log.
 bibtex all_cites
 This is BibTeX, Version 0.99d (MiKTeX 2.9)
 The top-level auxiliary file: all_cites.aux
 The style file: myacm.bst
 Database file #1: bird.bib
-"{" immediately follows a field name---line 14 of file bird.bib
- :  Year
- :      {2013},
-I'm skipping whatever remains of this entry
 Warning--empty booktitle in bird2010gdd
 Warning--empty booktitle in bird2010oev
-Warning--empty year in kocaguneli2013distributed
 Warning--empty journal in rigby2010cgd
-(There was 1 error message)
+(There were 3 warnings)
 pdflatex all_cites
 This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9)
 entering extended mode
@@ -73,7 +68,7 @@ x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x86
 KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/MiKTeX
  2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2.9
 /fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on all_cites.pdf (5 pages, 109005 bytes).
+Output written on all_cites.pdf (5 pages, 109012 bytes).
 Transcript written on all_cites.log.
 pdflatex all_cites
 This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9)
@@ -104,7 +99,7 @@ x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x86
 KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/MiKTeX
  2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2.9
 /fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on all_cites.pdf (5 pages, 109005 bytes).
+Output written on all_cites.pdf (5 pages, 109012 bytes).
 Transcript written on all_cites.log.
 cp all_cites.bbl bird_cv.bbl
 pdflatex bird_cv
@@ -285,7 +280,7 @@ les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files
 (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x
 86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86
 )/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on bird_cv.pdf (10 pages, 162011 bytes).
+Output written on bird_cv.pdf (10 pages, 162041 bytes).
 Transcript written on bird_cv.log.
 pdflatex bird_cv
 This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9)
@@ -465,5 +460,5 @@ les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files
 (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x
 86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86
 )/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on bird_cv.pdf (10 pages, 162011 bytes).
+Output written on bird_cv.pdf (10 pages, 162041 bytes).
 Transcript written on bird_cv.log.
