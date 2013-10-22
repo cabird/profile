@@ -1,11 +1,17 @@
 COVER_LETTERS=$(subst tex,pdf,$(wildcard *-cl.tex))
 BUNDLES=$(subst tex,pdf,$(wildcard *-bundle.tex))
-GS=gswin32c.exe
+UNAME := $(shell uname)
+
+ifeq ($(UNAME), CYGWIN_NT-6.2)
+   GS=gswin32c.exe
+else
+   GS=gs
+endif
 
 all: $(COVER_LETTERS) $(BUNDLES) bird_cv.pdf rs.pdf ts.pdf references.pdf pub_list.pdf rs-short.pdf rsts.pdf
 
 clean:
-	rm -f $(COVER_LETTERS) $(BUNDLES) *aux *blg *bbl *log *dvi \
+	rm -f $(COVER_LETTERS) $(BUNDLES) *out *aux *blg *bbl *log *dvi \
 		bird_cv.pdf pub_list.pdf references.pdf rs.pdf ts.pdf all_cites.pdf rs-short.pdf
 
 all_cites.bbl: all_cites.tex all_cites.tex bird.bib
