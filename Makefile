@@ -1,5 +1,6 @@
 COVER_LETTERS=$(subst tex,pdf,$(wildcard *-cl.tex))
 BUNDLES=$(subst tex,pdf,$(wildcard *-bundle.tex))
+GS=gswin32c.exe
 
 all: $(COVER_LETTERS) $(BUNDLES) bird_cv.pdf rs.pdf ts.pdf references.pdf pub_list.pdf rs-short.pdf rsts.pdf
 
@@ -37,12 +38,12 @@ ts.pdf: ts.tex
 	pdflatex ts
 
 rsts.pdf: rs.pdf ts.pdf
-	gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=rsts.pdf rs.pdf ts.pdf
+	$(GS) -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=rsts.pdf rs.pdf ts.pdf
 
 %-cl.pdf: %-cl.tex cover_letter_template.tex cover_letter_defs.tex
 	pdflatex $<
 
-%-bundle.pdf: %-bundle.tex $(COVER_LETTERS) rs.pdf rs-short.pdf ts.pdf bird_cv.pdf
+%-bundle.pdf: %-bundle.tex $(COVER_LETTERS) rs.pdf rs-short.pdf ts.pdf bird_cv.pdf references.pdf
 	pdflatex $<
 
 push: bird_cv.pdf
