@@ -1,0 +1,3 @@
+root_file: bird_cv.tex
+compiler: pdflatex
+
