@@ -12,3 +12,7 @@ paper.pdf
 /.gvim-init.vim
 /.project-aliases
 /.vimproject
+wp/CABirdWordPress/CABirdWordPress/bin/Debug/CABirdWordPress.exe.config
+wp/CABirdWordPress/CABirdWordPress/bin/Debug/CABirdWordPress.vshost.exe.config
+wp/CABirdWordPress/CABirdWordPress/bin/Debug/CABirdWordPress.vshost.exe.manifest
+wp/CABirdWordPress/CABirdWordPress/obj/

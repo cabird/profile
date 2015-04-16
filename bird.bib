@@ -12,15 +12,23 @@
 	title = {{The Uniqueness of Changes: Characteristics and Applications}},
 	booktitle = {Proceedings of the International Conference on Mining Software Repositories},
 	publisher = {{IEEE}},
-	year = {2015}
+	year = {2015},
+	date = {3-4-2015},
+	abstract = {
+		Changes in software development come in many forms. Some changes are frequent, idiomatic, or repetitive e.g. adding checks for nulls or logging important values) while others are unique. We hypothesize that unique changes are different from the more common similar (or non-unique) changes in important ways; they may require more expertise or represent code that is more complex or prone to mistakes. As such, these unique changes are worthy of study. In this paper, we present a definition of unique changes and provide a method for identifying them in software project history. Based on the results of applying our technique on the Linux kernel and two large projects at Microsoft, we present an empirical study of unique changes. We explore how prevalent unique changes are and investigate where they occur along the architecture of the project. We further investigate developers' contribution towards uniqueness of changes. We also describe potential applications of leveraging the uniqueness of change and implement two of those applications, evaluating the risk of changes based on uniqueness and providing change recommendations for non-unique changes.}
+
 }
+
 
 @inproceedings{bird2015cfa,
 	author = {Christian Bird and Trevor Carnahan and Michaela Greiler},
 	title = {{Lessons Learned from Building and Deploying a Code Review Analytics Platform}},
 	booktitle = {Proceedings of the International Conference on Mining Software Repositories},
 	publisher = {{IEEE}},
-	year = {2015}
+	year = {2015},
+	date = {3-4-2015},
+	abstract = {Tool-based code review is growing in popularity and has become a standard part of the development process at Microsoft. Adoption of these tools makes it possible to mine data from code reviews and provide access to it. In this paper, we present an experience report for CodeFlow Analytics, a system that collects code review data, generates metrics from this data, and provides a number of ways for development teams to access the metrics and data. We discuss the design, design decisions and challenges that we encountered when building CodeFlow Analytics. We contacted teams that used CodeFlow Analytics over the past two years and discuss what prompted them to use CodeFlow Analytics, how they have used it, and what the impact has been. Further, we survey research that has been enabled by using the CodeFlow Analytics platform. We provide a series of lessons learned from this experience to help others embarking on a task of building an analytics platform in an enterprise setting.
+	}
 }
 
 @inproceedings{bosu2015useful,
@@ -28,15 +36,68 @@
 	title = {{Characteristics of Useful Code Reviews: An Empirical Study at Microsoft}},
 	booktitle = {Proceedings of the International Conference on Mining Software Repositories},
 	publisher = {{IEEE}},
-	year = {2015}
+	year = {2015},
+	date = {3-4-2015},
+	abstract = {Over the past decade, both open source and commercial
+software projects have adopted contemporary peer code
+review practices as a quality control mechanism. Prior research
+has shown that developers spend a large amount of time and
+effort performing code reviews. Therefore, identifying factors that
+lead to useful code reviews can benefit projects by increasing
+code review effectiveness and quality. In a three-stage mixed
+research study, we qualitatively investigated what aspects of
+code reviews make them useful to developers, used our findings
+to build and verify a classification model that can distinguish
+between useful and not useful code review feedback, and finally
+we used this classifier to classify review comments enabling us
+to empirically investigate factors that lead to more effective code
+review feedback.
+<br>
+In total, we analyzed 1.5 millions review comments from five
+Microsoft projects and uncovered many factors that affect the
+usefulness of review feedback. For example, we found that the
+proportion of useful comments made by a reviewer increases
+dramatically in the first year that he or she is at Microsoft but
+tends to plateau afterwards. In contrast, we found that the more
+files that are in a change, the lower the proportion of comments
+in the code review that will be of value to the author of the
+change. Based on our findings, we provide recommendations for
+practitioners to improve effectiveness of code reviews.
+}
 }
 
 @inproceedings{zanjani2015developer,
 	author = {Motahareh Bahrami Zanjani and Huzefa Kagdi and Christian Bird},
 	title = {{Using Developer-Interaction Trails to Triage Change Requests}},
-	booktitle = {Proceedinsg of the International Conference on Mining Software Repositories},
+	booktitle = {Proceedings of the International Conference on Mining Software Repositories},
 	publisher = {{IEEE}},
-	year = {2015}
+	year = {2015},
+	date = {3-4-2015},
+	abstract = {
+		The paper presents an approach, namely iHDev,
+to recommend developers who are most likely to implement
+incoming change requests. The basic premise of iHDev is that
+the developers who interacted with the source code relevant to
+a given change request are most likely to best assist with its
+resolution. A machine-learning technique is first used to locate
+source-code entities relevant to the textual description of a given
+change request. iHDev then mines interaction trails (i.e., Mylyn
+sessions) associated with these source-code entities to recommend
+a ranked list of developers. iHDev integrates the interaction trails
+in a unique way to perform its task, which was not investigated
+previously.
+<br>
+An empirical study on open source systems Mylyn and Eclipse
+Project was conducted to assess the effectiveness of iHDev. A
+number of change requests were used in the evaluated benchmark.
+Recall for top one to five recommended developers and
+Mean Reciprocal Rank (MRR) values are reported. Furthermore,
+a comparative study with two previous approaches that use
+commit histories and/or the source-code authorship information
+for developer recommendation was performed. Results show
+that iHDev could provide a recall gain of up to 127.27\% with
+equivalent or improved MRR values by up to 112.5\%.
+	}
 }
 
 @inproceedings{smith2015homegrown,

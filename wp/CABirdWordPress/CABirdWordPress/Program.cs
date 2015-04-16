@@ -15,16 +15,23 @@ namespace CABirdWordPress
 {
     class Program
     {
+
+
         static void Main(string[] args)
         {
             Program program = new Program();
 
-            program.ConnectToDatabase();
+            string bibtexPath = @"C:\Users\cbird\Documents\GitHub\cv\bird.bib";
+
+            var entries = program.GetBibtexEntries(bibtexPath);
+
+            program.PostToDatabase(entries["zanjani2015developer"]);
            
         }
 
-        void ConnectToDatabase()
+        void PostToDatabase(BibtexEntry entry)
         {
+            PostData post = new PostData(entry);
             string connectionString = "Server=mysql.cabird.com;Database=cabird_com_4;Uid=cabird;Pwd=***REMOVED***";
 
             MySqlConnection conn;
@@ -38,57 +45,74 @@ namespace CABirdWordPress
 
                 string sql = string.Format("SELECT ID from {0}_users where user_login='cabird'", tablePrefix);
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
-                MySqlDataReader rdr = cmd.ExecuteReader();
 
-                int userID = 1;
-                while (rdr.Read())
+                int userId = Convert.ToInt32(cmd.ExecuteScalar());
+
+                /* check for a post with this citekey */
+                cmd.CommandText = string.Format("select count(*) from {0}_posts where post_name='{1}'", tablePrefix, post.Key);
+                int number = Convert.ToInt32(cmd.ExecuteScalar());
+
+                MySqlCommand postCmd = new MySqlCommand();
+                postCmd.Connection = conn;
+                if (number == 0)
                 {
-                    userID = rdr.GetInt32(0);
-                    Debug.WriteLine("User id for cabird is {0}", userID);
-                }
-                rdr.Close();
-
-                string postSql = string.Format(
+                    postCmd.CommandText = string.Format(
                     @"insert into {0}_posts (post_author, post_date, post_date_gmt, post_content, post_title, post_excerpt, post_status, comment_status, ping_status,
                         post_password, post_name, to_ping, pinged, post_modified, post_modified_gmt, post_content_filtered, post_parent, guid, menu_order, post_type, 
                         post_mime_type, comment_count) 
                         values (@post_author, @post_date, @post_date_gmt, @post_content, @post_title, @post_excerpt, @post_status, @comment_status, @ping_status,
                         @post_password, @post_name, @to_ping, @pinged, @post_modified, @post_modified_gmt, @post_content_filtered, @post_parent, @guid, @menu_order, @post_type, 
                         @post_mime_type, @comment_count)", tablePrefix);
+                    postCmd.Prepare();
 
-                MySqlCommand postCmd = new MySqlCommand(postSql, conn);
-                postCmd.Prepare();
+                    Dictionary<string, object> paramValues = new Dictionary<string, object>()
+                    {
+                        {"@post_author", userId},
+                        {"@post_date", post.DateTime},
+                        {"@post_date_gmt", post.DateTime},
+                        {"@post_content", post.PostText},
+                        {"@post_title", post.Title},
+                        {"@post_excerpt", ""},
+                        {"@post_status", "publish"},
+                        {"@comment_status", "closed"},
+                        {"@ping_status", "open"},
+                        {"@post_password", ""},
+                        {"@post_name", post.Key},
+                        {"@to_ping", ""},
+                        {"@pinged", ""},
+                        {"@post_modified", DateTime.Now},
+                        {"@post_modified_gmt", DateTime.Now},
+                        {"@post_content_filtered", ""},
+                        {"@post_parent", 0},
+                        {"@guid", entry.getCiteKey()},
+                        {"@menu_order", 0},
+                        {"@post_type", "post"},
+                        {"@post_mime_type", ""},
+                        {"@comment_count", 0}
+                    };
 
-
-                Dictionary<string, object> paramValues = new Dictionary<string, object>()
+                    foreach (var kvp in paramValues)
+                    {
+                        postCmd.Parameters.AddWithValue(kvp.Key, kvp.Value);
+                    }
+                } else
                 {
-                    {"@post_author", userID},
-                    {"@post_date", DateTime.Now},
-                    {"@post_date_gmt", DateTime.Now},
-                    {"@post_content", "Test Post"},
-                    {"@post_title", "Test Post Title"},
-                    {"@post_excerpt", ""},
-                    {"@post_status", "publish"},
-                    {"@comment_status", "closed"},
-                    {"@ping_status", "open"},
-                    {"@post_password", ""},
-                    {"@post_name", "test-post"},
-                    {"@to_ping", ""},
-                    {"@pinged", ""},
-                    {"@post_modified", DateTime.Now},
-                    {"@post_modified_gmt", DateTime.Now},
-                    {"@post_content_filtered", ""},
-                    {"@post_parent", 0},
-                    {"@guid", Guid.NewGuid().ToString()},
-                    {"@menu_order", 0},
-                    {"@post_type", "post"},
-                    {"@post_mime_type", ""},
-                    {"@comment_count", 0}
-                };
-
-                foreach (var kvp in paramValues)
-                {
-                    postCmd.Parameters.AddWithValue(kvp.Key, kvp.Value);
+                    postCmd.CommandText = string.Format(
+                        @"update {0}_posts set post_content=@post_content, post_title=@post_title, post_date=@post_date,
+                            post_date_gmt=@post_date_gmt
+                            where post_name = '{1}'", tablePrefix, post.Key);
+                    postCmd.Prepare();
+                    Dictionary<string, object> paramValues = new Dictionary<string, object>()
+                    {
+                        {"@post_date", post.DateTime},
+                        {"@post_date_gmt", post.DateTime},
+                        {"@post_content", post.PostText},
+                        {"@post_title", post.Title}
+                    };
+                    foreach (var kvp in paramValues)
+                    {
+                        postCmd.Parameters.AddWithValue(kvp.Key, kvp.Value);
+                    }
                 }
 
                 postCmd.ExecuteNonQuery();
@@ -101,29 +125,24 @@ namespace CABirdWordPress
 
         }
 
-        void Foo()
+
+
+
+
+        Dictionary<string, BibtexEntry> GetBibtexEntries(string path)
         {
-            var parser = new BibtexParser(new StreamReader(@"C:\Users\cbird\Documents\GitHub\cv\bird.bib"));
+            var parser = new BibtexParser(new StreamReader(path));
             var result = parser.Parse();
             var db = result.Database;
 
-            var ff = new LatexFieldFormatter();
+            var entries = new Dictionary<string, BibtexEntry>();
 
             foreach (var entry in db.getEntries())
             {
-                entry.clearField("title");
-
-                Debug.WriteLine(entry.ToString());
-                var sw = new StringWriter();
-                entry.write(sw, ff, true);
-                AuthorList authorList = AuthorList.getAuthorList(entry.getField("author"));
-                for (int i = 0; i > authorList.size(); i++)
-                {
-                    sw.WriteLine("  " + authorList.getAuthor(i).getFirstLast(false));
-                }
-
-                Debug.WriteLine(sw.ToString());
+                entries[entry.getCiteKey()] = entry;
             }
+
+            return entries;
         }
     }
 }
