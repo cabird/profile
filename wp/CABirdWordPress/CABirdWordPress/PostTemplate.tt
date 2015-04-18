@@ -25,6 +25,6 @@
 #>
 
 <!--more-->
-<a href="https://github.com/cabird/cv/raw/master/pubs/<#= data.Key #>.pdf">Download</a>
+<a href="http://cabird.com/pubs/<#= data.Key #>.pdf">Download</a>
 <pre class="paper_bibtex"><#= data.BibTex #>
 </pre>

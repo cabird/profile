@@ -27,9 +27,13 @@ namespace CABirdWordPress
         {
             get
             {
-                if (ContainsField("date"))
+                if (ContainsField("postdate"))
                 {
-                    return DateTime.Parse(Entry.getField("date"));
+                    return DateTime.Parse(Entry.getField("postdate"));
+                }
+                if (ContainsField("year"))
+                {
+                    return new DateTime(Int32.Parse(Entry.getField("year")), 1, 1);
                 }
                 return DateTime.Now;
             }

@@ -87,7 +87,7 @@ namespace CABirdWordPress
             
             #line default
             #line hidden
-            this.Write("\r\n<!--more-->\r\n<a href=\"https://github.com/cabird/cv/raw/master/pubs/");
+            this.Write("\r\n<!--more-->\r\n<a href=\"http://cabird.com/pubs/");
             
             #line 28 "C:\Users\cbird\Documents\GitHub\cv\wp\CABirdWordPress\CABirdWordPress\PostTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(data.Key));
