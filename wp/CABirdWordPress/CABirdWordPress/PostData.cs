@@ -44,6 +44,10 @@ namespace CABirdWordPress
             get
             {
                 string title = Entry.getField("title").Replace("{", "").Replace("}", "");
+                if (HasShortVenue())
+                {
+                    title += " (" + ShortVenue + ")";
+                }
                 return title;
             }
         }
@@ -64,8 +68,13 @@ namespace CABirdWordPress
         {
             return ContainsField("abstract");
         }
-        public string Abstract { get { return Entry.getField("abstract"); } }
+        public string Abstract { get { return Entry.getField("abstract").Replace("\\%", "%"); } }
 
+        public bool HasShortVenue()
+        {
+            return ContainsField("short_venue");
+        }
+        public string ShortVenue { get { return Entry.getField("short_venue"); } }
 
         public bool HasPublishedIn()
         {

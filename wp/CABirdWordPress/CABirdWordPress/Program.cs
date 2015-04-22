@@ -11,6 +11,7 @@ using System.Diagnostics;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 using System.Text.RegularExpressions;
+using System.Net;
 
 namespace CABirdWordPress
 {
@@ -22,9 +23,14 @@ namespace CABirdWordPress
         {
             Program program = new Program();
 
-            string bibtexPath = @"C:\Users\cbird\Documents\GitHub\cv\bird.bib";
+            string bibtexURL = "https://raw.githubusercontent.com/cabird/profile/master/bird.bib";
 
-            var entries = program.GetBibtexEntries(bibtexPath);
+            Dictionary<string, BibtexEntry> entries;
+            using (WebClient client = new WebClient())
+            {
+                string bibtex = client.DownloadString(bibtexURL);
+                entries = program.GetBibtexEntries(GenerateStreamReaderFromString(bibtex));
+            }
 
             program.Connect();
             //int a = program.GetOrCreateTagID("Test Tag");
@@ -49,6 +55,16 @@ namespace CABirdWordPress
             string connectionString = string.Format("Server=mysql.cabird.com;Database=cabird_com_4;Uid=cabird;Pwd={0}", password); 
             conn = new MySql.Data.MySqlClient.MySqlConnection(connectionString);
             conn.Open();
+        }
+
+        public static StreamReader GenerateStreamReaderFromString(string s)
+        {
+            MemoryStream stream = new MemoryStream();
+            StreamWriter writer = new StreamWriter(stream);
+            writer.Write(s);
+            writer.Flush();
+            stream.Position = 0;
+            return new StreamReader(stream);
         }
 
         void PostToDatabase(BibtexEntry entry)
@@ -243,9 +259,9 @@ namespace CABirdWordPress
 
 
 
-        Dictionary<string, BibtexEntry> GetBibtexEntries(string path)
+        Dictionary<string, BibtexEntry> GetBibtexEntries(StreamReader reader)
         {
-            var parser = new BibtexParser(new StreamReader(path));
+            var parser = new BibtexParser(reader);
             var result = parser.Parse();
             var db = result.Database;
 
