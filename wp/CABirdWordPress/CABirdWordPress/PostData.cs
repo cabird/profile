@@ -18,9 +18,17 @@ namespace CABirdWordPress
             Entry = entry;
         }
 
-        private bool ContainsField(string field)
+        public bool ContainsField(string field)
         {
             return Entry.getAllFields().ContainsKey(field);
+        }
+
+        public string this[string index]
+        {
+            get
+            {
+                return Entry.getAllFields().ContainsKey(index) ? Entry.getField(index) : "";
+            }
         }
 
         public DateTime DateTime
@@ -47,6 +55,9 @@ namespace CABirdWordPress
                 if (HasShortVenue())
                 {
                     title += " (" + ShortVenue + ")";
+                } else if (ContainsField("abbrv"))
+                {
+                    title += " (" + this["abbrv"] + ")";
                 }
                 return title;
             }

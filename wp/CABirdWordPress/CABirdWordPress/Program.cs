@@ -40,7 +40,7 @@ namespace CABirdWordPress
 
             foreach (var entry in entries.Values)
             {
-                Debug.WriteLine("Adding/Updating {0}", entry.getField("title"));
+                Debug.WriteLine("Adding/Updating {0}{1}", entry.getField("title"), "");
                 program.PostToDatabase(entry);
             }
            
@@ -74,7 +74,7 @@ namespace CABirdWordPress
 
             string tablePrefix = "wp_2a8dr8";
 
-            try
+            //try
             {
                 string sql = string.Format("SELECT ID from {0}_users where user_login='cabird'", tablePrefix);
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
@@ -153,10 +153,10 @@ namespace CABirdWordPress
                 AddCategoryToPost("Publications", post.Key);
                 
             }
-            catch (MySql.Data.MySqlClient.MySqlException ex)
-            {
-                Debug.WriteLine(ex.Message);
-            }
+            //catch (MySql.Data.MySqlClient.MySqlException ex)
+            //{
+            //    Debug.WriteLine(ex.Message);
+            //}
 
         }
 
@@ -171,8 +171,10 @@ namespace CABirdWordPress
             // need to do a left join here...
             cmd.CommandText = string.Format(
                 @"select p.ID, tt.term_taxonomy_id
-                from {0}_posts p, {0}_terms t, {0}_term_taxonomy tt
-                where post_name='{1}' and t.term_id = tt.term_id and tt.taxonomy='category'",
+                from {0}_posts p left join 
+                ({0}_term_relationships tr inner join {0}_term_taxonomy tt on tt.term_taxonomy_id = tr.term_taxonomy_id)
+                on p.ID = tr.object_id
+                where post_name='{1}'",
                 tablePrefix, postKey);
 
             int postID = -1;
@@ -181,16 +183,16 @@ namespace CABirdWordPress
                 while (reader.Read())
                 {
                     postID = reader.GetInt32(0);
-                    if (reader.GetInt32(1) == categoryId)
+                    if (!reader.IsDBNull(1) && reader.GetInt32(1) == categoryId)
                     {
                         return;
                     }
                 }
             }
             string sql = @"insert into {0}_term_relationships (object_id, term_taxonomy_id) 
-                    select {1}, {2}
-                    where not exists (select * from {0}_term_relationships where object_id={1} and term_taxonomy_id={2});
-                end;";
+                    select * from (select {1}, {2}) as tmp
+                    where not exists (select 1 from {0}_term_relationships where object_id={1} and term_taxonomy_id={2}) limit 1
+                    ";
 
             cmd.CommandText = string.Format(sql, tablePrefix, postID, categoryId);
             cmd.ExecuteNonQuery();

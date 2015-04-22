@@ -4,6 +4,9 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 
+
+
+
 <p class="paper_authors">By <#= data.Authors #></p>
 <# 
 	if (data.HasPublishedIn())
@@ -14,6 +17,16 @@
 	}
 #>
 
+<#
+	if (data.ContainsField("award"))
+	{
+
+#>
+<i class="fa fa-trophy fa-5x"></i>
+<p class="award"> <#= data["award"] #> </p>
+<# 
+	}
+#>
 
 <# 
 	if (data.HasAbstract())
