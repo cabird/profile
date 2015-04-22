@@ -27,10 +27,10 @@ namespace CABirdWordPress
             var entries = program.GetBibtexEntries(bibtexPath);
 
             program.Connect();
-            int a = program.GetOrCreateTagID("Test Tag");
+            //int a = program.GetOrCreateTagID("Test Tag");
 
-            program.PostToDatabase(entries["barnett2015helping"]);
-            return;
+            //program.PostToDatabase(entries["barnett2015helping"]);
+            //return;
 
             foreach (var entry in entries.Values)
             {
@@ -171,9 +171,12 @@ namespace CABirdWordPress
                     }
                 }
             }
-            cmd.CommandText = string.Format(
-                @"insert into {0}_term_relationships (object_id, term_taxonomy_id) values ({1}, {2})",
-                tablePrefix, postID, categoryId);
+            string sql = @"insert into {0}_term_relationships (object_id, term_taxonomy_id) 
+                    select {1}, {2}
+                    where not exists (select * from {0}_term_relationships where object_id={1} and term_taxonomy_id={2});
+                end;";
+
+            cmd.CommandText = string.Format(sql, tablePrefix, postID, categoryId);
             cmd.ExecuteNonQuery();
 
         }
