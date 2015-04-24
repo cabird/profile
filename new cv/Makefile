@@ -5,19 +5,14 @@ everything: all $(COVER_LETTERS) $(BUNDLES) bird_cv.pdf rs.pdf ts.pdf references
 cv: bird_cv.pdf
 
 full: clean cv
+
 clean:
 	rm -f $ *aux *blg *bbl *log *dvi all_cites* \
 		bird_cv.pdf pub_list.pdf references.pdf rs.pdf ts.pdf all_cites.pdf rs-short.pdf
 
-all_cites.bbl: bird.bib bird.bib buildallcites.py
-	python buildallcites.py bird.bib > all_cites.tex
-	pdflatex all_cites
-	bibtex all_cites
-	pdflatex all_cites
-	pdflatex all_cites
-
-bird_cv.pdf: bird_cv.tex bird.bib all_cites.bbl revnum.sty
-	cp all_cites.bbl bird_cv.bbl
+bird_cv.pdf: bird_cv.tex bird.bib revnum.sty
+	pdflatex bird_cv
+	bibtex bird_cv
 	pdflatex bird_cv
 	pdflatex bird_cv
 
