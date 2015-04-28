@@ -3,6 +3,8 @@
 *.blg
 *.todo
 *.pdfsync
+*.out
+*.log
 paper.pdf
 /*.pdf
 !bird_cv.pdf

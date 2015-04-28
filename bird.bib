@@ -377,6 +377,38 @@ generate 18 patches for 5 open source projects: 14 were accepted.
     Pages = {1-43}
 }
 
+@Article {hindle2014topics,
+abstract     = {Large organizations like Microsoft tend to rely on formal requirements
+                documentation in order to specify and design the software products that they
+                develop. These documents are meant to be tightly coupled with the actual
+                implementation of the features they describe. In this paper we evaluate the value
+                of high-level topic-based requirements traceability and issue report traceability
+                in the version control system, using <em>Latent Dirichlet Allocation</em> (LDA).
+                We evaluate LDA topics on practitioners and check if the topics and trends
+                extracted match the perception that industrial Program Managers and Developers
+                have about the effort put into addressing certain topics. We then replicate this
+                study again on Open Source Developers using issue reports from issue trackers
+                instead of requirements, confirming our previous industrial conclusions. We found
+                that efforts extracted as commits from version control systems relevant to a
+                topic often matched the perception of the managers and developers of what
+                actually occurred at that time. Furthermore we found evidence that many of the
+                identified topics made sense to practitioners and matched their perception of
+                what occurred. But for some topics, we found that practitioners had difficulty
+                interpreting and labelling them. In summary, we investigate the high-level
+                traceability of requirements topics and issue/bug report topics to version
+                control commits via topic analysis and validate with the actual stakeholders the
+                relevance of these topics extracted from requirements and issues.},
+author       = {Abram Hindle and Christian Bird and Thomas Zimmermann and Nachiappan Nagappan},
+abbrv = {ESE},
+pages = {1-37},
+journal      = {Empirical Software Engineering},
+month        = {June},
+publisher    = {Springer},
+title        = {Do Topics Make Sense to Managers and Developers?},
+url          = {http://research.microsoft.com/apps/pubs/default.aspx?id=228976},
+year         = {2014}
+}
+
 @inproceedings{hindle2012rri,
 	Author = {Abram Hindle and Christian Bird and Thomas Zimmermann and Nachiappan Nagappan},
 	Title = {Relating Requirements to Implementation via Topic Analysis: Do Topics Extracted from Requirements Make Sense to Managers and Developers?},
@@ -973,7 +1005,8 @@ perils when mining and analyzing git data.}
 	Title = {{Structure and Dynamics of Research Collaboration in Computer Science} },
 	Year = {2009},
 	pages = {826--837},
-	acceptance = {29\%\footnote{SDM paper accepted in full as a poster presentation paper.  15\% of papers accepted for presentation and 14\% were accepted as for poster presentation.}},
+	acceptance = {29\%},
+	acceptance_long = {29\%\footnote{SDM paper accepted in full as a poster presentation paper.  15\% of papers accepted for presentation and 14\% were accepted as for poster presentation.}},
 	abbrv = {SDM 09},
 	pdf = {bird2009sdr.pdf},
 	short_venue = {SDM 09},
@@ -1019,7 +1052,7 @@ interconnected within itself.}
 	number = {8},
 	pages = {85--93},
 	pdf = {http://portal.acm.org/citation.cfm?id=1536639},
-	short_venue = {CACM}
+	short_venue = {CACM},
 	Year = {2009},
 	date = {8-10-2009},
 	acceptance = {Revised edition of ICSE paper invited to Research Highlights in CACM},
@@ -1091,7 +1124,7 @@ prior work in this area.}
 	abbrv = {FSE 08},
 	pdf = {bird2008lss.pdf},
 	date = {7-12-2008},
-	short_venue = {FSE 08}
+	short_venue = {FSE 08},
 	abstract = {Commercial software project managers design
 project organizational structure carefully, mindful of available skills,
 division of labour, geographical boundaries, etc.  These organizational
