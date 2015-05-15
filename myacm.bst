@@ -190,7 +190,7 @@ FUNCTION {emphasizeic}
 FUNCTION {scapify}
 { duplicate$ empty$
     { pop$ "" }
-    { "{\sc " swap$ * "}" * }
+    { "\textsc{" swap$ * "}" * }
   if$
 }
 
@@ -266,7 +266,7 @@ FUNCTION {format.authors}
 FUNCTION {format.editors}
 { editor empty$
     { "" }
-    { editor format.names scapify
+    { editor format.names 
       editor num.names$ #1 >
 	{ ", Eds." * }
 	{ ", Ed." * }
