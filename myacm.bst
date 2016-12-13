@@ -43,7 +43,7 @@ STRINGS { bold.author }
 
 FUNCTION {set.bold.author}
 {
-  "Christian Bird" 'bold.author :=
+  "fred flintstone" 'bold.author :=
 }
 
 FUNCTION {format.acceptance}
