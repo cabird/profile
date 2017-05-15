@@ -33,15 +33,17 @@ namespace CABirdWordPress
             }
 
             program.Connect();
-            //int a = program.GetOrCreateTagID("Test Tag");
-
-            //program.PostToDatabase(entries["barnett2015helping"]);
-            //return;
-
+            var values = new String[] { "bird2016interviews", "bird2016bias", "christakis2016developers", "smith2016beliefs", "bosu2017review",
+                "washburn2016games", "devanbu2016evidence", "manotas2016green", "zanjani2016recommending", "saraiva2015ngram"};
             foreach (var entry in entries.Values)
             {
-                Debug.WriteLine("Adding/Updating {0}{1}", entry.getField("title"), "");
-                program.PostToDatabase(entry);
+                Debug.WriteLine("examining {0} - {1}", entry.getCiteKey(), entry.getField("title"));
+                if (values.Contains(entry.getCiteKey()))
+                {
+                    Debug.WriteLine("  Adding/Updating {0} - {1}", entry.getCiteKey(), entry.getField("title"));
+                    program.PostToDatabase(entry);
+                }
+                
             }
            
         }
@@ -74,7 +76,7 @@ namespace CABirdWordPress
 
             string tablePrefix = "wp_2a8dr8";
 
-            //try
+            try
             {
                 string sql = string.Format("SELECT ID from {0}_users where user_login='cabird'", tablePrefix);
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
@@ -84,6 +86,12 @@ namespace CABirdWordPress
                 /* check for a post with this citekey */
                 cmd.CommandText = string.Format("select count(*) from {0}_posts where post_name='{1}'", tablePrefix, post.Key);
                 int number = Convert.ToInt32(cmd.ExecuteScalar());
+
+                if (number > 0)
+                {
+                    Debug.WriteLine("*** There is already an entry for " + entry.getCiteKey() + " ***");
+                    return;
+                }
 
                 MySqlCommand postCmd = new MySqlCommand();
                 postCmd.Connection = conn;
@@ -152,11 +160,10 @@ namespace CABirdWordPress
 
                 AddCategoryToPost("Publications", post.Key);
                 
+            } catch (MySql.Data.MySqlClient.MySqlException ex)
+            {
+                Debug.WriteLine(ex.Message);
             }
-            //catch (MySql.Data.MySqlClient.MySqlException ex)
-            //{
-            //    Debug.WriteLine(ex.Message);
-            //}
 
         }
 

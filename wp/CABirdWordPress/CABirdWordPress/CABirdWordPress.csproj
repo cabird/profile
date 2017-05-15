@@ -37,7 +37,7 @@
       <HintPath>..\packages\MySql.Data.6.9.6\lib\net45\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="NETRef">
-      <HintPath>..\lib\NETRef.dll</HintPath>
+      <HintPath>..\packages\NETRef.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
