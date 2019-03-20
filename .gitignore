@@ -5,6 +5,9 @@
 *.pdfsync
 *.out
 *.log
+*.fls
+*.fdb_latexmk
+bird_cv.docx
 paper.pdf
 /*.pdf
 !bird_cv.pdf
